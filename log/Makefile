@@ -6,25 +6,23 @@
 #    By: github <github@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 00:00:00 by github            #+#    #+#              #
-#    Updated: 2025/11/04 00:00:00 by github           ###   ########.fr        #
+#    Updated: 2025/11/03 00:00:00 by github           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= miniRT
 
-CC		:= cc
+CC			:= cc
 CFLAGS		:= -Wall -Wextra -Werror
 
-PROJECT_ROOT	:= log/vibe_coded
-
-INCLUDES	:= -I$(PROJECT_ROOT)/includes -I$(PROJECT_ROOT)/lib/libft -I$(PROJECT_ROOT)/lib/get_next_line -I$(PROJECT_ROOT)/lib/minilibx-linux
-LIBFT_DIR	:= $(PROJECT_ROOT)/lib/libft
-MLX_DIR	:= $(PROJECT_ROOT)/lib/minilibx-linux
+INCLUDES	:= -Ivibe_coded/includes -Ivibe_coded/lib/libft -Ivibe_coded/lib/get_next_line -Ivibe_coded/lib/minilibx-linux
+LIBFT_DIR	:= vibe_coded/lib/libft
+MLX_DIR	:= vibe_coded/lib/minilibx-linux
 
 LIBFT		:= $(LIBFT_DIR)/libft.a
 MLX		:= $(MLX_DIR)/libmlx.a
 
-SRCS_DIR	:= $(PROJECT_ROOT)/src/core
+SRCS_DIR	:= vibe_coded/src/core
 SRCS		:= \
 	$(SRCS_DIR)/rt_entry_main.c \
 	$(SRCS_DIR)/rt_core_main.c \
@@ -52,8 +50,8 @@ SRCS		:= \
 	$(SRCS_DIR)/rt_color_ops.c \
 	$(SRCS_DIR)/rt_color_convert.c \
 	$(SRCS_DIR)/rt_error.c \
-	$(PROJECT_ROOT)/lib/get_next_line/get_next_line.c \
-	$(PROJECT_ROOT)/lib/get_next_line/get_next_line_utils.c
+	vibe_coded/lib/get_next_line/get_next_line.c \
+	vibe_coded/lib/get_next_line/get_next_line_utils.c
 
 OBJS		:= $(SRCS:.c=.o)
 
