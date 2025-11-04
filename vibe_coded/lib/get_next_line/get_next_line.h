@@ -32,7 +32,7 @@ void	free_and_null(char **ptr);
  * @param str String to measure
  * @return Length of string
  */
-int		ft_strlen(char *str);
+size_t	gnl_strlen(const char *str);
 
 /**
  * @brief Locates first occurrence of character in string
@@ -47,14 +47,14 @@ char	*gnl_strchr(char *s, char c);
  * @param dest Destination buffer
  * @param src Source string
  */
-void	ft_strcpy(char *dest, const char *src);
+void	gnl_strcpy(char *dest, const char *src);
 
 /**
  * @brief Concatenates source string to destination
  * @param dest Destination buffer
  * @param src Source string to append
  */
-void	ft_strcat(char *dest, const char *src);
+void	gnl_strcat(char *dest, const char *src);
 
 /**
  * @brief Joins stash and buffer into new string

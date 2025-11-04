@@ -41,7 +41,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	sub_start = 0;
 	while (ft_isset(s1[sub_start], set))
 		sub_start++;
-		sub_len = 0;
+	sub_len = 0;
 	while (s1[sub_start + sub_len])
 		sub_len++;
 	sub_len--;

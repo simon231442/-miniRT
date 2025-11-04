@@ -128,7 +128,7 @@ char	*clean_stash(char *stash)
 		i++;
 	if (!stash[i])
 		return (free_and_null(&stash), NULL);
-	cleaned = malloc(sizeof(char) * (ft_strlen(stash) - i + 1));
+	cleaned = malloc(sizeof(char) * (gnl_strlen(stash) - i + 1));
 	if (!cleaned)
 		return (free_and_null(&stash), NULL);
 	j = 0;
