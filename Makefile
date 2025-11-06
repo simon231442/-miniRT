@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/11/05 15:20:58 by srenaud          ###   ####lausanne.ch    #
+#    Updated: 2025/11/06 22:57:36 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,12 @@ NAME := miniRT
 ################################################################################
 #                               DIRECTORIES                                    #
 ################################################################################
+
 SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = includes
 LIB_DIR = lib
+OBJ_DIR = obj
 
 ################################################################################
 #                                MINIRT SRC                                    #
@@ -28,16 +30,21 @@ vpath	%.c src
 
 SOURCES := minirt.c
 
-#libft + gnl a ajoute
-
 .DEFAULT_GOAL := all
+
 ################################################################################
 #                                 LIBRARY                                      #
 ################################################################################
 
+lib/libft/libft.a:
+	$(MAKE) -C lib/libft
+lib/get_next_line/get_next_line.a:
+	$(MAKE) -C lib/get_next_line
+
 ################################################################################
 #                             COMPILER OPTIONS                                 #
 ################################################################################
+
 UNAME_N := $(shell uname -n)
 ifeq ($(UNAME_N),Arch-Jules)
 	CC	:= tcc
@@ -47,28 +54,38 @@ endif
 
 CFLAGS		:= -g -Wall -Werror -Wextra
 CPPFLAGS	:= -Iincludes
+MLXFLAGS 	:= -Llib/minilibx-linux/ -lmlx -lXext -lX11 -lm
 
-OBJETS		:= $(SOURCES:%.c=%.o)
+LIBFT		:= lib/libft/libft.a
+GNL			:= lib/get_next_line/get_next_line.a
 
-#objet dans dossier
+OBJETS		:= $(SOURCES:%.c=$(OBJ_DIR)/%.o)
 
 ################################################################################
 #                              TARGETS & RULES                                 #
 ################################################################################
-$(NAME) : $(OBJETS)
-	$(CC) $(CFLAGS) $(OBJETS) -o $(NAME)
+
+$(NAME) : $(OBJETS) $(LIBFT) $(GNL)
+	$(CC) $(CFLAGS) $(OBJETS) $(LIBFT) $(GNL) $(MLXFLAGS) -o $(NAME)
+
+$(OBJ_DIR)/%.o : %.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 .PHONY: all
 all : $(NAME)
 
 .PHONY: clean
 clean : 
-	$(RM) *.o
+	$(RM) -r $(OBJ_DIR)
 
 .PHONY: fclean
 fclean : clean
 	$(RM) $(NAME)
-#clean libft/gnl
+	$(MAKE) -C lib/libft fclean
+	$(MAKE) -C lib/get_next_line fclean
 
 .PHONY: re
 re : fclean all
