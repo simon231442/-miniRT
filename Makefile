@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/11/06 22:57:36 by jsurian42        ###   ########.fr        #
+#    Updated: 2025/11/07 08:53:06 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ lib/libft/libft.a:
 lib/get_next_line/get_next_line.a:
 	$(MAKE) -C lib/get_next_line
 
+LIB_LINK = -Ilib/libft -Ilib/minilibx-linux -Ilib/get_next_line
+
 ################################################################################
 #                             COMPILER OPTIONS                                 #
 ################################################################################
@@ -53,7 +55,7 @@ else
 endif
 
 CFLAGS		:= -g -Wall -Werror -Wextra
-CPPFLAGS	:= -Iincludes
+CPPFLAGS	:= -Iincludes $(LIB_LINK)
 MLXFLAGS 	:= -Llib/minilibx-linux/ -lmlx -lXext -lX11 -lm
 
 LIBFT		:= lib/libft/libft.a
