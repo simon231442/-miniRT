@@ -18,6 +18,10 @@ CC	= gcc
 ifeq ($(UNAME),FreeBSD)
 	CC = clang
 endif
+UNAME_N := $(shell uname -n)
+ifeq ($(UNAME_N),Arch-Jules)
+	CC	:= tcc
+endif
 
 NAME		= libmlx.a
 NAME_UNAME	= libmlx_$(UNAME).a

@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/11/07 08:53:06 by jsurian42        ###   ########.fr        #
+#    Updated: 2025/11/12 17:46:46 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,9 @@ lib/libft/libft.a:
 	$(MAKE) -C lib/libft
 lib/get_next_line/get_next_line.a:
 	$(MAKE) -C lib/get_next_line
+lib/minilibx-linux/libmlx_linux.a:
+	cd lib/minilibx-linux && ./configure
+	$(MAKE) -C lib/minilibx-linux
 
 LIB_LINK = -Ilib/libft -Ilib/minilibx-linux -Ilib/get_next_line
 
@@ -60,6 +63,7 @@ MLXFLAGS 	:= -Llib/minilibx-linux/ -lmlx -lXext -lX11 -lm
 
 LIBFT		:= lib/libft/libft.a
 GNL			:= lib/get_next_line/get_next_line.a
+MLX			:= lib/minilibx-linux/libmlx_linux.a
 
 OBJETS		:= $(SOURCES:%.c=$(OBJ_DIR)/%.o)
 
@@ -67,7 +71,7 @@ OBJETS		:= $(SOURCES:%.c=$(OBJ_DIR)/%.o)
 #                              TARGETS & RULES                                 #
 ################################################################################
 
-$(NAME) : $(OBJETS) $(LIBFT) $(GNL)
+$(NAME) : $(OBJETS) $(LIBFT) $(GNL) $(MLX)
 	$(CC) $(CFLAGS) $(OBJETS) $(LIBFT) $(GNL) $(MLXFLAGS) -o $(NAME)
 
 $(OBJ_DIR)/%.o : %.c | $(OBJ_DIR)

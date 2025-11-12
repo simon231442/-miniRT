@@ -21,8 +21,12 @@ else ifeq ($(UNAME), FreeBSD)
 	CC = clang
 else
 	#Linux and others...
-	CC	= gcc
+	CC	= tcc
 	LFLAGS += -lbsd
+endif
+UNAME_N := $(shell uname -n)
+ifeq ($(UNAME_N),Arch-Jules)
+	CC	:= tcc
 endif
 
 all: $(NAME)
