@@ -1,0 +1,33 @@
+The Ray Tracer Challenge – Chapitre 6
+Fiche de révision : Patterns (Motifs)
+
+🎯 Objectif
+Appliquer des motifs sur les objets :
+- Rayures, dégradés, damiers
+- Transformation des patterns
+
+---
+
+🖌️ Types de patterns
+- Stripe (rayures)
+- Gradient (dégradé)
+- Ring (anneaux)
+- Checker (damier)
+
+---
+
+🔄 Transformations de pattern
+- Chaque pattern peut avoir sa propre matrice
+- Permet translation, rotation, scaling du motif indépendamment de l’objet
+
+---
+
+✅ À retenir
+- Patterns = variation de couleur selon coordonnées locales
+- Transformations permettent contrôle précis
+- Patterns combinables avec matériaux et éclairage
+- Normales et intersections ne sont pas affectées par pattern
+
+---
+Fiche rédigée d’après : The Ray Tracer Challenge de Jamis Buck
+

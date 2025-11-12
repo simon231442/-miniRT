@@ -1,0 +1,46 @@
+The Ray Tracer Challenge – Chapitre 4
+Fiche de révision : Matériaux et Ombres
+
+🎯 Objectif
+Gérer l’éclairage et l’apparence des objets :
+- Matériaux
+- Couleurs
+- Ombres
+
+---
+
+🧩 Matériaux
+- Définissent comment un objet interagit avec la lumière
+- Propriétés principales :
+  • Couleur de base
+  • Diffuse (répartition de la lumière)
+  • Specular (brillance)
+  • Ambient (lumière ambiante)
+  • Shininess (taille du highlight)
+
+---
+
+💡 Lumière
+- Lumière ponctuelle : position + couleur
+- Calcul de la couleur au point :
+  couleur = ambient + diffuse + specular
+- Nécessite la normale du point et le vecteur vers la lumière
+
+---
+
+🌑 Ombres
+- Vérifier si le point est visible depuis la lumière
+- Si un objet bloque la lumière → point en ombre
+- Influence sur la composante diffuse et specular
+
+---
+
+✅ À retenir
+- Couleur finale = combinaison des propriétés du matériau et lumière
+- Normale et direction de la lumière = clés pour l’éclairage
+- Test d’ombre indispensable pour réalisme
+- Matériaux peuvent être combinés avec transformations pour variation
+
+---
+Fiche rédigée d’après : The Ray Tracer Challenge de Jamis Buck
+

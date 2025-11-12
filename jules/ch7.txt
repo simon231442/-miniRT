@@ -1,0 +1,34 @@
+The Ray Tracer Challenge – Chapitre 7
+Fiche de révision : Caméra et Rendu
+
+🎯 Objectif
+Gérer :
+- Projection de la scène
+- Rendu des pixels
+- Orientation de la caméra
+
+---
+
+📷 Caméra
+- Définie par :
+  • Taille de l’image (width, height)
+  • Champ de vision (field of view)
+  • Matrice de transformation (position et orientation)
+- Plan de l’image (canvas) pour générer pixels
+
+🖼️ Rendu
+- Pour chaque pixel :
+  1. Calculer rayon passant par le pixel
+  2. Intersections avec objets
+  3. Couleur finale selon éclairage, matériaux, reflets, transparence
+- Anti-aliasing possible pour lisser les contours
+
+✅ À retenir
+- La caméra définit l’espace de vue
+- Calcul précis du rayon par pixel = rendu correct
+- Transformation de caméra = déplacement et rotation
+- Ordre de calcul : rayon → intersection → couleur
+
+---
+Fiche rédigée d’après : The Ray Tracer Challenge de Jamis Buck
+

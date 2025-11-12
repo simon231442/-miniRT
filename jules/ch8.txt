@@ -1,0 +1,33 @@
+The Ray Tracer Challenge – Chapitre 8
+Fiche de révision : Optimisations et CSG
+
+🎯 Objectif
+Améliorer performance et complexité des scènes :
+- Groupes d’objets
+- Bounding boxes
+- Opérations booléennes (CSG)
+
+---
+
+📦 Groupes et hiérarchie
+- Permettent d’organiser les objets
+- Transformations appliquées au groupe = transformation sur tous les enfants
+- Réduit répétitions dans la scène
+
+🔲 Bounding Boxes
+- Boîtes englobantes pour test rapide des intersections
+- Si le rayon ne touche pas la bbox → pas besoin de tester les objets internes
+
+⚙️ CSG (Constructive Solid Geometry)
+- Opérations booléennes : union, intersection, différence
+- Combinaison d’objets simples pour créer des formes complexes
+
+✅ À retenir
+- Hiérarchie et BBox = optimisation majeure
+- CSG = création d’objets complexes avec maths simples
+- Toujours vérifier intersections dans l’espace local
+- Réduction des tests inutile → gain de performance
+
+---
+Fiche rédigée d’après : The Ray Tracer Challenge de Jamis Buck
+

@@ -1,0 +1,59 @@
+The Ray Tracer Challenge – Chapitre 3
+Fiche de révision : Transformations
+
+🎯 Objectif
+Apprendre à appliquer des transformations aux objets et aux rayons :
+- Translation, Scaling, Rotation
+- Utilisation de matrices 4x4
+- Inversion et combinaison des transformations
+
+---
+
+🧮 Matrices 4x4
+- Permettent de représenter toutes les transformations 3D
+- Multiplication matricielle pour combiner plusieurs transformations
+- Les matrices sont appliquées **de droite à gauche**
+
+---
+
+⚡ Translation
+- Déplace un objet ou un point dans l’espace
+- Matrice de translation :
+  | 1 0 0 tx |
+  | 0 1 0 ty |
+  | 0 0 1 tz |
+  | 0 0 0 1  |
+- Translation d’un rayon : appliquer l’inverse à la ray direction/origine pour intersection
+
+---
+
+📏 Scaling
+- Agrandit ou réduit un objet
+- Matrice diagonale avec facteurs sx, sy, sz
+- Attention aux normales : après scaling non uniforme, normaliser et appliquer la transposée inverse
+
+---
+
+🔄 Rotation
+- Autour des axes X, Y ou Z
+- Matrices de rotation classiques
+- Combinable avec scaling et translation
+
+---
+
+🔁 Inversion
+- Nécessaire pour appliquer transformations aux rayons
+- Intersection calculée dans le **système local de l’objet**
+- Rayon transformé par l’inverse de la matrice de l’objet
+
+---
+
+✅ À retenir
+- Les transformations permettent de manipuler objets et rayons facilement
+- Toujours transformer le rayon avec la **matrice inverse** de l’objet
+- Combiner les transformations = multiplication matricielle
+- Normales doivent être recalculées après transformations non uniformes
+
+---
+Fiche rédigée d’après : The Ray Tracer Challenge de Jamis Buck
+
