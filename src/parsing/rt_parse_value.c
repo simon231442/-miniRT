@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                            :+:    :+:           */
+/*   rt_parse_value.c                                    :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/13 16:14:52 by srenaud        ########   odam.nl        */
+/*   Created: 2025/11/13 16:17:55 by srenaud           #+#    #+#             */
+/*   Updated: 2025/11/13 16:37:41 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "minirt.h"
 
-# include <stdio.h>
+double	rt_parse_value(char *value)
+{
+	double	result;
+	int		i;
 
-# include "mlx.h"
-# include "libft.h"
-# include "get_next_line.h"
-
-
-#endif
+	i = 0;
