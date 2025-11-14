@@ -22,7 +22,7 @@ double	rt_parse_value(char *value)
 
 	i = 0;
 	sign = 1; 
-	result = 1;
+	result = 0;
 	if (value[i] == '-')
 	{
 		sign = -1;
@@ -34,7 +34,7 @@ double	rt_parse_value(char *value)
 		i++;
 	}
 	if (value[i] == '.')
-		result = after_dot_get(&value[++i]);
+		result = result after_dot_get(&value[++i]);
 	return (result * sign);
 }
 
@@ -51,7 +51,7 @@ static double	after_dot_get(char *value)
 	i--;
 	while (i >= 0)
 	{
-		result = result / 10 + value[i] - 0;
+		result = result / 10 + value[i] - '0';
 		i--;
 	}
 	return (result);
