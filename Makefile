@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/11/12 17:46:46 by jsurian42        ###   ########.fr        #
+#    Updated: 2025/11/17 17:11:18 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,17 @@ SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = includes
 LIB_DIR = lib
-OBJ_DIR = obj
 
 ################################################################################
 #                                MINIRT SRC                                    #
 ################################################################################
 
-vpath	%.c src
+vpath	%.c src:src/mlx
 
-SOURCES := minirt.c
+SOURCES := minirt.c \
+		   rt_mlx_init.c \
+		   rt_mlx_hook.c \
+		   rt_mlx_hook_key.c
 
 .DEFAULT_GOAL := all
 

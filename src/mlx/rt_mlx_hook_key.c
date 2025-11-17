@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.c                                           :+:      :+:    :+:   */
+/*   rt_mlx_hook_key.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/17 13:00:10 by jsurian42        ###   ########.fr       */
+/*   Created: 2025/11/17 12:45:27 by jsurian42         #+#    #+#             */
+/*   Updated: 2025/11/17 13:00:34 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+//#include "stdio.h"
 
-int	main(void)
+int	rt_mlx_hook_key(int keycode, t_mlx *self)
 {
-	t_mlx	mlx;
-
-	if (rt_mlx_init(&mlx))
-		rt_mlx_free(&mlx);
-	if (rt_mlx_hook(&mlx))
-		rt_mlx_free(&mlx);
-	mlx_loop(mlx.mlx_ptr);
+	if (keycode == KEY_Q)
+		rt_mlx_free(self);
+	//printf("keycode %d\n", keycode);
 	return (0);
 }

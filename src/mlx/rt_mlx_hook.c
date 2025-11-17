@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.c                                           :+:      :+:    :+:   */
+/*   rt_mlx_hook.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/17 13:00:10 by jsurian42        ###   ########.fr       */
+/*   Created: 2025/11/17 12:42:32 by jsurian42         #+#    #+#             */
+/*   Updated: 2025/11/17 12:50:09 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int	main(void)
+int	rt_mlx_hook(t_mlx *self)
 {
-	t_mlx	mlx;
-
-	if (rt_mlx_init(&mlx))
-		rt_mlx_free(&mlx);
-	if (rt_mlx_hook(&mlx))
-		rt_mlx_free(&mlx);
-	mlx_loop(mlx.mlx_ptr);
+	mlx_key_hook(self->win_ptr, rt_mlx_hook_key, self);
+	//mlx_mouse_hook(self->win_ptr, rt_mlx_hook_mouse, self);
+	//mlx_hook(self->win_ptr, LITTLECROSS, 0, hook, self);
 	return (0);
 }
