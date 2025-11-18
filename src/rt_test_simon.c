@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.c                                           :+:      :+:    :+:   */
+/*   rt_test_simon.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/04 16:20:10 by jsurian42        ###   ########.fr       */
+/*   Created: 2025/11/15 18:22:52 by simon2314         #+#    #+#             */
+/*   Updated: 2025/11/15 18:22:52 by simon2314        ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ int	main(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		number = rt_parse_atod(av[i]);
+		number = rt_atod(av[i]);
 		printf("%f\n",number);
 		i++;
 	}
-	return (0);
 }

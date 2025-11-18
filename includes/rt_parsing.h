@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.c                                           :+:      :+:    :+:   */
+/*   rt_parsing.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/04 16:20:10 by jsurian42        ###   ########.fr       */
+/*   Created: 2025/11/15 17:00:32 by simon2314         #+#    #+#             */
+/*   Updated: 2025/11/15 17:00:32 by simon2314        ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#ifndef RT_PARSING_H
+# define RT_PARSING_H
 
-int	main(int ac, char **av)
-{
-	int		i;
-	double	number;
+double	rt_parse_atod(char *value);
 
-	i = 1;
-	while (i < ac)
-	{
-		number = rt_parse_atod(av[i]);
-		printf("%f\n",number);
-		i++;
-	}
-	return (0);
-}
+#endif
+

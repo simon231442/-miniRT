@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_value.c                                    :+:    :+:           */
+/*   rt_parse_atod.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
+/*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 16:17:55 by srenaud           #+#    #+#             */
-/*   Updated: 2025/11/13 16:37:41 by srenaud        ########   odam.nl        */
+/*   Created: 2025/11/15 16:56:48 by simon2314         #+#    #+#             */
+/*   Updated: 2025/11/15 16:56:48 by simon2314        ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static double	after_dot_get(char *value);
 
-double	rt_parse_value(char *value)
+double	rt_parse_atod(char *value)
 {
 	double	result;
 	int		i;
@@ -34,7 +34,7 @@ double	rt_parse_value(char *value)
 		i++;
 	}
 	if (value[i] == '.')
-		result = result after_dot_get(&value[++i]);
+		result = result + after_dot_get(&value[++i]);
 	return (result * sign);
 }
 
@@ -44,14 +44,14 @@ static double	after_dot_get(char *value)
 	int	i;
 
 	i = 0;
-	result = 1;
+	result = 0;
 	while (value[i])
 		i++;
-	result = value[--i] - '0';
 	i--;
 	while (i >= 0)
 	{
 		result = result / 10 + value[i] - '0';
+		result = value[i] - '0';
 		i--;
 	}
 	return (result);
