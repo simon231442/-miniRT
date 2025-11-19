@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/11/18 18:48:50 by jsurian42        ###   ########.fr        #
+#    Updated: 2025/11/19 16:20:23 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ lib/libft/libft.a:
 	$(MAKE) -C lib/libft
 lib/get_next_line/get_next_line.a:
 	$(MAKE) -C lib/get_next_line
-lib/minilibx-linux/libmlx_linux.a:
+lib/minilibx-linux/libmlx.a:
 	$(MAKE) -C lib/minilibx-linux
 
 LIB_LINK = -Ilib/libft -Ilib/minilibx-linux -Ilib/get_next_line
@@ -89,6 +89,7 @@ clean :
 	$(RM) -r $(OBJ_DIR)
 	$(MAKE) -C lib/libft clean
 	$(MAKE) -C lib/get_next_line clean
+	$(MAKE) -C lib/minilibx-linux clean
 
 .PHONY: fclean
 fclean : clean
