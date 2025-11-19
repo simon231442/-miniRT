@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   rt_test_simon.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/17 17:08:33 by jsurian42        ###   ########.fr       */
+/*   Created: 2025/11/15 18:22:52 by simon2314         #+#    #+#             */
+/*   Updated: 2025/11/15 18:22:52 by simon2314        ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "minirt.h"
 
-# include <stdio.h>
+int	main(int ac, char **av)
+{
+	int		i;
+	double	number;
 
-# include "mlx.h"
-# include "libft.h"
-# include "get_next_line.h"
-
-# include "rt_mlx.h"
-
-# include "rt_parsing.h"
-
-
-#endif
+	i = 1;
+	while (i < ac)
+	{
+		number = rt_atod(av[i]);
+		printf("%f\n",number);
+		i++;
+	}
+}

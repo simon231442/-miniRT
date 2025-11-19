@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   rt_parsing.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/17 17:08:33 by jsurian42        ###   ########.fr       */
+/*   Created: 2025/11/15 17:00:32 by simon2314         #+#    #+#             */
+/*   Updated: 2025/11/15 17:00:32 by simon2314        ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#ifndef RT_PARSING_H
+# define RT_PARSING_H
 
-# include <stdio.h>
-
-# include "mlx.h"
-# include "libft.h"
-# include "get_next_line.h"
-
-# include "rt_mlx.h"
-
-# include "rt_parsing.h"
-
+double	rt_parse_atod(char *value);
 
 #endif
+

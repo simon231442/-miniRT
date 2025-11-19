@@ -28,6 +28,7 @@ LIB_DIR = lib
 vpath	%.c src:src/mlx
 
 SOURCES := minirt.c \
+		parsing/rt_parse_atod.c \
 		   rt_mlx_init.c \
 		   rt_mlx_hook.c \
 		   rt_mlx_hook_key.c
@@ -76,6 +77,7 @@ $(NAME) : $(OBJETS) $(LIBFT) $(GNL) $(MLX)
 	$(CC) $(CFLAGS) $(OBJETS) $(LIBFT) $(GNL) $(MLXFLAGS) -o $(NAME)
 
 $(OBJ_DIR)/%.o : %.c | $(OBJ_DIR)
+#@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
