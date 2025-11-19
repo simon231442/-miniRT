@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile                                            :+:    :+:            #
 #                                                     +:+ +:+         +:+      #
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/11/19 16:20:23 by jsurian42        ###   ########.fr        #
+#    Updated: 2025/11/19 17:35:07 by srenaud        ########   odam.nl         #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,13 @@ LIB_DIR = lib
 #                                MINIRT SRC                                    #
 ################################################################################
 
-vpath	%.c src:src/mlx
+vpath	%.c src:src/mlx:src/parsing
 
-SOURCES := minirt.c \
-		parsing/rt_parse_atod.c \
-		   rt_mlx_init.c \
-		   rt_mlx_hook.c \
-		   rt_mlx_hook_key.c
+SOURCES :=	minirt.c \
+			rt_parse_atod.c \
+			rt_mlx_init.c \
+			rt_mlx_hook.c \
+			rt_mlx_hook_key.c
 
 .DEFAULT_GOAL := all
 
