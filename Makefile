@@ -28,7 +28,8 @@ OBJ_DIR = obj
 
 vpath	%.c src
 
-SOURCES := minirt.c
+SOURCES := minirt.c \
+	parsing/rt_parse_atod.c
 
 .DEFAULT_GOAL := all
 
@@ -71,6 +72,7 @@ $(NAME) : $(OBJETS) $(LIBFT) $(GNL)
 	$(CC) $(CFLAGS) $(OBJETS) $(LIBFT) $(GNL) $(MLXFLAGS) -o $(NAME)
 
 $(OBJ_DIR)/%.o : %.c | $(OBJ_DIR)
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ_DIR):

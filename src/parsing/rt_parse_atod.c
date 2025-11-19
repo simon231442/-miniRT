@@ -50,9 +50,10 @@ static double	after_dot_get(char *value)
 	i--;
 	while (i >= 0)
 	{
-		result = result / 10 + value[i] - '0';
-		result = value[i] - '0';
+		result = result / 10;
+		result = result + value[i] - '0';
 		i--;
 	}
+	result /= 10;
 	return (result);
 }
