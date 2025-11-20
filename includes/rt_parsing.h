@@ -14,12 +14,12 @@
 # define RT_PARSING_H
 
 typedef struct s_la_complete t_la_complete;
-typedef struct e_error_type t_error_type;
+typedef enum e_error_type t_error_type;
 typedef struct s_vec3 t_vec3;
 
 int 	rt_parse_cam(char *line, t_la_complete *la_complete);
 double	rt_parse_atod(char *value);
-int		rt_parse_vector(char *arg, t_vec3 *vector)
+int		rt_parse_vector(char *arg, t_vec3 *vector);
 
 #endif
 

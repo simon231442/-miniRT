@@ -36,7 +36,7 @@ SOURCES :=	minirt.c \
 			rt_parse_obj_cylinder.c \
 			rt_parse_obj_plane.c \
 			rt_parse_obj_sphere.c \
-			rt_parse_obj_vector.c \
+			rt_parse_vector.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c

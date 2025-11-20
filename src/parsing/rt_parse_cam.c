@@ -19,10 +19,10 @@ int rt_parse_cam(char *line, t_la_complete *la_complete)
 	arg = ft_split(line, ' ');
 	if (!arg)
 		return (ERROR_SYSTEM);
-	if (rt_parse_vector(arg[1], la_complet->obj.cam.origin) ||
-		rt_parse_vector(arg[2], ls_complet->obj.cam.direction))
-		return (1);
+	if (rt_parse_vector(arg[1], &la_complete->obj.cam.origin) ||
+		rt_parse_vector(arg[2], &la_complete->obj.cam.direction))
+		return (free(arg), 1);
 	la_complete->obj.cam.fov = rt_parse_atod(arg[3]);
-	return (0);
+	return (free(arg), 0);
 }
 

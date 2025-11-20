@@ -14,5 +14,13 @@
 
 int	rt_parse_vector(char *arg, t_vec3 *vector)
 {
-	return (0);
+	char	**vec_tmp;
+
+	vec_tmp = ft_split(arg, ',');
+	if (!vec_tmp)
+		return (ERROR_SYSTEM);
+	vector->x = rt_parse_atod(vec_tmp[0]);
+	vector->y = rt_parse_atod(vec_tmp[1]);
+	vector->y = rt_parse_atod(vec_tmp[2]); 
+	return (free(vec_tmp), 0);
 }

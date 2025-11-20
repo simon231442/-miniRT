@@ -13,9 +13,10 @@
 #ifndef RT_ERROR_H
 # define RT_ERROR_H
 
+
 typedef enum e_error_type
 {
-	ERROR_SYSTEM,
+	ERROR_SYSTEM
 }	t_error_type;
 
 #endif
