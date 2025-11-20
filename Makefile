@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/11/19 17:35:07 by srenaud        ########   odam.nl         #
+#    Updated: 2025/11/20 08:36:05 by srenaud        ########   odam.nl         #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,15 @@ LIB_DIR = lib
 vpath	%.c src:src/mlx:src/parsing
 
 SOURCES :=	minirt.c \
+			rt_parse_ambient.c \
 			rt_parse_atod.c \
+			rt_parse_cam.c \
+			rt_parse_light.c \
+			rt_parse_line.c \
+			rt_parse_obj_cylinder.c \
+			rt_parse_obj_plane.c \
+			rt_parse_obj_sphere.c \
+			rt_parse_obj_vector.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c
