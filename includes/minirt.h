@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                            :+:    :+:           */
+/*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/19 22:48:55 by srenaud        ########   odam.nl        */
+/*   Updated: 2025/11/20 17:58:23 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include "get_next_line.h"
 
 # include "rt_mlx.h"
-# include "rt_parsing.h"
-# include "rt_error.h"
+//# include "rt_parsing.h"
+//# include "rt_error.h"
 
 typedef struct s_vec3
 {
