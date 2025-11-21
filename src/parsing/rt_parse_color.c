@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_obj_sphere.c                               :+:    :+:           */
+/*   rt_parse_color.c                                    :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 19:29:43 by srenaud           #+#    #+#             */
-/*   Updated: 2025/11/21 11:49:24 by srenaud        ########   odam.nl        */
+/*   Created: 2025/11/21 09:59:25 by srenaud           #+#    #+#             */
+/*   Updated: 2025/11/21 10:07:30 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-/** 
- * @brief	parse an sphere line, create a shape node and fill it's fields
- 			sphere parametres : origine, radius, color 
- * @return	0 on success, ERROR_SYSTEM or ... 
-*/
-
-int rt_parse_sphere(char *line, t_la_complete *la_complete)
+int	rt_parse_color(char *arg, t_color *color)
 {
-	(void)line;
-	(void)la_complete;
-	return (0);
+	char	**color_tmp;
+
+	color_tmp = ft_split(arg, ',');
+	if (!color_tmp)
+		return (ERROR_SYSTEM);
+	color->r = rt_parse_atod(color_tmp[0]);
+	color->g = rt_parse_atod(color_tmp[1]);
+	color->b = rt_parse_atod(color_tmp[2]); 
+	return (free(color_tmp), 0);
 }
