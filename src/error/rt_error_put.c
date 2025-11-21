@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_error.h                                          :+:    :+:           */
+/*   rt_error_put.c                                      :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 21:07:36 by srenaud           #+#    #+#             */
-/*   Updated: 2025/11/21 16:04:16 by srenaud        ########   odam.nl        */
+/*   Created: 2025/11/21 15:41:28 by srenaud           #+#    #+#             */
+/*   Updated: 2025/11/21 16:04:37 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_ERROR_H
-# define RT_ERROR_H
+#include "minirt.c"
 
-
-#define ERROR_SYSTEM "system error\n"
-#define ERROR_USAGE "usage"
-
-#endif
+void	rt_error_put(char *message)
+{
+	ft_putendl_fd("Error\n", 2);
+	ft_putendl_fd(message, 2);
+}
