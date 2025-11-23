@@ -18,7 +18,7 @@ int	rt_parse_vector(char *arg, t_vec3 *vector)
 
 	vec_tmp = ft_split(arg, ',');
 	if (!vec_tmp)
-		return (ERROR_SYSTEM);
+		return (rt_error_put(ERROR_SYSTEM), 1);
 	vector->x = rt_parse_atod(vec_tmp[0]);
 	vector->y = rt_parse_atod(vec_tmp[1]);
 	vector->y = rt_parse_atod(vec_tmp[2]); 

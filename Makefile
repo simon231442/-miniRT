@@ -25,9 +25,10 @@ LIB_DIR = lib
 #                                MINIRT SRC                                    #
 ################################################################################
 
-vpath	%.c src:src/mlx:src/parsing
+vpath	%.c src:src/mlx:src/parsing:src/error
 
 SOURCES :=	minirt.c \
+			rt_error_put.c \
 			rt_parse.c \
 			rt_parse_ambient.c \
 			rt_parse_atod.c \

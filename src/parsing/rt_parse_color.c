@@ -18,7 +18,7 @@ int	rt_parse_color(char *arg, t_color *color)
 
 	color_tmp = ft_split(arg, ',');
 	if (!color_tmp)
-		return (ERROR_SYSTEM);
+		return (rt_error_put(ERROR_SYSTEM), 1);
 	color->r = rt_parse_atod(color_tmp[0]);
 	color->g = rt_parse_atod(color_tmp[1]);
 	color->b = rt_parse_atod(color_tmp[2]); 

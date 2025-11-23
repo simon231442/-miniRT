@@ -15,11 +15,12 @@
 int	main(int ac, char **av)
 {
 	t_mlx	mlx;
-	(void)av;
+	t_la_complete	la_complete;
 
 	if (ac != 2)
-		return (rt_error_put(ERROR_USAGE));
-
+		return (rt_error_put(ERROR_USAGE), EXIT_FAILURE);
+	if (rt_parse(av[0], &la_complete))
+		return (EXIT_FAILURE);
 	if (rt_mlx_init(&mlx))
 		rt_mlx_free(&mlx);
 	if (rt_mlx_hook(&mlx))

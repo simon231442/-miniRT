@@ -14,7 +14,7 @@
 
 static int		parse_line(char	*line, t_la_complete *la_complete);
 static t_parser *parser_tab_get(void);
-static int		parser_find(char *line, t_parser parser_tab[], t_la_complete *la_complete);
+static int		parser_find_and_execute(char *line, t_parser parser_tab[], t_la_complete *la_complete);
 static int		identifier_cmp(char *line, char *indentifier);
 
 int	rt_parse(char *path, t_la_complete *la_complete)
@@ -24,7 +24,7 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		return (ERROR_SYSTEM);
+		return (rt_error_put(ERROR_SYSTEM), 1);
 	while (1)
 	{
 		line = get_next_line(fd);
@@ -44,7 +44,8 @@ static int	parse_line(char	*line, t_la_complete *la_complete)
 	while (1)
 	{
 //		rt_parse_line_count_is_valid();
-		parser_find(line, parser_tab, la_complete);
+		if (parser_find_and_execute(line, parser_tab, la_complete))
+			return (1);
 	}
 	return (0);
 }
@@ -64,17 +65,19 @@ static t_parser	*parser_tab_get(void)
 	return (parser_tab);
 }
 
-static int	parser_find(char *line, t_parser parser_tab[], t_la_complete *la_complete)
+static int	parser_find_and_execute(char *line, t_parser parser_tab[], t_la_complete *la_complete)
 {
 	int	i;
 
 	i = 0;
-	while (parser_tab[i].identifier)
+	while (1)
 	{
+		if (!parser_tab[i].identifier)
+			break;
 		if (identifier_cmp(line, parser_tab[i].identifier))
 			return (parser_tab[i].f(line, la_complete));
 	}
-	return (1);
+	return(rt_error_put(ERROR_IDENTIFIER), 1);
 }
 
 static int	identifier_cmp(char *line, char *identifier)
@@ -84,7 +87,7 @@ static int	identifier_cmp(char *line, char *identifier)
 	i = 0;
 	while (line[i] == identifier[i] && identifier[i])
 		i++;
-	if (!identifier[i])
+	if (line[i] == ' ' &&!identifier[i])
 		return (1);
 	else
 		return (0);

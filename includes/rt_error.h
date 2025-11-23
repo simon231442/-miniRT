@@ -13,8 +13,12 @@
 #ifndef RT_ERROR_H
 # define RT_ERROR_H
 
+#define EXIT_SUCCESS 0
+#define EXIT_FAILURE 1
+#define ERROR_USAGE "usage ./miniRT <scene.rt>"
+#define ERROR_SYSTEM "Failure system"
+#define ERROR_IDENTIFIER "Wrong identifier"
 
-#define ERROR_SYSTEM "system error\n"
-#define ERROR_USAGE "usage"
+void	rt_error_put(char *message);
 
 #endif

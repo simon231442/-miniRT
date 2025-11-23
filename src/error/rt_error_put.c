@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.c"
+#include "minirt.h"
 
 void	rt_error_put(char *message)
 {

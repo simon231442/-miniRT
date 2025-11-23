@@ -23,7 +23,7 @@ int rt_parse_cam(char *line, t_la_complete *la_complete)
 
 	arg = ft_split(line, ' ');
 	if (!arg)
-		return (ERROR_SYSTEM);
+		return (rt_error_put(ERROR_SYSTEM), 1);
 	if (rt_parse_vector(arg[1], &la_complete->obj.cam.origin) ||
 		rt_parse_vector(arg[2], &la_complete->obj.cam.direction))
 		return (free(arg), 1);
