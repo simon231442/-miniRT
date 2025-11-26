@@ -17,6 +17,12 @@ static t_parser *parser_tab_get(void);
 static int		parser_find_and_execute(char *line, t_parser parser_tab[], t_la_complete *la_complete);
 static int		identifier_cmp(char *line, char *indentifier);
 
+/** 
+ * @brief	the main parsing function.
+		gnl is called and parse_line is called for each line.
+ * @return	0 on success, or ... 
+*/
+
 int	rt_parse(char *path, t_la_complete *la_complete)
 {
 	char	*line;
@@ -32,9 +38,16 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 			break;
 		if (parse_line(line, la_complete))
 			return (1);
+		free(line);
 	}
 	return (0);
 }
+
+/** 
+ * @brief	select and call the parser coresponding to the identifier
+		by using parserfind_and_execute.	
+ * @return	0 on success, or ... 
+*/
 
 static int	parse_line(char	*line, t_la_complete *la_complete)
 {
@@ -76,9 +89,16 @@ static int	parser_find_and_execute(char *line, t_parser parser_tab[], t_la_compl
 			break;
 		if (identifier_cmp(line, parser_tab[i].identifier))
 			return (parser_tab[i].f(line, la_complete));
+		i++;
 	}
 	return(rt_error_put(ERROR_IDENTIFIER), 1);
 }
+
+/**
+ * @brief	compare each caractere of the identifier
+		to each caracter of the beginninge of the line to the first space. 
+ * @return	1 if the same, 0 either.
+*/
 
 static int	identifier_cmp(char *line, char *identifier)
 {

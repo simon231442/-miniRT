@@ -60,7 +60,7 @@ typedef struct s_light
 
 typedef enum e_shape_type
 {
-	SHPERE,
+	SPHERE,
 	PLANE,
 	CYLINDER
 }	t_shape_type;

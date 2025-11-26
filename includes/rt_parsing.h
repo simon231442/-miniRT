@@ -35,5 +35,7 @@ double	rt_parse_atod(char *value);
 int		rt_parse_vector(char *arg, t_vec3 *vector);
 int		rt_parse_color(char *arg, t_color *color);
 
+void	rt_parse_util_arg_free(char **arg);
+
 #endif
 
