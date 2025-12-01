@@ -34,6 +34,7 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 	while (1)
 	{
 		line = get_next_line(fd);
+		ft_printf("%s\n", line);
 		if (!line)
 			break;
 		if (parse_line(line, la_complete))
