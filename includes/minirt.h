@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/21 11:57:03 by srenaud        ########   odam.nl        */
+/*   Updated: 2025/12/01 15:06:49 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include "rt_mlx.h"
 # include "rt_parsing.h"
 # include "rt_error.h"
+
+# include "rt_debug.h"
 
 typedef struct s_vec3
 {

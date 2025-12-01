@@ -6,7 +6,7 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 17:00:32 by simon2314         #+#    #+#             */
-/*   Updated: 2025/11/21 11:55:20 by srenaud        ########   odam.nl        */
+/*   Updated: 2025/12/01 14:11:11 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ double	rt_parse_atod(char *value);
 int		rt_parse_vector(char *arg, t_vec3 *vector);
 int		rt_parse_color(char *arg, t_color *color);
 
+void	rt_parse_util_line_clean(char *line);
 void	rt_parse_util_arg_free(char **arg);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 19:38:18 by simon2314         #+#    #+#             */
-/*   Updated: 2025/12/01 11:19:19 by srenaud        ########   odam.nl        */
+/*   Updated: 2025/12/01 14:10:32 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 	while (1)
 	{
 		line = get_next_line(fd);
-		printf("%s\n", line);
+		rt_parse_util_line_clean(line);
 		if (!line)
 			break;
 		if (parse_line(line, la_complete))
@@ -55,12 +55,9 @@ static int	parse_line(char	*line, t_la_complete *la_complete)
 	static t_parser	*parser_tab;
 
 	parser_tab = parser_tab_get();
-	while (1)
-	{
 //		rt_parse_line_count_is_valid();
-		if (parser_find_and_execute(line, parser_tab, la_complete))
-			return (1);
-	}
+	if (parser_find_and_execute(line, parser_tab, la_complete))
+		return (1);
 	return (0);
 }
 
@@ -108,7 +105,7 @@ static int	identifier_cmp(char *line, char *identifier)
 	i = 0;
 	while (line[i] == identifier[i] && identifier[i])
 		i++;
-	if (line[i] == ' ' &&!identifier[i])
+	if (line[i] == ' ' && !identifier[i])
 		return (1);
 	else
 		return (0);

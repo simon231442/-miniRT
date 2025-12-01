@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:28:02 by srenaud           #+#    #+#             */
-/*   Updated: 2025/11/21 15:05:58 by srenaud        ########   odam.nl        */
+/*   Updated: 2025/12/01 15:39:57 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int rt_parse_cam(char *line, t_la_complete *la_complete)
 		rt_parse_vector(arg[2], &la_complete->obj.cam.direction))
 		return (free(arg), 1);
 	la_complete->obj.cam.fov = rt_parse_atod(arg[3]);
+	rt_debug_scene_cam_display(la_complete);
 	return (free(arg), 0);
 }
 

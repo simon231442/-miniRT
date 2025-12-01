@@ -1,11 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_util_obj_node_create.c                    :+:      :+:    :+:   */
+/*   rt_parse_util_line_clean.c                          :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
+/*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 14:49:30 by simon2314         #+#    #+#             */
-/*   Updated: 2025/11/23 14:49:30 by simon2314        ###   ####lausanne.ch   */
+/*   Created: 2025/12/01 12:13:40 by srenaud           #+#    #+#             */
+/*   Updated: 2025/12/01 14:18:41 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "minirt.h"
+
+void	rt_parse_util_line_clean(char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == '\t' || line[i] == '\n')
+			line[i] = ' ';
+		i++;
+	}
+}

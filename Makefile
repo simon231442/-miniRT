@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/12/01 10:38:19 by srenaud        ########   odam.nl         #
+#    Updated: 2025/12/01 15:02:30 by srenaud        ########   odam.nl         #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,14 @@ LIB_DIR = lib
 #                                MINIRT SRC                                    #
 ################################################################################
 
-vpath	%.c src:src/mlx:src/parsing:src/error
+vpath	%.c src:src/mlx:src/parsing:src/error:src/debug
 
 SOURCES :=	minirt.c \
 			rt_error_put.c \
+			rt_debug_scene_ambient_display.c \
+			rt_debug_scene_cam_display.c \
+			rt_debug_scene_light_display.c \
+			rt_debug_scene_obj_display.c \
 			rt_parse.c \
 			rt_parse_ambient.c \
 			rt_parse_atod.c \
@@ -41,7 +45,7 @@ SOURCES :=	minirt.c \
 			rt_parse_obj_sphere.c \
 			rt_parse_vector.c \
 			rt_parse_util_arg_free.c \
-			rt_parse_util_obj_node_create.c \
+			rt_parse_util_line_clean.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c
