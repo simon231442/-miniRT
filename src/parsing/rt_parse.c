@@ -6,7 +6,7 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 19:38:18 by simon2314         #+#    #+#             */
-/*   Updated: 2025/11/21 14:58:49 by srenaud        ########   odam.nl        */
+/*   Updated: 2025/12/01 11:19:19 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 	while (1)
 	{
 		line = get_next_line(fd);
-		ft_printf("%s\n", line);
+		printf("%s\n", line);
 		if (!line)
 			break;
 		if (parse_line(line, la_complete))

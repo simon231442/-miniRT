@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/21 15:42:50 by srenaud        ########   odam.nl        */
+/*   Updated: 2025/12/01 11:18:21 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 		return (rt_error_put(ERROR_USAGE), EXIT_FAILURE);
-	if (rt_parse(av[0], &la_complete))
+	if (rt_parse(av[1], &la_complete))
 		return (EXIT_FAILURE);
 	if (rt_mlx_init(&mlx))
 		rt_mlx_free(&mlx);
