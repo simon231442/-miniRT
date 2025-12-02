@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_util_line_clean.c                          :+:    :+:           */
+/*   rt_parse_util_obj_free.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
+/*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/01 12:13:40 by srenaud           #+#    #+#             */
-/*   Updated: 2025/12/01 14:18:41 by srenaud        ########   odam.nl        */
+/*   Created: 2025/12/02 22:49:38 by simon2314         #+#    #+#             */
+/*   Updated: 2025/12/02 22:49:38 by simon2314        ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-/** 
- * @brief	'\n' and '\n' with ' '
-*/
-
-void	rt_parse_util_line_clean(char *line)
+void	rt_parse_util_obj_free(t_la_complete *la_complete)
 {
-	int	i;
+	t_list	*current;
+	t_list	*tmp;
 
-	i = 0;
-	while (line[i])
+	current = la_complete->shape;
+	while (current)
 	{
-		if (line[i] == '\t' || line[i] == '\n')
-			line[i] = ' ';
-		i++;
+		free(current->content);
+		tmp = current->next;
+		free(current);
+		current = tmp;
 	}
 }
+

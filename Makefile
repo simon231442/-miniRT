@@ -46,6 +46,7 @@ SOURCES :=	minirt.c \
 			rt_parse_vector.c \
 			rt_parse_util_arg_free.c \
 			rt_parse_util_line_clean.c \
+			rt_parse_util_obj_free.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c

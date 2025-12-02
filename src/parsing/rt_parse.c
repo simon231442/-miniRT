@@ -26,7 +26,7 @@ static int		identifier_cmp(char *line, char *indentifier);
 int	rt_parse(char *path, t_la_complete *la_complete)
 {
 	char	*line;
-	int	fd;
+	int		fd;
 
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
@@ -34,11 +34,11 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 	while (1)
 	{
 		line = get_next_line(fd);
-		rt_parse_util_line_clean(line);
 		if (!line)
 			break;
+		rt_parse_util_line_clean(line);
 		if (parse_line(line, la_complete))
-			return (1);
+			return (free(line), 1);
 		free(line);
 	}
 	return (0);
@@ -46,7 +46,7 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 
 /** 
  * @brief	select and call the parser coresponding to the identifier
-		by using parserfind_and_execute.	
+			by using parserfind_and_execute.	
  * @return	0 on success, or ... 
 */
 

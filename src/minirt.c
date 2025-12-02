@@ -19,8 +19,9 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 		return (rt_error_put(ERROR_USAGE), EXIT_FAILURE);
+	ft_bzero(&la_complete, sizeof(t_la_complete));
 	if (rt_parse(av[1], &la_complete))
-		return (EXIT_FAILURE);
+		return (rt_parse_util_obj_free(&la_complete), EXIT_FAILURE);
 	if (rt_mlx_init(&mlx))
 		rt_mlx_free(&mlx);
 	if (rt_mlx_hook(&mlx))

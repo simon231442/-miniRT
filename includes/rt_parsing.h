@@ -37,6 +37,7 @@ int		rt_parse_color(char *arg, t_color *color);
 
 void	rt_parse_util_line_clean(char *line);
 void	rt_parse_util_arg_free(char **arg);
+void	rt_parse_util_obj_free(t_la_complete *la_complete);
 
 #endif
 

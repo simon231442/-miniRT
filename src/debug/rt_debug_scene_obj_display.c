@@ -12,6 +12,11 @@
 
 #include "minirt.h"
 
+static void	obj_display(t_shape *shape);
+static void	sphere_display(t_shape *shape);
+static void	plane_display(t_shape *shape);
+static void	cylinder_display(t_shape *shape);
+
 void	rt_debug_scene_obj_display(t_la_complete *la_complete)
 {
 	t_list	*current;
