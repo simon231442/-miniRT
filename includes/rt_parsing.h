@@ -31,9 +31,9 @@ int		rt_parse_light(char *line, t_la_complete *la_complete);
 int 	rt_parse_shape_sphere(char *line, t_la_complete *la_complete);
 int		rt_parse_shape_plane(char *line, t_la_complete *la_complete);
 int		rt_parse_shape_cylinder(char *line, t_la_complete *la_complete);
-double	rt_parse_atod(char *value);
-int		rt_parse_vector(char *arg, t_vec3 *vector);
-int		rt_parse_color(char *arg, t_color *color);
+double	rt_parse_util_atod(char *value);
+int		rt_parse_util_vector(char *arg, t_vec3 *vector);
+int		rt_parse_util_color(char *arg, t_color *color);
 
 void	rt_parse_util_line_clean(char *line);
 void	rt_parse_util_arg_free(char **arg);

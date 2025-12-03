@@ -47,11 +47,11 @@ static t_shape	*shape_plane_new(char *line)
 	if (!arg)
 		return (rt_error_put(ERROR_SYSTEM), NULL);
 	shape->type = PLANE;
-	if (rt_parse_vector(arg[1], &shape->origin))
+	if (rt_parse_util_vector(arg[1], &shape->origin))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
-	if (rt_parse_vector(arg[2], &shape->direction))
+	if (rt_parse_util_vector(arg[2], &shape->direction))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
-	if (rt_parse_color(arg[3], &shape->color))
+	if (rt_parse_util_color(arg[3], &shape->color))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
 	return (shape);
 }

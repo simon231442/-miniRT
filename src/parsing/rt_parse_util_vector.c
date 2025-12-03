@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_vector.c                                   :+:    :+:           */
+/*   rt_parse_util_vector.c                              :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,15 @@
 
 #include "minirt.h"
 
-int	rt_parse_vector(char *arg, t_vec3 *vector)
+int	rt_parse_util_vector(char *arg, t_vec3 *vector)
 {
 	char	**vec_tmp;
 
 	vec_tmp = ft_split(arg, ',');
-//	printf("x assci : %s", vec_tmp[0]);
-//	printf("y assci : %s", vec_tmp[1]);
-//	printf("y assci : %s", vec_tmp[1]);
 	if (!vec_tmp)
 		return (rt_error_put(ERROR_SYSTEM), 1);
-	vector->x = rt_parse_atod(vec_tmp[0]);
-	vector->y = rt_parse_atod(vec_tmp[1]);
-	vector->y = rt_parse_atod(vec_tmp[2]); 
+	vector->x = rt_parse_util_atod(vec_tmp[0]);
+	vector->y = rt_parse_util_atod(vec_tmp[1]);
+	vector->y = rt_parse_util_atod(vec_tmp[2]); 
 	return (free(vec_tmp), 0);
 }

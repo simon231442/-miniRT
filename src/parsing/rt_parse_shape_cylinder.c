@@ -47,13 +47,13 @@ static t_shape	*shape_cylinder_new(char *line)
 	if (!arg)
 		return (rt_error_put(ERROR_SYSTEM), NULL);
 	shape->type = CYLINDER;
-	if (rt_parse_vector(arg[1], &shape->origin))
+	if (rt_parse_util_vector(arg[1], &shape->origin))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
-	if (rt_parse_vector(arg[2], &shape->direction))
+	if (rt_parse_util_vector(arg[2], &shape->direction))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
-	shape->radius = rt_parse_atod(arg[3]) / 2;
-	shape->height = rt_parse_atod(arg[4]);
-	if (rt_parse_color(arg[5], &shape->color))
+	shape->radius = rt_parse_util_atod(arg[3]) / 2;
+	shape->height = rt_parse_util_atod(arg[4]);
+	if (rt_parse_util_color(arg[5], &shape->color))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
 	return (shape);
 }

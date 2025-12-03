@@ -24,10 +24,10 @@ int rt_parse_cam(char *line, t_la_complete *la_complete)
 	arg = ft_split(line, ' ');
 	if (!arg)
 		return (rt_error_put(ERROR_SYSTEM), 1);
-	if (rt_parse_vector(arg[1], &la_complete->obj.cam.origin) ||
-		rt_parse_vector(arg[2], &la_complete->obj.cam.direction))
+	if (rt_parse_util_vector(arg[1], &la_complete->obj.cam.origin) ||
+		rt_parse_util_vector(arg[2], &la_complete->obj.cam.direction))
 		return (rt_parse_util_arg_free(arg), 1);
-	la_complete->obj.cam.fov = rt_parse_atod(arg[3]);
+	la_complete->obj.cam.fov = rt_parse_util_atod(arg[3]);
 	rt_debug_scene_cam_display(la_complete);
 	return (rt_parse_util_arg_free(arg), 0);
 }
