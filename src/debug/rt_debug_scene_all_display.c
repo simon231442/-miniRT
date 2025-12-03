@@ -14,7 +14,7 @@
 
 void	rt_debug_scene_all_display(t_la_complete *la_complete)
 {
-	rt_debug_scene_cameras_display(la_complete->scene);
-	rt_debug_scene_lights_display(la_complete->scene);
-	rt_debug_scene_objects_display(la_complete->scene);
+	rt_debug_scene_cam_display(la_complete);
+	rt_debug_scene_light_display(la_complete);
+	rt_debug_scene_shape_display(la_complete);
 }

@@ -20,7 +20,13 @@
 
 int rt_parse_ambient(char *line, t_la_complete *la_complete)
 {
-	(void)line;
-	(void)la_complete;
-	return (0);
+	char	**arg;
+
+	arg = ft_split(line, ' ');
+	if (!arg)
+		return (rt_error_put(ERROR_SYSTEM), 1);
+	la_complete->obj.ambient.ratio = rt_parse_atod(arg[1]);
+	if (rt_parse_color(arg[2], &la_complete->obj.ambient.color))
+		return (rt_parse_util_arg_free(arg), 1);
+	return (rt_parse_util_arg_free(arg), 0);
 }

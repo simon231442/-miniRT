@@ -29,10 +29,11 @@ vpath	%.c src:src/mlx:src/parsing:src/error:src/debug
 
 SOURCES :=	minirt.c \
 			rt_error_put.c \
+			rt_debug_scene_all_display.c \
 			rt_debug_scene_ambient_display.c \
 			rt_debug_scene_cam_display.c \
 			rt_debug_scene_light_display.c \
-			rt_debug_scene_obj_display.c \
+			rt_debug_scene_shape_display.c \
 			rt_parse.c \
 			rt_parse_ambient.c \
 			rt_parse_atod.c \

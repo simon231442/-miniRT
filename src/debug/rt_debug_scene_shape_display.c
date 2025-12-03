@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_debug_scene_obj_display.c                        :+:    :+:           */
+/*   rt_debug_scene_shape_display.c                        :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,12 @@
 
 #include "minirt.h"
 
-static void	obj_display(t_shape *shape);
+static void	shape_display(t_shape *shape);
 static void	sphere_display(t_shape *shape);
 static void	plane_display(t_shape *shape);
 static void	cylinder_display(t_shape *shape);
 
-void	rt_debug_scene_obj_display(t_la_complete *la_complete)
+void	rt_debug_scene_shape_display(t_la_complete *la_complete)
 {
 	t_list	*current;
 	int		i;
@@ -32,13 +32,13 @@ void	rt_debug_scene_obj_display(t_la_complete *la_complete)
 	while (current)
 	{
 		printf("Object %d:\n", i);
-		obj_display((t_shape *)current->content);
+		shape_display((t_shape *)current->content);
 		current = current->next;
 		i++;
 	}
 }
 
-static void	obj_display(t_shape *shape)
+static void	shape_display(t_shape *shape)
 {
 	if (shape->type == SPHERE)
 		sphere_display(shape);
