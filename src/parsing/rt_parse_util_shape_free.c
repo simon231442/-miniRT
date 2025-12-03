@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_util_obj_free.c                           :+:      :+:    :+:   */
+/*   rt_parse_util_shape_free.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "minirt.h"
 
-void	rt_parse_util_obj_free(t_la_complete *la_complete)
+void	rt_parse_util_shape_free(t_la_complete *la_complete)
 {
 	t_list	*current;
 	t_list	*tmp;

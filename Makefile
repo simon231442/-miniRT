@@ -41,13 +41,13 @@ SOURCES :=	minirt.c \
 			rt_parse_color.c \
 			rt_parse_light.c \
 			rt_parse_line.c \
-			rt_parse_obj_cylinder.c \
-			rt_parse_obj_plane.c \
-			rt_parse_obj_sphere.c \
+			rt_parse_shape_cylinder.c \
+			rt_parse_shape_plane.c \
+			rt_parse_shape_sphere.c \
 			rt_parse_vector.c \
 			rt_parse_util_arg_free.c \
 			rt_parse_util_line_clean.c \
-			rt_parse_util_obj_free.c \
+			rt_parse_util_shape_free.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c

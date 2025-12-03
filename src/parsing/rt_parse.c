@@ -67,9 +67,9 @@ static t_parser	*parser_tab_get(void)
 	{"A", rt_parse_ambient},
 	{"C", rt_parse_cam},
 	{"L", rt_parse_light},
-	{"sp", rt_parse_sphere},
-	{"pl", rt_parse_plane},
-	{"cy", rt_parse_cylinder},
+	{"sp", rt_parse_shape_sphere},
+	{"pl", rt_parse_shape_plane},
+	{"cy", rt_parse_shape_cylinder},
 	{NULL, NULL}
 	};
 

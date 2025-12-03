@@ -70,16 +70,16 @@ typedef enum e_shape_type
 typedef struct s_shape
 {
 	t_shape_type	type;
-	t_vec3		origin;
-	double		radius;
-	double		height;
-	t_vec3		direction;
-	t_color		color;
+	t_vec3			origin;
+	double			radius;
+	double			height;
+	t_vec3			direction;
+	t_color			color;
 }	t_shape;
 
 typedef struct s_obj
 {
-	t_cam	cam;
+	t_cam		cam;
 	t_ambient	ambient;
 	t_light		light;
 }	t_obj;
@@ -89,8 +89,8 @@ typedef struct s_la_complete
 {
 	t_mlx	mlx;
 	t_obj	obj;
-	t_list		*shape;
-	int			error_status;
+	t_list	*shape;
+	int		error_status;
 }	t_la_complete;
 
 
