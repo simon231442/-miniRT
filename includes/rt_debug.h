@@ -6,12 +6,14 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 15:05:45 by srenaud           #+#    #+#             */
-/*   Updated: 2025/12/01 15:05:45 by srenaud          ###   ####lausanne.ch   */
+/*   Updated: 2025/12/05 17:32:28 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_DEBUG_H
 # define RT_DEBUG_H
+
+typedef struct s_la_complete t_la_complete;
 
 void	rt_debug_scene_all_display(t_la_complete *la_complete);
 void	rt_debug_scene_cam_display(t_la_complete *la_complete);
