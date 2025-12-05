@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/20 17:58:23 by jsurian42        ###   ########.fr       */
+/*   Updated: 2025/12/05 17:22:20 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MINIRT_H
 
 # include <stdio.h>
+# include <fcntl.h>
 
 # include "mlx.h"
 # include "libft.h"
@@ -22,6 +23,8 @@
 # include "rt_mlx.h"
 //# include "rt_parsing.h"
 //# include "rt_error.h"
+
+# include "rt_debug.h"
 
 typedef struct s_vec3
 {
@@ -59,7 +62,7 @@ typedef struct s_light
 
 typedef enum e_shape_type
 {
-	SHPERE,
+	SPHERE,
 	PLANE,
 	CYLINDER
 }	t_shape_type;
@@ -67,16 +70,16 @@ typedef enum e_shape_type
 typedef struct s_shape
 {
 	t_shape_type	type;
-	t_vec3		origin;
-	double		radius;
-	double		height;
-	t_vec3		direction;
-	t_color		color;
+	t_vec3			origin;
+	double			radius;
+	double			height;
+	t_vec3			direction;
+	t_color			color;
 }	t_shape;
 
 typedef struct s_obj
 {
-	t_cam	cam;
+	t_cam		cam;
 	t_ambient	ambient;
 	t_light		light;
 }	t_obj;
@@ -86,8 +89,8 @@ typedef struct s_la_complete
 {
 	t_mlx	mlx;
 	t_obj	obj;
-	t_list		*shape;
-	int			error_status;
+	t_list	*shape;
+	int		error_status;
 }	t_la_complete;
 
 

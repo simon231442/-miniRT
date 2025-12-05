@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/11/20 17:58:40 by jsurian42        ###   ########.fr        #
+#    Updated: 2025/12/05 17:21:58 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,28 @@ LIB_DIR = lib
 #                                MINIRT SRC                                    #
 ################################################################################
 
-vpath	%.c src:src/mlx:src/parsing
+vpath	%.c src:src/mlx:src/parsing:src/error:src/debug
 
 SOURCES :=	minirt.c \
+			rt_error_put.c \
+			rt_debug_scene_all_display.c \
+			rt_debug_scene_ambient_display.c \
+			rt_debug_scene_cam_display.c \
+			rt_debug_scene_light_display.c \
+			rt_debug_scene_shape_display.c \
+			rt_parse.c \
+			rt_parse_ambient.c \
+			rt_parse_cam.c \
+			rt_parse_light.c \
+			rt_parse_shape_cylinder.c \
+			rt_parse_shape_plane.c \
+			rt_parse_shape_sphere.c \
+			rt_parse_util_arg_free.c \
+			rt_parse_util_atod.c \
+			rt_parse_util_color.c \
+			rt_parse_util_line_clean.c \
+			rt_parse_util_shape_free.c \
+			rt_parse_util_vector.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c
@@ -39,7 +58,7 @@ SOURCES :=	minirt.c \
 ################################################################################
 
 lib/libft/libft.a:
-	$(MAKE) -C lib/libft
+	$(MAKE) -C lib/libft bonus
 lib/get_next_line/get_next_line.a:
 	$(MAKE) -C lib/get_next_line
 lib/minilibx-linux/libmlx.a:

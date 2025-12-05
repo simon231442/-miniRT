@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_atod.c                                    :+:      :+:    :+:   */
+/*   rt_parse_util_atod.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 
 static double	after_dot_get(char *value);
 
-double	rt_parse_atod(char *value)
+double	rt_parse_util_atod(char *value)
 {
 	double	result;
 	int		i;

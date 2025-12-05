@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_error.h                                          :+:    :+:           */
+/*   rt_debug.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 21:07:36 by srenaud           #+#    #+#             */
-/*   Updated: 2025/11/21 16:04:16 by srenaud        ########   odam.nl        */
+/*   Created: 2025/12/01 15:05:45 by srenaud           #+#    #+#             */
+/*   Updated: 2025/12/01 15:05:45 by srenaud          ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_ERROR_H
-# define RT_ERROR_H
+#ifndef RT_DEBUG_H
+# define RT_DEBUG_H
 
-#define EXIT_SUCCESS 0
-#define EXIT_FAILURE 1
-#define ERROR_USAGE "usage ./miniRT <scene.rt>"
-#define ERROR_SYSTEM "Failure system"
-#define ERROR_IDENTIFIER "Wrong identifier"
-
-void	rt_error_put(char *message);
+void	rt_debug_scene_all_display(t_la_complete *la_complete);
+void	rt_debug_scene_cam_display(t_la_complete *la_complete);
+void	rt_debug_scene_ambient_display(t_la_complete *la_complete);
+void	rt_debug_scene_light_display(t_la_complete *la_complete);
+void	rt_debug_scene_shape_display(t_la_complete *la_complete);
 
 #endif
