@@ -1,0 +1,22 @@
+changer nom des fonctions
+rt_math_...
+
+fonction a code jules:
+
+
+fonction qui parcourt chaque pixel
+
+->	fonction de calcule du vecteur d (voir photo)
+	rt_math_vec_pixel argument x, y -> definit le pixel
+	
+->	fonction pour trouver l'adresse aux coordonne x et y du pixel
+	rt_math_pixel_find
+
+	-----> tirer un rayon
+
+
+
+->rt_math_sphere_discri
+
+
+delta = {2 * dot_p(vD, vOC)}^2 - 4 * {dot_p(vD, vD) * dot_p(vOC, vOC) - r^2};
