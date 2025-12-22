@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_cam.c                                      :+:    :+:           */
+/*   rt_parse_cam.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:28:02 by srenaud           #+#    #+#             */
-/*   Updated: 2025/12/01 15:39:57 by srenaud        ########   odam.nl        */
+/*   Updated: 2025/12/22 18:07:59 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int rt_parse_cam(char *line, t_la_complete *la_complete)
 		rt_parse_util_vector(arg[2], &la_complete->obj.cam.direction))
 		return (rt_parse_util_arg_free(arg), 1);
 	la_complete->obj.cam.fov = rt_parse_util_atod(arg[3]);
-	rt_debug_scene_cam_display(la_complete);
+//	rt_debug_scene_cam_display(la_complete);
 	return (rt_parse_util_arg_free(arg), 0);
 }
