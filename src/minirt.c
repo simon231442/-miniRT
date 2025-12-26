@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/22 18:11:10 by jsurian42        ###   ########.fr       */
+/*   Updated: 2025/12/26 13:11:13 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,16 @@ int	main(int ac, char **av)
 
 	//ajouter dans les retours les frees de la complete
 	if (rt_mlx_init(&la_complete.mlx))
-		return (rt_mlx_free(&la_complete.mlx), rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
+		return (rt_mlx_free(&la_complete.mlx),
+			rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
 
 	if (rt_render(&la_complete))
-		return (rt_mlx_free(&la_complete.mlx), rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
+		return (rt_mlx_free(&la_complete.mlx),
+			rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
 
 	if (rt_mlx_hook(&la_complete.mlx))
-		return (rt_mlx_free(&la_complete.mlx), rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
+		return (rt_mlx_free(&la_complete.mlx),
+			rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
 
 	mlx_loop(la_complete.mlx.mlx_ptr);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:12:01 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/22 18:30:08 by jsurian42        ###   ########.fr       */
+/*   Updated: 2025/12/26 13:14:38 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	rt_render(t_la_complete *la_complete)
 {
 	t_render_view	v;
 
-	if (la_complete.mlx->mlx_ptr)
+	if (la_complete->mlx.mlx_ptr)
 	{
 		v.y = 0;
 		while (v.y < SIZE_Y)
@@ -24,14 +24,14 @@ int	rt_render(t_la_complete *la_complete)
 			v.x = 0;
 			while (v.x < SIZE_X)
 			{
-				*v.pixel_addr = rt_math_get_pixel_addr(la_complete->mlx, x, y);
-				v.pixel_addr = 0xff00;
+				v.pixel_addr = rt_math_get_pixel_addr(&la_complete->mlx, v.x, v.y);
+				*v.pixel_addr = 0xff00;
 				v.x++;
 			}
 			v.y++;
 		}
-		mlx_put_image_to_window(la_complete->mlx->mlx_ptr,
-			la_complete->mlx->win_ptr, la_complete->mlx->img_ptr, 0, 0);
 	}
+	mlx_put_image_to_window(la_complete->mlx.mlx_ptr,
+		la_complete->mlx.win_ptr, la_complete->mlx.img_ptr, 0, 0);
 	return (0);
 }

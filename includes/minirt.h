@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/22 18:15:16 by jsurian42        ###   ########.fr       */
+/*   Updated: 2025/12/25 18:41:06 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "rt_parsing.h"
 # include "rt_error.h"
 # include "rt_render.h"
+# include "rt_math.h"
 
 # include "rt_debug.h"
 
@@ -84,7 +85,6 @@ typedef struct s_obj
 	t_ambient	ambient;
 	t_light		light;
 }	t_obj;
-
 
 typedef struct s_la_complete
 {
