@@ -13,6 +13,9 @@ ok	->	fonction pour trouver l'adresse aux coordonne x et y du pixel
 	rt_math_pixel_find
 
 	-----> tirer un rayon
+	check comment tirer les rayons
+	comment gerer avec laffichage des pixels
+	quel fonctions encore necessaire
 
 
 
@@ -20,3 +23,5 @@ ok	->rt_math_sphere_discri
 
 
 delta = {2 * dot_p(vD, vOC)}^2 - 4 * {dot_p(vD, vD) * dot_p(vOC, vOC) - r^2};
+
+->> check si fichier ok (minirt se lance avec un dossier)
