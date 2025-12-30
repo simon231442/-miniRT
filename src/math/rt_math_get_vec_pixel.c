@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   rt_math_vec_pixel.c                                 :+:    :+:           */
+/*   rt_math_get_vec_pixel.c                            :+:      :+:    :+:   */
 /*                                                      +:+                   */
 /*   By: jsurian <jsurian@student.42lausanne.ch>       +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/12/15 16:45:57 by jsurian        #+#    #+#                */
-/*   Updated: 2025/12/15 16:58:21 by jsurian        ########   odam.nl        */
+/*   Updated: 2025/12/30 11:04:46 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "minirt.h"
 
-t_vec3	rt_math_vec_pixel(int x, int y, double fov)
+t_vec3	rt_math_get_vec_pixel(int x, int y, double fov)
 {
 	t_vec3	d;
 

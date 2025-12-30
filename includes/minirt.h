@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/25 18:41:06 by jsurian42        ###   ########.fr       */
+/*   Updated: 2025/12/30 11:31:18 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <stdio.h>
 # include <fcntl.h>
+# include <math.h>
+
+typedef struct s_vec3	t_vec3;
 
 # include "mlx.h"
 # include "libft.h"
@@ -33,6 +36,7 @@ typedef struct s_vec3
 	double	x;
 	double	y;
 	double	z;
+	double	w;
 }	t_vec3;
 
 typedef struct s_color
