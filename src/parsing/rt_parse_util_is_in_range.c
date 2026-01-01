@@ -13,59 +13,58 @@
 #include "minirt.h"
 
 int	is_higher(char *value, char *limit);
+int	dot_handle(char *a, char *b);
+int	nega_handle(char *a, char *b);
 
 int	rt_parse_util_is_in_range(char *value, char *min, char *max)
 {
-	// min 4 value 5 max 6
 	if (!is_higher(min, value) && is_higher(max, value))
-		return (1);
-
-
-	int	value_len;
-	int	min_len;
-	int	max_len;
-
-	value_len = ft_strlen(value);
-	min_len = ft_strlen(min);
-	max_len = ft_strlen(max);
-	//val 2351 < min 235 && val 235 < max 2351
-	if (value_len < max_len)
-		return
-	if (value_len > min_len	&& value_len < max_len)
-		return (1);
-	if (value_len > min_len	|| value_len > max_len)
-		return (0);
-	if (is_higher(value, max))
-		return (0);
-	if (is_higher(min, value))
 		return (1);
 	return (0);
 }
 
-int	is_higher(char *value, char *limit)
+int	is_higher(char *a, char *b)
 {
-	if (*value == '-' && *limit == '-')
+	if (*a == '-' || *b == '-')
+		return (nega_handle(a,b));
+	while (ft_isdigit(*a) && ft_isdigit(*b))
 	{
-		limit++;
-		value++;
+		if (*a < *b)
+			return (0);
+		a++;
+		b++;
 	}
-	else if (*value != '-' && *limit == '-')
+	if (*a == '.' || *b == '.')
+		return (dot_handle(++a, ++b));
+	if (ft_isdigit(*a)) 
 		return (1);
-	else if (*value == '-' && *limit != '-')
-		return (0);
-	while (*value && *limit)
+	return (0);
+}
+
+int	nega_handle(char *a, char *b)
+{
+	if (*a == '-' && *b == '-')
 	{
-		if (*limit == '.' && *value && *value != '.')
+		a++;
+		b++;
+		if (ft_isdigit(*a) && ft_isdigit(*b))
+			return (is_higher(b, a));
+		else
 			return (1);
-		if (*value == '.' && *limit && *limit != '.')
-			return (0);
-		if (*value > *limit)
-			return (1);
-		value++;
-		if (*value == '\0')
-			return (0);
-		limit++;
 	}
-	return (1);
+	else if (*a != '-' && *b == '-')
+		return (1);
+	else if (*a == '-' && *b != '-')
+		return (0);
+	return (0);
+}
+
+int	dot_handle(char *a, char *b)
+{
+	if (ft_isdigit(*a) && *b == '.')
+		return (1);
+	if (*a == '.' && *b == '.')
+		return (is_higher(a, b));
+	return (0);
 }
 
