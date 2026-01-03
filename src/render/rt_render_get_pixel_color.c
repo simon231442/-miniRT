@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_math.h                                          :+:      :+:    :+:   */
+/*   rt_render_get_pixel_color.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 18:41:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/30 12:15:30 by jsurian42        ###   ########.fr       */
+/*   Created: 2025/12/30 12:24:26 by jsurian42         #+#    #+#             */
+/*   Updated: 2025/12/30 14:31:29 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_MATH_H
-# define RT_MATH_H
+#include "minirt.h"
 
-int	*rt_math_get_pixel_addr(t_mlx *mlx, int x, int y);
-t_vec3	rt_math_get_vec_pixel(int x, int y, double fov);
+int	rt_render_get_pixel_color(t_la_complete *la_complete, t_render_view v)
+{
+	//vecteur par pixel ok
+	//-> vecteur + point cam ->>> rayon par pixel 
+	
+	//
 
-t_vec3	normalize(t_vec3 v);
-double	vec_length(t_vec3 v);
-
-#endif
+	(void)la_complete;
+	(void)v;
+	return (0xFFFFFF);
+}

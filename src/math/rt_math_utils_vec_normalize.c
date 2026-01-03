@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_math_utils_vec_normalize.c                       :+:    :+:           */
+/*   rt_math_utils_vec_normalize.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:48:05 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/15 17:03:41 by jsurian        ########   odam.nl        */
+/*   Updated: 2025/12/30 12:14:59 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "minirt.h"
 
 //normalization uniquement de vecteurs
 t_vec3	normalize(t_vec3 v)

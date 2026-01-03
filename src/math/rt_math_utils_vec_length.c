@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_length.c                                       :+:      :+:    :+:   */
+/*   rt_math_utils_vec_length.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:46:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/15 13:53:39 by jsurian42        ###   ########.fr       */
+/*   Updated: 2025/12/30 12:17:28 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "minirt.h"
 
 //magnitude
 //pas possible de calculer celle d'un point geometriquement

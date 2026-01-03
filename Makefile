@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/12/30 11:29:14 by jsurian42        ###   ########.fr        #
+#    Updated: 2025/12/30 14:25:51 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LIB_DIR = lib
 #                                MINIRT SRC                                    #
 ################################################################################
 
-vpath	%.c src:src/mlx:src/parsing:src/error:src/debug:src/math
+vpath	%.c src:src/mlx:src/parsing:src/error:src/debug:src/math:src/render
 
 SOURCES :=	minirt.c \
 			rt_error_put.c \
@@ -50,9 +50,12 @@ SOURCES :=	minirt.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c \
-			rt_render.c \
 			rt_math_get_pixel_addr.c \
-			rt_math_get_vec_pixel.c
+			rt_math_get_vec_pixel.c \
+			rt_math_utils_vec_normalize.c \
+			rt_math_utils_vec_length.c \
+			rt_render.c \
+			rt_render_get_pixel_color.c
 
 .DEFAULT_GOAL := all
 

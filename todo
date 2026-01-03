@@ -13,9 +13,6 @@ ok	->	fonction pour trouver l'adresse aux coordonne x et y du pixel
 	rt_math_get_pixel_addr
 
 	-----> tirer un rayon
-	check comment tirer les rayons
-	comment gerer avec laffichage des pixels
-	quel fonctions encore necessaire
 
 
 
