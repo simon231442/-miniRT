@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:46:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/30 12:17:28 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/05 09:17:39 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //magnitude
 //pas possible de calculer celle d'un point geometriquement
 //uniquement vecteur dans le cadre minirt
-double	vec_length(t_vec3 v)
+double	rt_math_utils_vec_length(t_vec3 v)
 {
 	double	ret;
 

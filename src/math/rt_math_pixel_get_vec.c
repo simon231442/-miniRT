@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   rt_math_get_pixel_addr.c                           :+:      :+:    :+:   */
+/*   rt_math_pixel_get_vec.c                            :+:      :+:    :+:   */
 /*                                                      +:+                   */
 /*   By: jsurian <jsurian@student.42lausanne.ch>       +#+                    */
 /*                                                    +#+                     */
-/*   Created: 2025/12/15 16:52:05 by jsurian        #+#    #+#                */
-/*   Updated: 2025/12/26 13:13:36 by jsurian42        ###   ########.fr       */
+/*   Created: 2025/12/15 16:45:57 by jsurian        #+#    #+#                */
+/*   Updated: 2026/01/05 17:31:17 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int	*rt_math_get_pixel_addr(t_mlx *mlx, int x, int y)
+t_vec3	rt_math_pixel_get_vec(int x, int y, double fov)
 {
-	int	*addr;
+	t_vec3	d;
 
-	addr = mlx->img_addr + y * mlx->img_line + x * mlx->img_bpp / 8;
-	return (addr);
+	d.x = x - SIZE_X / 2;
+	d.y = SIZE_Y / 2 - y;
+	d.z = - SIZE_Y / 2 / tan(fov / 2);
+	d = rt_math_utils_vec_normalize(d);
+	return (d);
 }

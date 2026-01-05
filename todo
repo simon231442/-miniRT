@@ -13,7 +13,10 @@ ok	->	fonction pour trouver l'adresse aux coordonne x et y du pixel
 	rt_math_get_pixel_addr
 
 	-----> tirer un rayon
-
+	R = o + t * D
+	o : origine camera
+	t : distance
+	D : vecteur
 
 
 ok	->rt_math_sphere_discri

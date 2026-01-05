@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:25:29 by srenaud           #+#    #+#             */
-/*   Updated: 2024/10/24 11:09:32 by srenaud          ###   ########.fr       */
+/*   Updated: 2026/01/05 10:40:44 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,15 @@
 # include <stddef.h>
 # include <unistd.h>
 
+typedef struct s_shape	t_shape;
+
 typedef struct s_list
 {
-	void			*content;
+	union
+	{
+		void	*content;
+		t_shape	*shape;
+	};
 	struct s_list	*next;
 }					t_list;
 

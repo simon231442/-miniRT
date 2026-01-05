@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/30 14:33:56 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/05 16:19:27 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,6 @@ typedef struct s_vec3
 	double	w;
 }	t_vec3;
 
-# include "rt_mlx.h"
-# include "rt_parsing.h"
-# include "rt_error.h"
-# include "rt_render.h"
-# include "rt_math.h"
-
-# include "rt_debug.h"
 
 typedef struct s_color
 {
@@ -89,6 +82,8 @@ typedef struct s_obj
 	t_light		light;
 }	t_obj;
 
+# include "rt_mlx.h"
+
 typedef struct s_la_complete
 {
 	t_mlx	mlx;
@@ -96,5 +91,12 @@ typedef struct s_la_complete
 	t_list	*shape;
 	int		error_status;
 }	t_la_complete;
+
+# include "rt_parsing.h"
+# include "rt_error.h"
+# include "rt_math.h"
+# include "rt_render.h"
+
+# include "rt_debug.h"
 
 #endif

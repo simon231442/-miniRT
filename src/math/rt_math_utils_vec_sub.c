@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_sub.c                                          :+:      :+:    :+:   */
+/*   rt_math_utils_vec_sub.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:48:30 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/15 11:56:35 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/05 09:19:42 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "minirt.h"
 
-t_vec3	vec_sub(t_vec3 v1, t_vec3 v2)
+t_vec3	rt_math_utils_vec_sub(t_vec3 v1, t_vec3 v2)
 {
 	t_vec3	ret;
 

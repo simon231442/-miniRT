@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2025/12/30 14:25:51 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/01/05 16:38:26 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,12 +50,17 @@ SOURCES :=	minirt.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c \
-			rt_math_get_pixel_addr.c \
-			rt_math_get_vec_pixel.c \
+			rt_math_pixel_get_addr.c \
+			rt_math_pixel_get_vec.c \
+			rt_math_sphere_get_delta.c \
+			rt_math_sphere_intersect.c \
 			rt_math_utils_vec_normalize.c \
 			rt_math_utils_vec_length.c \
+			rt_math_utils_vec_dot.c \
+			rt_math_utils_vec_sub.c \
 			rt_render.c \
-			rt_render_get_pixel_color.c
+			rt_render_pixel_get_color.c \
+
 
 .DEFAULT_GOAL := all
 
@@ -78,7 +83,7 @@ LIB_LINK = -Ilib/libft -Ilib/minilibx-linux -Ilib/get_next_line
 
 UNAME_N := $(shell uname -n)
 ifeq ($(UNAME_N),Arch-Jules)
-	CC	:= tcc
+	CC	:= tcc 
 else
 	CC	:= gcc
 endif
