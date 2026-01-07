@@ -6,15 +6,15 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 08:56:19 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/05 11:33:02 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/07 14:49:55 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_MLX_H
 # define RT_MLX_H
 
-# define SIZE_X 1000
-# define SIZE_Y 500
+# define SIZE_X 800
+# define SIZE_Y 800
 
 # define TITLE "miniRT" 
 

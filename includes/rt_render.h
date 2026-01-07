@@ -6,12 +6,14 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:14:10 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/05 10:11:02 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/07 14:43:38 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_RENDER_H
 # define RT_RENDER_H
+
+#define T_MAX 10000
 
 typedef struct s_render_view
 {

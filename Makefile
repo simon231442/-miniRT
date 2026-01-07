@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/01/05 16:38:26 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/01/07 14:22:02 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ LIB_LINK = -Ilib/libft -Ilib/minilibx-linux -Ilib/get_next_line
 
 UNAME_N := $(shell uname -n)
 ifeq ($(UNAME_N),Arch-Jules)
-	CC	:= tcc 
+	CC	:= tcc
 else
 	CC	:= gcc
 endif

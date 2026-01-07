@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 18:41:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/05 16:38:09 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/07 14:03:36 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,18 @@ typedef struct	s_ray
 	t_vec3	dir;
 	t_vec3	origin;
 }	t_ray;
+
+typedef	struct	s_intersect_view
+{
+	t_vec3	oc;
+	double	a;
+	double	b;
+	double	c;
+	double	delta;
+	double	sqrt_delta;
+	double	t0;
+	double	t1;
+}	t_intersect_view;
 
 int		*rt_math_pixel_get_addr(t_mlx *mlx, int x, int y);
 t_vec3	rt_math_pixel_get_vec(int x, int y, double fov);
