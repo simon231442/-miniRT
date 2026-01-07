@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_shape_sphere.c                             :+:    :+:           */
+/*   rt_parse_shape_sphere.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:29:43 by srenaud           #+#    #+#             */
-/*   Updated: 2025/11/21 11:49:24 by srenaud        ########   odam.nl        */
+/*   Updated: 2026/01/07 16:51:56 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 static t_shape	*shape_sphere_new(char *line);
 
-int rt_parse_shape_sphere(char *line, t_la_complete *la_complete)
+int	rt_parse_shape_sphere(char *line, t_la_complete *la_complete)
 {
 	t_list	*lst;
 	t_shape	*shape;
@@ -30,7 +30,7 @@ int rt_parse_shape_sphere(char *line, t_la_complete *la_complete)
 		return (1);
 	lst = ft_lstnew(shape);
 	if (!lst)
-		return (free(shape), rt_error_put(ERROR_SYSTEM), 1);		
+		return (free(shape), rt_error_put(ERROR_SYSTEM), 1);
 	ft_lstadd_back(&la_complete->shape, lst);
 	return (0);
 }
@@ -42,7 +42,7 @@ static t_shape	*shape_sphere_new(char *line)
 
 	shape = malloc(sizeof(t_shape));
 	if (!shape)
-		return (rt_error_put(ERROR_SYSTEM), NULL);		
+		return (rt_error_put(ERROR_SYSTEM), NULL);
 	arg = ft_split(line, ' ');
 	if (!arg)
 		return (rt_error_put(ERROR_SYSTEM), NULL);

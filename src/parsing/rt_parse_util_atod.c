@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_util_atod.c                                    :+:      :+:    :+:   */
+/*   rt_parse_util_atod.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 16:56:48 by simon2314         #+#    #+#             */
-/*   Updated: 2025/11/15 16:56:48 by simon2314        ###   ####lausanne.ch   */
+/*   Updated: 2026/01/07 16:44:02 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ double	rt_parse_util_atod(char *value)
 	double	sign;
 
 	i = 0;
-	sign = 1; 
+	sign = 1;
 	result = 0;
 	if (value[i] == '-')
 	{
@@ -40,8 +40,8 @@ double	rt_parse_util_atod(char *value)
 
 static double	after_dot_get(char *value)
 {
-	double	result; 
-	int	i;
+	double	result;
+	int		i;
 
 	i = 0;
 	result = 0;

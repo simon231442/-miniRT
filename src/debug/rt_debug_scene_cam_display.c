@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_debug_scene_cam_display.c                        :+:    :+:           */
+/*   rt_debug_scene_cam_display.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 15:10:35 by srenaud           #+#    #+#             */
-/*   Updated: 2025/12/01 15:41:51 by srenaud        ########   odam.nl        */
+/*   Updated: 2026/01/07 16:34:56 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static void	cam_origin_display(t_la_complete *la_complete)
 
 static void	cam_direction_display(t_la_complete *la_complete)
 {
-
 	printf("Camera Direction: (%.2f, %.2f, %.2f)\n",
 		la_complete->obj.cam.direction.x,
 		la_complete->obj.cam.direction.y,

@@ -6,24 +6,25 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 08:50:41 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/17 14:03:39 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/07 16:41:56 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-void	rt_mlx_free(t_mlx *self) //t_general
+//a modifier exit status
+void	rt_mlx_free(t_mlx *self)
 {
 	if (self->img_ptr)
 		mlx_destroy_image(self->mlx_ptr, self->img_ptr);
 	if (self->win_ptr)
 		mlx_destroy_window(self->mlx_ptr, self->win_ptr);
-//	if (self->mlx_ptr)
-//	{
+	if (self->mlx_ptr)
+	{
 		mlx_destroy_display(self->mlx_ptr);
 		free(self->mlx_ptr);
-//	}
-	exit(EXIT_SUCCESS); //a modifier //exit status
+	}
+	exit(EXIT_SUCCESS);
 }
 
 int	rt_mlx_init(t_mlx *self)

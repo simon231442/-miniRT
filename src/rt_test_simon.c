@@ -6,10 +6,9 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 18:22:52 by simon2314         #+#    #+#             */
-/*   Updated: 2025/11/15 18:22:52 by simon2314        ###   ####lausanne.ch   */
+/*   Updated: 2026/01/07 16:56:35 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "minirt.h"
 
 int	main(int ac, char **av)
@@ -21,7 +20,7 @@ int	main(int ac, char **av)
 	while (i < ac)
 	{
 		number = rt_atod(av[i]);
-		printf("%f\n",number);
+		printf("%f\n", number);
 		i++;
 	}
 }

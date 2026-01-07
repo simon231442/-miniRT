@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 12:24:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/07 15:45:17 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/07 16:53:23 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
 	t_min = T_MAX;
 	while (shape_lst != NULL)
 	{
-		if (rt_math_sphere_intersect(r, shape_lst->shape, &t)) //si sphere
+		if (rt_math_sphere_intersect(r, shape_lst->shape, &t))
 		{
 			if (t < t_min)
 			{

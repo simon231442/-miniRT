@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 12:45:27 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/11/17 13:00:34 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/07 16:42:21 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int	rt_mlx_hook_key(int keycode, t_mlx *self)
 {
 	if (keycode == KEY_Q)
 		rt_mlx_free(self);
-	//printf("keycode %d\n", keycode);
 	return (0);
 }
+	//printf("keycode %d\n", keycode);
