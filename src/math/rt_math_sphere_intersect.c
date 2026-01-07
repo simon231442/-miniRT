@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:36:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/06 17:04:10 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/07 15:45:29 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,23 @@
 
 int rt_math_sphere_intersect(t_ray r, t_shape *sphere, double *t)
 {
-	double	a;
-	double	b;
-	double	c;
-	t_vec3	oc;
-	double	delta;
-	double	sqrt_delta;
-	double	t0;
-	double	t1;
+	t_intersect_view	v;
 
-	oc = rt_math_utils_vec_sub(r.origin, sphere->origin);
-    a = rt_math_utils_vec_dot(r.dir, r.dir);
-    b = 2.0 * rt_math_utils_vec_dot(oc, r.dir);
-    c = rt_math_utils_vec_dot(oc, oc) - sphere->radius * sphere->radius;
-	delta = rt_math_sphere_get_delta(sphere->radius, r.dir, oc);
-    if (delta < 0)
-        return 0;
-    sqrt_delta = sqrt(delta);
-    t0 = (-b - sqrt_delta) / (2*a);
-    t1 = (-b + sqrt_delta) / (2*a);
-    if (t0 > 0)
-		*t = t0;
-    else if (t1 > 0 && t1 < t0)
-		*t = t1;
-    else
-		return 0;
-    return 1;
+	v.oc = rt_math_utils_vec_sub(r.origin, sphere->origin);
+    v.a = rt_math_utils_vec_dot(r.dir, r.dir); //devrait valoir 1
+    v.b = 2.0 * rt_math_utils_vec_dot(v.oc, r.dir);
+    v.c = rt_math_utils_vec_dot(v.oc, v.oc) - sphere->radius * sphere->radius;
+	v.delta = v.b * v.b - 4 * v.a * v.c;
+	if (v.delta < 0)
+		return (0);
+	v.sqrt_delta = sqrt(v.delta);
+	v.t0 = (-v.b - v.sqrt_delta) / (2 * v.a);
+	v.t1 = (-v.b + v.sqrt_delta) / (2 * v.a);
+	if (v.t0 > 0)
+		*t = v.t0;
+	else if (v.t1 > 0)
+		*t = v.t1;
+	else
+		return (0);
+	return (1);
 }
-    // on prend le plus petit t positif
