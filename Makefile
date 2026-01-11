@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/01/07 14:22:02 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/01/11 18:00:06 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,6 @@ SOURCES :=	minirt.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c \
-			rt_math_pixel_get_addr.c \
 			rt_math_pixel_get_vec.c \
 			rt_math_sphere_get_delta.c \
 			rt_math_sphere_intersect.c \
@@ -59,6 +58,7 @@ SOURCES :=	minirt.c \
 			rt_math_utils_vec_dot.c \
 			rt_math_utils_vec_sub.c \
 			rt_render.c \
+			rt_render_pixel_get_addr.c \
 			rt_render_pixel_get_color.c \
 
 

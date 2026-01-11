@@ -1,27 +1,12 @@
-changer nom des fonctions
-rt_math_...
-
-fonction a code jules:
-
-
-fonction qui parcourt chaque pixel
-
-ok	->	fonction de calcule du vecteur d (voir photo)
-	rt_math_vec_pixel argument x, y -> definit le pixel
-	
-ok	->	fonction pour trouver l'adresse aux coordonne x et y du pixel
-	rt_math_get_pixel_addr
-
-	-----> tirer un rayon
-	R = o + t * D
-	o : origine camera
-	t : distance
-	D : vecteur
-
-
-ok	->rt_math_sphere_discri
-
-
-delta = {2 * dot_p(vD, vOC)}^2 - 4 * {dot_p(vD, vD) * dot_p(vOC, vOC) - r^2};
-
-->> check si fichier ok (minirt se lance avec un dossier)
+1	trouver le vecteur de la lumiere 
+		light_get_vec
+		light_get_ray
+2	trouver le cosinus entre le rayon de la lumiere et la normale de la sphere
+		sphere_get_normal
+		math_get_cosinus (t_vec3, t_vec3)
+3	multiplier le cosinus de langle par le ratio brightness de la lumiere
+		light_get_color
+4	ajouter le result a la couleur  de l'intersection
+		
+5	ajouter cette valeur a la lumiere ambiant
+		ambient_get_color

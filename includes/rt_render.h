@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:14:10 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/07 14:43:38 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/11 17:59:24 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ typedef struct s_render_view
 
 int	rt_render(t_la_complete *la_complete);
 int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v);
+int	*rt_render_pixel_get_addr(t_mlx *mlx, int x, int y);
 
 #endif
