@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	ft_bzero(&la_complete, sizeof(t_la_complete));
 	if (rt_parse(av[1], &la_complete))
 		return (rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
-	rt_debug_scene_all_display(&la_complete);
+//	rt_debug_scene_all_display(&la_complete);
 	if (rt_mlx_init(&mlx))
 		rt_mlx_free(&mlx);
 	if (rt_mlx_hook(&mlx))

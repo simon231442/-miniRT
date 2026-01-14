@@ -16,9 +16,15 @@ int	is_higher(char *value, char *limit);
 int	dot_handle(char *a, char *b);
 int	nega_handle(char *a, char *b);
 
+/**
+ * @brief	check if the assci argument is in the range
+ * @return	1 if it's in range, 0 ifn't
+ *
+*/
+
 int	rt_parse_util_is_in_range(char *value, char *min, char *max)
 {
-	if (!is_higher(min, value) && is_higher(max, value))
+	if (!is_higher(min, value) && is_higher(value, max))
 		return (1);
 	return (0);
 }

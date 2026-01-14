@@ -18,6 +18,7 @@
 #define ERROR_USAGE "usage ./miniRT <scene.rt>"
 #define ERROR_SYSTEM "Failure system"
 #define ERROR_IDENTIFIER "Wrong identifier"
+#define ERROR_OUT_OF_RANGE "An argument is out of range"
 
 void	rt_error_put(char *message);
 

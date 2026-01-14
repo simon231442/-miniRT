@@ -44,6 +44,7 @@ SOURCES :=	minirt.c \
 			rt_parse_util_arg_free.c \
 			rt_parse_util_atod.c \
 			rt_parse_util_color.c \
+			rt_parse_util_is_in_range.c \
 			rt_parse_util_line_clean.c \
 			rt_parse_util_shape_free.c \
 			rt_parse_util_vector.c \
