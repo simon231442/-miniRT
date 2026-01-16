@@ -6,7 +6,7 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 17:00:32 by simon2314         #+#    #+#             */
-/*   Updated: 2025/12/30 11:32:24 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/15 15:41:56 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		rt_parse_shape_cylinder(char *line, t_la_complete *la_complete);
 double	rt_parse_util_atod(char *value);
 int		rt_parse_util_vector(char *arg, t_vec3 *vector);
 int		rt_parse_util_color(char *arg, t_color *color);
+int		rt_parse_utils_get_int_color(t_color color);
 
 void	rt_parse_util_line_clean(char *line);
 void	rt_parse_util_arg_free(char **arg);

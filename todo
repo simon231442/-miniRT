@@ -1,4 +1,4 @@
-1	trouver le vecteur de la lumiere 
+1	trouver le vecteur de la lumiere sur le point d'intersection 
 		light_get_vec
 		light_get_ray
 2	trouver le cosinus entre le rayon de la lumiere et la normale de la sphere
@@ -10,3 +10,19 @@
 		
 5	ajouter cette valeur a la lumiere ambiant
 		ambient_get_color
+
+
+
+grace a t on calcule la coordonne du point du pixel si il touche 
+
+avec ce point
+	pour la lumiere on calcule le vecteur ainsi que son rayon
+	on calcule la normal de la sphere
+		
+avec la normal et le light ray
+	on calcule de le cosinus de l'angle 
+
+color = cos_angle * ratio_bightness + ambiant_light + obj_color
+
+
+math_utils get_cosinus a changer
