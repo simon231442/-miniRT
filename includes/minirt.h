@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/05 16:19:27 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/16 11:15:58 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef struct s_la_complete
 	t_obj	obj;
 	t_list	*shape;
 	int		error_status;
+	int	coefficient;
 }	t_la_complete;
 
 # include "rt_parsing.h"

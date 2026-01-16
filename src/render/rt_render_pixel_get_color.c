@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 12:24:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/15 16:04:25 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/16 11:16:53 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
 	}
 	if (t_min < T_MAX)
 	{
+		la_complete->coefficient++;
+		if (la_complete->coefficient > 0xFFFFFFFF)
+			la_complete->coefficient = 0;
 		intersect_point = rt_math_get_intersect_point(v.pixel_vec, t_min);
 		light_vec = rt_math_light_get_vec(intersect_point,
 				la_complete->obj.light.origin);
@@ -53,7 +56,7 @@ int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
 			+ rt_parse_utils_get_int_color(la_complete->obj.ambient.color)
 			* la_complete->obj.ambient.ratio; //+ obj_color
 		color = cosinus_angle * la_complete->obj.light.ratio
-			* 0xFFFF00;
+			* la_complete->coefficient;
 		return (color);
 	}
 	return (0x000000);
