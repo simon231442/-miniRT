@@ -24,7 +24,7 @@ int	nega_handle(char *a, char *b);
 
 int	rt_parse_util_is_in_range(char *value, char *min, char *max)
 {
-	if (!is_higher(min, value) && is_higher(value, max))
+	if (!is_higher(min, value) && !is_higher(value, max))
 		return (1);
 	return (0);
 }

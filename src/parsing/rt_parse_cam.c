@@ -38,7 +38,11 @@ int rt_parse_cam(char *line, t_la_complete *la_complete)
 int	arg_all_is_valid(char **arg)
 {
 	if (!rt_parse_util_is_in_range(arg[3],"0","70"))
+	{
+		printf("%s\n", arg[3]);
 		return (rt_error_put(ERROR_OUT_OF_RANGE), 1);
+	}
+	printf("%s is ok\n", arg[3]);
 	return (1);
 }
 
