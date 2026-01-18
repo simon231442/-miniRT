@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/01/15 15:42:15 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/01/18 14:49:18 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,7 @@ SOURCES :=	minirt.c \
 			rt_render.c \
 			rt_render_pixel_get_addr.c \
 			rt_render_pixel_get_color.c \
+			rt_render_light_get_intensity.c \
 
 
 .DEFAULT_GOAL := all

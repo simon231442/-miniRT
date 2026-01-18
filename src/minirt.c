@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/16 11:16:11 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/16 11:21:49 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int ac, char **av)
 {
 	t_la_complete	la_complete;
 
-	la_complete.coefficient = 0;
 	if (ac != 2)
 		return (rt_error_put(ERROR_USAGE), EXIT_FAILURE);
 	ft_bzero(&la_complete, sizeof(t_la_complete));

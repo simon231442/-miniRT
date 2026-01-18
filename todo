@@ -25,4 +25,20 @@ avec la normal et le light ray
 color = cos_angle * ratio_bightness + ambiant_light + obj_color
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 math_utils get_cosinus a changer

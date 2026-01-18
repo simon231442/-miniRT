@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 12:24:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/16 11:16:53 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/18 15:16:48 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,39 @@
 
 int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
 {
-	t_ray	r;
-	t_list	*shape_lst;
-	t_list	*last_shape;
-	double	t;
-	double	t_min;
-	t_vec3	intersect_point;
-	t_vec3	light_vec;
-	t_vec3	normal_vec;
-	double	cosinus_angle;
-	int		color;
+	t_get_color_view	c;
 
-	r.dir = v.pixel_vec;
-	r.origin = la_complete->obj.cam.origin;
-	shape_lst = la_complete->shape;
-	t_min = T_MAX;
-	while (shape_lst != NULL)
+	c.r.dir = v.pixel_vec;
+	c.r.origin = la_complete->obj.cam.origin;
+	c.shape_lst = la_complete->shape;
+	c.t_min = T_MAX;
+	while (c.shape_lst != NULL)
 	{
-		if (rt_math_sphere_intersect(r, shape_lst->shape, &t))
+		if (rt_math_sphere_intersect(c.r, c.shape_lst->shape, &c.t))
 		{
-			if (t < t_min)
+			if (c.t < c.t_min)
 			{
-				t_min = t;
+				c.t_min = c.t;
+				c.last_shape = c.shape_lst;
 			}
 		}
-		last_shape = shape_lst;
-		shape_lst = shape_lst->next;
+		c.shape_lst = c.shape_lst->next;
 	}
-	if (t_min < T_MAX)
+	if (c.t_min < T_MAX)
 	{
-		la_complete->coefficient++;
-		if (la_complete->coefficient > 0xFFFFFFFF)
-			la_complete->coefficient = 0;
-		intersect_point = rt_math_get_intersect_point(v.pixel_vec, t_min);
-		light_vec = rt_math_light_get_vec(intersect_point,
-				la_complete->obj.light.origin);
-		normal_vec = rt_math_sphere_get_normal(intersect_point,
-				last_shape->shape->origin);
-		cosinus_angle = rt_math_utils_get_cosinus(normal_vec, light_vec);
-		color = cosinus_angle * la_complete->obj.light.ratio
-			+ rt_parse_utils_get_int_color(la_complete->obj.ambient.color)
-			* la_complete->obj.ambient.ratio; //+ obj_color
-		color = cosinus_angle * la_complete->obj.light.ratio
-			* la_complete->coefficient;
-		return (color);
+		c.intensity = rt_render_light_get_intensity(la_complete, c.last_shape, c.r, 
+				c.t_min);
+		c.color.r = (0xFF / 255.0) * c.intensity * 255;
+		c.color.g = (0xFF / 255.0) * c.intensity * 255;
+		c.color.b = (0xFF / 255.0) * c.intensity * 255;
+		return (rt_parse_utils_get_int_color(c.color));
 	}
-	return (0x000000);
+	return (0xFFF000);
 }
+//t_color	tcolor;
+//		tcolor.r = (normal_vec.x + 1) * 0.5 * 255;
+//		tcolor.g = (normal_vec.y + 1) * 0.5 * 255;
+//		tcolor.b = (normal_vec.z + 1) * 0.5 * 255;
+//		color = rt_parse_utils_get_int_color(tcolor);
+		//color = cosinus_angle * la_complete->obj.light.ratio
+		//	* 0xFFFFFFFF;

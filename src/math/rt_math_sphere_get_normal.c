@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 18:43:42 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/15 14:26:25 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/16 14:13:27 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@
 
 t_vec3	rt_math_sphere_get_normal(t_vec3 intersect_point, t_vec3 origin_sphere)
 {
-	return (rt_math_utils_vec_sub(origin_sphere, intersect_point));
+	return (rt_math_utils_vec_sub(intersect_point, origin_sphere));
 }

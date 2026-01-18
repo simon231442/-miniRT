@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:12:01 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/16 11:09:33 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/16 11:51:33 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	rt_render(t_la_complete *la_complete)
 {
 	t_render_view	v;
-	while (1)
-	{
 	if (la_complete->mlx.mlx_ptr)
 	{
 		v.y = 0;
@@ -37,6 +35,5 @@ int	rt_render(t_la_complete *la_complete)
 	}
 	mlx_put_image_to_window(la_complete->mlx.mlx_ptr,
 		la_complete->mlx.win_ptr, la_complete->mlx.img_ptr, 0, 0);
-	}
 	return (0);
 }
