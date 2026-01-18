@@ -12,10 +12,7 @@
 
 #include "minirt.h"
 
-int	is_higher(char *value, char *limit);
-int	dot_handle(char *a, char *b);
-int	nega_handle(char *a, char *b);
-int	is_only_zero(char *str);
+int decimal_counter(char *a);
 
 /**
  * @brief	check if the assci argument is in the range comparing caracteres
@@ -30,73 +27,110 @@ int	is_only_zero(char *str);
 
 int	rt_parse_util_is_in_range(char *value, char *min, char *max)
 {
-	if (is_higher(value, min) && is_higher(max, value))
-		return (1);
-	return (0);
-}
+	int decimal_diff_min;
 
-/**
- * @brief	check if the ascii value of the first parameter is stricly bigger
- *			than the second
-*/
+	decimal_diff_max = decimal_counter(max) - decimal_counter(value);
+	decimal_diff_min = decimal_counter(min) - decimal_counter(value);
 
-int	is_higher(char *a, char *b)
-{
-	if (*a == '-' || *b == '-')
-		return (nega_handle(a,b));
-	while (ft_isdigit(*a) && ft_isdigit(*b))
-	{
-		if (*a < *b)
-			return (0);
-		if (*a > *b)
-			return (1);
-		a++;
-		b++;
-	}
-	if (*a == '.' || *b == '.')
-		return (dot_handle(++a, ++b));
-	if (ft_isdigit(*b)) // for a case like a = 123, b = 12  
+	if (decimal_diff_max < 0 || decimal_diff_min > 0)
 		return (0);
-	return (1);
-}
-
-int	nega_handle(char *a, char *b)
-{
-	if (*a == '-' && *b == '-')
+	if (decimal_diff_max > 0 && decimal_diff_min < 0)
+		return (1);
+	if (decimal_diff_max == 0)
 	{
-		a++;
-		b++;
-		if (ft_isdigit(*a) && ft_isdigit(*b))
-			return (is_higher(b, a));
+		if (decimal_diff_min == 0 && rt_parse_utils_is_higher_or_equal(value, min) && rt_parse_utils_is_higher_or_equal(max, value))// cas ou la value a le meme nb de decimal que min et max)
+			return (1);
+		if (decimal_diff_min < 0 && rt_parse_utils_is_higher_or_equal(max, value))//dicimal_diff_min < 0 ---> valeur plus grand que min //cas ou la value a le meme nb de decimal que max et min deja ok) 
+			return (0);
 		else
 			return (1);
 	}
-	else if (*a != '-' && *b == '-')
+	if (decimal_diff_min == 0 && decimal_diff_max > 0 && rt_parse_utils_is_higher_or_equal(value, min))// decimal_diff_mah
 		return (1);
-	else if (*a == '-' && *b != '-')
-		return (0);
+	/*	
+	if (rt_parse_utils_is_higher_or_equal(value, min) && rt_parse_utils_is_higher_or_equal(max, value))
+		return (1); */
 	return (0);
 }
 
-int	dot_handle(char *a, char *b)
+int decimal_counter(char *a)
 {
-	int	a_is_zero;
-	int b_is_zero;
+	int	count;
 
-
-	if (ft_isdigit(*a) && *b == '.')
-		return (1);
-	if (*a == '.' && *b == '.')
-		return (is_higher(a, b));
-	return (0);
-}
-
-int	is_only_zero(char *str)
-{
-	while (*str)
+	count = 0;
+	if (*a == '-')
+		a++;
+	while (*a && ft_isdigit(*a))
 	{
-		if (*str != '0')
-			return(0);
+		count++;
+		a++;
 	}
-	return (1);
+	return (count);
 }
+
+int	is_smaller_or_equal_to_max(char *value, char *max)
+{
+	int	decimal_diff;
+	
+	decimal_diff = decimal_counter(max) - decimal_counter(value);
+	if (*value == '-')
+	{
+		if (*max != '-')
+			retrurn (1);
+		if (*max == '-')
+		{
+			if (decimal_diff > 0)
+				return (1);
+			if (decimal_diff == 0)
+			{
+				if (rt_parse_utils_is_higher_or_equal(max, value))
+					return (1);
+				else
+					return (0);
+			}
+			return (0);
+		}
+	}
+	if (*max == '-')
+		return (0);
+	if (*max != '-')
+	{
+		if (decimal_diff > 0)
+			return (1);
+		if (decimal_diff == 0)
+		{
+			if (rt_parse_utils_is_higher_or_equal(max, value))
+				return (1);
+			else
+				return (0);
+		}
+		return (0);
+	}
+}
+
+int	is_higher_or_equal_to_min(char *value, char *min)
+{
+	int	decimal_diff;
+
+	deccimal_diff = decimalcounter(min) - decimal_counter(value);
+	if (decimal_diff == 0)
+		return (rt_parse_utils_is_higher_or_equal(value, max);
+	if (*value == '-')
+	{
+		if (*min != '-')
+			return (0);
+		if (*min == '-')
+		{
+			if (decimal_diff > 0)
+				return (1);
+			if (decimal_diff < 0)
+				return (0);
+		}
+	}
+	if (*min == '-')
+		return (1);
+	if (*
+	
+
+	
+
