@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 12:24:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/18 15:16:48 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/20 15:48:48 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
 	c.t_min = T_MAX;
 	while (c.shape_lst != NULL)
 	{
-		if (rt_math_sphere_intersect(c.r, c.shape_lst->shape, &c.t))
+		if (rt_math_shape_intersect(c.r, *c.shape_lst->shape, &c.t))
 		{
 			if (c.t < c.t_min)
 			{
@@ -34,19 +34,12 @@ int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
 	}
 	if (c.t_min < T_MAX)
 	{
-		c.intensity = rt_render_light_get_intensity(la_complete, c.last_shape, c.r, 
-				c.t_min);
-		c.color.r = (0xFF / 255.0) * c.intensity * 255;
-		c.color.g = (0xFF / 255.0) * c.intensity * 255;
-		c.color.b = (0xFF / 255.0) * c.intensity * 255;
+		c.intensity = rt_render_light_get_intensity(la_complete, c.last_shape,
+				c.r, c.t_min);
+		c.color = rt_render_pixel_get_ret_color(c.last_shape->shape->color,
+				la_complete->obj.ambient, c.intensity);
 		return (rt_parse_utils_get_int_color(c.color));
+//		return (0xFFFFFF);
 	}
-	return (0xFFF000);
+	return (0);
 }
-//t_color	tcolor;
-//		tcolor.r = (normal_vec.x + 1) * 0.5 * 255;
-//		tcolor.g = (normal_vec.y + 1) * 0.5 * 255;
-//		tcolor.b = (normal_vec.z + 1) * 0.5 * 255;
-//		color = rt_parse_utils_get_int_color(tcolor);
-		//color = cosinus_angle * la_complete->obj.light.ratio
-		//	* 0xFFFFFFFF;

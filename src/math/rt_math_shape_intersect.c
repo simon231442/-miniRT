@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_mlx_hook_key.c                                  :+:      :+:    :+:   */
+/*   rt_math_shape_intersect.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 12:45:27 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/19 16:10:20 by jsurian42        ###   ########.fr       */
+/*   Created: 2026/01/20 12:51:26 by jsurian42         #+#    #+#             */
+/*   Updated: 2026/01/20 13:40:18 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
-//#include "stdio.h"
 
-int	rt_mlx_hook_key(int keycode, t_mlx *self)
+int	rt_math_shape_intersect(t_ray r, t_shape shape, double *t)
 {
-	if (keycode == KEY_Q || keycode == KEY_ESC)
-		rt_mlx_free(self);
+	if (shape.type == SPHERE) 
+		return (rt_math_sphere_intersect(r, shape, t));
+	if (shape.type == PLANE) 
+		return (rt_math_plane_intersect(r, shape, t));
 	return (0);
 }
-//	printf("keycode %d\n", keycode);

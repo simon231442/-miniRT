@@ -1,44 +1,22 @@
-1	trouver le vecteur de la lumiere sur le point d'intersection 
-		light_get_vec
-		light_get_ray
-2	trouver le cosinus entre le rayon de la lumiere et la normale de la sphere
-		sphere_get_normal
-		math_get_cosinus (t_vec3, t_vec3)
-3	multiplier le cosinus de langle par le ratio brightness de la lumiere
-		light_get_color
-4	ajouter le result a la couleur  de l'intersection
-		
-5	ajouter cette valeur a la lumiere ambiant
-		ambient_get_color
+gerer plusieurs forme differente
+ok		rt_math_shape_intersect
+ok			rt_math_sphere_intersect
+ok			rt_math_plan_intersect
+		rt_math_cylinder_intersect
+	
+	rt_math_shape_get_normal
+ok			rt_math_sphere_get_normal
+ok			rt_math_plan_get_normal
+		rt_math_cylinder_get_normal
 
 
-
-grace a t on calcule la coordonne du point du pixel si il touche 
-
-avec ce point
-	pour la lumiere on calcule le vecteur ainsi que son rayon
-	on calcule la normal de la sphere
-		
-avec la normal et le light ray
-	on calcule de le cosinus de l'angle 
-
-color = cos_angle * ratio_bightness + ambiant_light + obj_color
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+sphere deforme quand pas au centre de l'ecran
+si lumieres trop forte ->pixel noir
+shadow
+supp sphere_get_delta
 
 math_utils get_cosinus a changer
+
+simon : 
+-commentaire dans le .rt
+-ligne vide dans le .rt

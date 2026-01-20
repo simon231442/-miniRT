@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_mlx_hook_key.c                                  :+:      :+:    :+:   */
+/*   rt_math_cylinder_get_normal.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 12:45:27 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/19 16:10:20 by jsurian42        ###   ########.fr       */
+/*   Created: 2026/01/20 14:11:24 by jsurian42         #+#    #+#             */
+/*   Updated: 2026/01/20 14:11:59 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
-//#include "stdio.h"
 
-int	rt_mlx_hook_key(int keycode, t_mlx *self)
+t_vec3	rt_math_cylinder_get_normal(void)
 {
-	if (keycode == KEY_Q || keycode == KEY_ESC)
-		rt_mlx_free(self);
-	return (0);
+	t_vec3	ret;
+
+	return (ret);
 }
-//	printf("keycode %d\n", keycode);

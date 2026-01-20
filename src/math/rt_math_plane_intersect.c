@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_mlx_hook_key.c                                  :+:      :+:    :+:   */
+/*   rt_math_plane_intersect.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 12:45:27 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/19 16:10:20 by jsurian42        ###   ########.fr       */
+/*   Created: 2026/01/20 13:06:24 by jsurian42         #+#    #+#             */
+/*   Updated: 2026/01/20 14:26:26 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
-//#include "stdio.h"
 
-int	rt_mlx_hook_key(int keycode, t_mlx *self)
+int	rt_math_plane_intersect(t_ray r, t_shape plane, double *t) 
 {
-	if (keycode == KEY_Q || keycode == KEY_ESC)
-		rt_mlx_free(self);
+	//plane.direction -> normal du plan
+	double	denom;
+	t_vec3	temp;
+
+	denom = rt_math_utils_vec_dot(plane.direction, r.dir);
+	if (denom != 0)
+	{
+		temp = rt_math_utils_vec_sub(r.origin, plane.origin);
+		*t = rt_math_utils_vec_dot(temp, plane.direction) / denom;
+		if (*t < EPSILON) //????????????????
+			return (0);
+		else
+			return (1);
+	}
 	return (0);
 }
-//	printf("keycode %d\n", keycode);
