@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/01/18 14:49:18 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/01/21 11:57:31 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,11 @@ SOURCES :=	minirt.c \
 			rt_math_light_get_vec.c \
 			rt_math_sphere_get_delta.c \
 			rt_math_sphere_intersect.c \
+			rt_math_shape_intersect.c \
+			rt_math_plane_intersect.c \
+			rt_math_shape_get_normal.c \
 			rt_math_sphere_get_normal.c \
+			rt_math_cylinder_get_normal.c \
 			rt_math_get_intersect_point.c \
 			rt_math_utils_vec_normalize.c \
 			rt_math_utils_vec_length.c \
@@ -66,6 +70,7 @@ SOURCES :=	minirt.c \
 			rt_render_pixel_get_addr.c \
 			rt_render_pixel_get_color.c \
 			rt_render_light_get_intensity.c \
+			rt_render_pixel_get_ret_color.c \
 
 
 .DEFAULT_GOAL := all

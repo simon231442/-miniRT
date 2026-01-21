@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:03:35 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/20 15:39:07 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/21 12:08:49 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,11 @@ t_color	rt_render_pixel_get_ret_color(t_color shape_color, t_ambient ambient,
 		+ ambient.ratio * ambient.color.g;
 	ret_color.b = (shape_color.b / 255.0) * multiply_color
 		+ ambient.ratio * ambient.color.b;
+	if (ret_color.r > 255)
+		ret_color.r = 255;
+	if (ret_color.g > 255)
+		ret_color.g = 255;
+	if (ret_color.b > 255)
+		ret_color.b = 255;
 	return (ret_color);
 }

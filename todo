@@ -4,18 +4,20 @@ ok			rt_math_sphere_intersect
 ok			rt_math_plan_intersect
 		rt_math_cylinder_intersect
 	
-	rt_math_shape_get_normal
+ok	rt_math_shape_get_normal
 ok			rt_math_sphere_get_normal
 ok			rt_math_plan_get_normal
 		rt_math_cylinder_get_normal
 
 
 sphere deforme quand pas au centre de l'ecran
-si lumieres trop forte ->pixel noir
 shadow
-supp sphere_get_delta
+supp sphere_get_delta une fois que cylinder ok
 
 math_utils get_cosinus a changer
+
+antialiasing 
+multithread
 
 simon : 
 -commentaire dans le .rt

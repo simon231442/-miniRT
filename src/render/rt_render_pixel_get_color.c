@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 12:24:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/20 15:48:48 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/21 12:10:36 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
 		c.color = rt_render_pixel_get_ret_color(c.last_shape->shape->color,
 				la_complete->obj.ambient, c.intensity);
 		return (rt_parse_utils_get_int_color(c.color));
-//		return (0xFFFFFF);
 	}
 	return (0);
 }

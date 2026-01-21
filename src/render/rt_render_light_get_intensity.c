@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 13:52:52 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/20 15:36:33 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/21 12:05:56 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,9 @@ double	rt_render_light_get_intensity(t_la_complete *c,
 	intersect_point = rt_math_get_intersect_point(r, t_min);
 	light_vec = rt_math_light_get_vec(intersect_point,
 			c->obj.light.origin);
-	///////////////////////////////
-	//fonction pour definir quelle normal prendre 
-	//possible de lunir avec l'intersect ????????????????????
-	if (last_shape->shape->type == SPHERE)
-		normal_vec = rt_math_sphere_get_normal(intersect_point,
-			last_shape->shape->origin);
-	else if (last_shape->shape->type == PLANE)
-		normal_vec = last_shape->shape->direction;
-	else if (last_shape->shape->type == CYLINDER)
-		normal_vec = rt_math_cylinder_get_normal();
+	normal_vec = rt_math_shape_get_normal(intersect_point, last_shape->shape);
 	cosinus_angle = rt_math_utils_get_cosinus(normal_vec, light_vec);
-//	if (cosinus_angle < 0)
+//	if (cosinus_angle < 0) ////////????????????????????
 //		return (0);
 	intensity = cosinus_angle * c->obj.light.ratio
 		+ c->obj.ambient.ratio; //+ obj_color
