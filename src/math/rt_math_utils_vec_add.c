@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_add.c                                          :+:      :+:    :+:   */
+/*   rt_math_utils_vec_add.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:43:44 by jsurian42         #+#    #+#             */
-/*   Updated: 2025/12/15 11:51:26 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/21 15:11:43 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "minirt.h"
 
 //on ne peut pas additionner 2 point
-t_vec3	vec_add(t_vec3 v1, t_vec3 v2)
+t_vec3	rt_math_utils_vec_add(t_vec3 v1, t_vec3 v2)
 {
 	t_vec3	ret;
 

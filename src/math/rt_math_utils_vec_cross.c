@@ -6,14 +6,14 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:44:52 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/07 16:39:04 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/21 15:11:29 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "minirt.h"
 
 //cross product cree un vecteur perpendiculaire a 2 autres
-t_vec3	vec_cross(t_vec3 v1, t_vec3 v2)
+t_vec3	rt_math_utils_vec_cross(t_vec3 v1, t_vec3 v2)
 {
 	t_vec3	v;
 

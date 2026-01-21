@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/01/21 11:57:31 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/01/21 15:10:01 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,9 @@ SOURCES :=	minirt.c \
 			rt_math_utils_vec_dot.c \
 			rt_math_utils_vec_sub.c \
 			rt_math_utils_get_cosinus.c\
+			rt_math_utils_vec_cross.c \
+			rt_math_utils_vec_add.c \
+			rt_math_utils_vec_multi_scale.c \
 			rt_render.c \
 			rt_render_pixel_get_addr.c \
 			rt_render_pixel_get_color.c \
