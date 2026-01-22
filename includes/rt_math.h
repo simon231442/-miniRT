@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 18:41:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/21 15:07:38 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/22 17:07:58 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef	struct	s_intersect_view
 	double	t1;
 }	t_intersect_view;
 
-t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction);
+t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction, t_vec3 origin);
 //double	rt_math_sphere_get_delta(double radius, t_vec3 d, t_vec3 oc);
 
 t_vec3	rt_math_utils_vec_normalize(t_vec3 v);

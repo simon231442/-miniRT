@@ -10,6 +10,7 @@ ok			rt_math_plan_get_normal
 		rt_math_cylinder_get_normal
 
 pixel_get_vec !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+probleme diametre negatif avec test2.rt
 
 shadow
 supp sphere_get_delta une fois que cylinder ok
@@ -22,3 +23,6 @@ multithread
 simon : 
 -commentaire dans le .rt
 -ligne vide dans le .rt
+-core dump 
+sp 0,0,0 -4 4 255,255,0
+

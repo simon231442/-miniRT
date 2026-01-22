@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:12:01 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/21 14:17:11 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/22 17:08:26 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	rt_render(t_la_complete *la_complete)
 				v.pixel_addr = rt_render_pixel_get_addr(&la_complete->mlx,
 						v.x, v.y);
 				v.pixel_vec = rt_math_pixel_get_vec(v.x, v.y,
-						la_complete->obj.cam.fov, la_complete->obj.cam.direction);
+						la_complete->obj.cam.fov, la_complete->obj.cam.direction,
+						la_complete->obj.cam.origin);
 				*v.pixel_addr = rt_render_pixel_get_color(la_complete, v);
 				v.x++;
 			}
