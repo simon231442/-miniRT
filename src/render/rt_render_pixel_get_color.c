@@ -12,13 +12,13 @@
 
 #include "minirt.h"
 
-int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
+int	rt_render_pixel_get_color(t_list *shape, t_obj obj, t_render_view v)
 {
 	t_get_color_view	c;
 
 	c.r.dir = v.pixel_vec;
-	c.r.origin = la_complete->obj.cam.origin;
-	c.shape_lst = la_complete->shape;
+	c.r.origin = obj.cam.origin;
+	c.shape_lst = shape;
 	c.t_min = T_MAX;
 	while (c.shape_lst != NULL)
 	{
@@ -34,10 +34,10 @@ int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v)
 	}
 	if (c.t_min < T_MAX)
 	{
-		c.intensity = rt_render_light_get_intensity(la_complete, c.last_shape,
-				c.r, c.t_min);
+		c.intensity = rt_render_light_get_intensity(obj,
+				c.last_shape->shape, c.r, c.t_min);
 		c.color = rt_render_pixel_get_ret_color(c.last_shape->shape->color,
-				la_complete->obj.ambient, c.intensity);
+				obj.ambient, c.intensity);
 		return (rt_parse_utils_get_int_color(c.color));
 	}
 	return (0);

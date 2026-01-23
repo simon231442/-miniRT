@@ -28,7 +28,8 @@ int	rt_render(t_la_complete *la_complete)
 				v.pixel_vec = rt_math_pixel_get_vec(v.x, v.y,
 						la_complete->obj.cam.fov, la_complete->obj.cam.direction,
 						la_complete->obj.cam.origin);
-				*v.pixel_addr = rt_render_pixel_get_color(la_complete, v);
+				*v.pixel_addr = rt_render_pixel_get_color(la_complete->shape,
+						la_complete->obj, v);
 				v.x++;
 			}
 			v.y++;

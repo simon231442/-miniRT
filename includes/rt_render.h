@@ -40,11 +40,11 @@ typedef struct	s_get_color_view
 
 
 int	rt_render(t_la_complete *la_complete);
-int	rt_render_pixel_get_color(t_la_complete *la_complete, t_render_view v);
+int	rt_render_pixel_get_color(t_list *shape, t_obj obj, t_render_view v);
 int	*rt_render_pixel_get_addr(t_mlx *mlx, int x, int y);
 
-double	rt_render_light_get_intensity(t_la_complete *c,
-		t_list *last_shape, t_ray r, double t_min);
+double	rt_render_light_get_intensity(t_obj obj,
+		t_shape *act_shape, t_ray r, double t_min);
 t_color	rt_render_pixel_get_ret_color(t_color shape_color, t_ambient ambient,
 			double intensity);
 

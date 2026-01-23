@@ -12,8 +12,8 @@
 
 #include "minirt.h"
 
-double	rt_render_light_get_intensity(t_la_complete *c,
-		t_list *last_shape, t_ray r, double t_min)
+double	rt_render_light_get_intensity(t_obj obj,
+		t_shape *act_shape, t_ray r, double t_min)
 {
 	t_vec3	intersect_point;
 	t_vec3	light_vec;
@@ -23,13 +23,15 @@ double	rt_render_light_get_intensity(t_la_complete *c,
 
 	intersect_point = rt_math_get_intersect_point(r, t_min);
 	light_vec = rt_math_light_get_vec(intersect_point,
-			c->obj.light.origin);
-	normal_vec = rt_math_shape_get_normal(intersect_point, last_shape->shape);
+			obj.light.origin);
+	//if intersection avec un objet
+	//return (0);
+	//parcourir les shape ()
+		//sur chaque shape rt_math_shape_intersect
+	normal_vec = rt_math_shape_get_normal(intersect_point, act_shape);
 	cosinus_angle = rt_math_utils_get_cosinus(normal_vec, light_vec);
-//	if (cosinus_angle < 0) ////////????????????????????
-//		return (0);
-	intensity = cosinus_angle * c->obj.light.ratio
-		+ c->obj.ambient.ratio; //+ obj_color
+	intensity = cosinus_angle * obj.light.ratio
+		+ obj.ambient.ratio; //+ obj_color
 	if (intensity > 1)
 		intensity = 1;
 	else if (intensity < 0)

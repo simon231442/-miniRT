@@ -12,8 +12,9 @@ ok			rt_math_plan_get_normal
 pixel_get_vec !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 probleme diametre negatif avec test2.rt
 
-shadow
+shadow rt_math_light_get_intensity add rt_math_shape_intersect
 supp sphere_get_delta une fois que cylinder ok
+inversion x et y
 
 math_utils get_cosinus a changer
 
@@ -26,3 +27,5 @@ simon :
 -core dump 
 sp 0,0,0 -4 4 255,255,0
 
+-possibilite de mettre de mettre des diametres negatifs
+-couleur negative
