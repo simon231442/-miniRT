@@ -1,0 +1,233 @@
+diff --git a/Makefile b/Makefile
+index 83ba4c4..536643d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -6,7 +6,7 @@
+ #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
+ #                                                 +#+#+#+#+#+   +#+            #
+ #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
+-#    Updated: 2026/01/21 15:10:01 by jsurian42        ###   ########.fr        #
++#    Updated: 2026/01/24 15:48:41 by jsurian42        ###   ########.fr        #
+ #                                                                              #
+ # **************************************************************************** #
+ 
+@@ -55,7 +55,6 @@ SOURCES :=	minirt.c \
+ 			rt_math_light_get_vec.c \
+ 			rt_math_sphere_get_delta.c \
+ 			rt_math_sphere_intersect.c \
+-			rt_math_shape_intersect.c \
+ 			rt_math_plane_intersect.c \
+ 			rt_math_shape_get_normal.c \
+ 			rt_math_sphere_get_normal.c \
+@@ -72,6 +71,7 @@ SOURCES :=	minirt.c \
+ 			rt_render.c \
+ 			rt_render_pixel_get_addr.c \
+ 			rt_render_pixel_get_color.c \
++			rt_render_shape_intersect.c \
+ 			rt_render_light_get_intensity.c \
+ 			rt_render_pixel_get_ret_color.c \
+ 
+diff --git a/includes/rt_math.h b/includes/rt_math.h
+index 156159f..b87d2b4 100644
+--- a/includes/rt_math.h
++++ b/includes/rt_math.h
+@@ -6,7 +6,7 @@
+ /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+ /*                                                +#+#+#+#+#+   +#+           */
+ /*   Created: 2025/12/25 18:41:24 by jsurian42         #+#    #+#             */
+-/*   Updated: 2026/01/22 17:07:58 by jsurian42        ###   ########.fr       */
++/*   Updated: 2026/01/24 16:25:25 by jsurian42        ###   ########.fr       */
+ /*                                                                            */
+ /* ************************************************************************** */
+ 
+@@ -42,7 +42,6 @@ t_vec3	rt_math_utils_vec_cross(t_vec3 v1, t_vec3 v2);
+ t_vec3	rt_math_utils_vec_add(t_vec3 v1, t_vec3 v2);
+ t_vec3	rt_math_utils_vec_multi_scale(t_vec3 v, double scalar);
+ 
+-int	rt_math_shape_intersect(t_ray r, t_shape shape, double *t);
+ int rt_math_sphere_intersect(t_ray r, t_shape sphere, double *t);
+ int	rt_math_plane_intersect(t_ray r, t_shape plane, double *t);
+ 
+diff --git a/includes/rt_render.h b/includes/rt_render.h
+index e442ab8..03aa712 100644
+--- a/includes/rt_render.h
++++ b/includes/rt_render.h
+@@ -6,7 +6,7 @@
+ /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+ /*                                                +#+#+#+#+#+   +#+           */
+ /*   Created: 2025/12/22 18:14:10 by jsurian42         #+#    #+#             */
+-/*   Updated: 2026/01/20 14:25:32 by jsurian42        ###   ########.fr       */
++/*   Updated: 2026/01/24 15:59:17 by jsurian42        ###   ########.fr       */
+ /*                                                                            */
+ /* ************************************************************************** */
+ 
+@@ -27,24 +27,18 @@ typedef struct s_render_view
+ 	t_vec3	pixel_vec;
+ }	t_render_view;
+ 
+-typedef struct	s_get_color_view
+-{
+-	t_ray	r;
+-	t_list	*shape_lst;
+-	t_list	*last_shape;
+-	double	t;
+-	double	t_min;
+-	t_color	color;
+-	double intensity;
+-}	t_get_color_view;
+-
+ 
+ int	rt_render(t_la_complete *la_complete);
+-int	rt_render_pixel_get_color(t_list *shape, t_obj obj, t_render_view v);
+ int	*rt_render_pixel_get_addr(t_mlx *mlx, int x, int y);
++int	rt_render_pixel_get_color(t_list *shape, t_obj obj, t_render_view v);
+ 
+-double	rt_render_light_get_intensity(t_obj obj,
++int	rt_render_shape_intersect(t_list *shape_lst, t_shape *last_shape, t_ray r,
++		double *t_min);
++
++
++double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
+ 		t_shape *act_shape, t_ray r, double t_min);
++
+ t_color	rt_render_pixel_get_ret_color(t_color shape_color, t_ambient ambient,
+ 			double intensity);
+ 
+diff --git a/src/math/rt_math_shape_intersect.c b/src/math/rt_math_shape_intersect.c
+deleted file mode 100644
+index f236a43..0000000
+--- a/src/math/rt_math_shape_intersect.c
++++ /dev/null
+@@ -1,22 +0,0 @@
+-/* ************************************************************************** */
+-/*                                                                            */
+-/*                                                        :::      ::::::::   */
+-/*   rt_math_shape_intersect.c                          :+:      :+:    :+:   */
+-/*                                                    +:+ +:+         +:+     */
+-/*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+-/*                                                +#+#+#+#+#+   +#+           */
+-/*   Created: 2026/01/20 12:51:26 by jsurian42         #+#    #+#             */
+-/*   Updated: 2026/01/20 13:40:18 by jsurian42        ###   ########.fr       */
+-/*                                                                            */
+-/* ************************************************************************** */
+-
+-#include "minirt.h"
+-
+-int	rt_math_shape_intersect(t_ray r, t_shape shape, double *t)
+-{
+-	if (shape.type == SPHERE) 
+-		return (rt_math_sphere_intersect(r, shape, t));
+-	if (shape.type == PLANE) 
+-		return (rt_math_plane_intersect(r, shape, t));
+-	return (0);
+-}
+diff --git a/src/render/rt_render_light_get_intensity.c b/src/render/rt_render_light_get_intensity.c
+index 6e51603..997f4d4 100644
+--- a/src/render/rt_render_light_get_intensity.c
++++ b/src/render/rt_render_light_get_intensity.c
+@@ -6,13 +6,13 @@
+ /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+ /*                                                +#+#+#+#+#+   +#+           */
+ /*   Created: 2026/01/18 13:52:52 by jsurian42         #+#    #+#             */
+-/*   Updated: 2026/01/21 12:05:56 by jsurian42        ###   ########.fr       */
++/*   Updated: 2026/01/24 16:44:45 by jsurian42        ###   ########.fr       */
+ /*                                                                            */
+ /* ************************************************************************** */
+ 
+ #include "minirt.h"
+ 
+-double	rt_render_light_get_intensity(t_obj obj,
++double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
+ 		t_shape *act_shape, t_ray r, double t_min)
+ {
+ 	t_vec3	intersect_point;
+@@ -38,3 +38,30 @@ double	rt_render_light_get_intensity(t_obj obj,
+ 		intensity = 0;
+ 	return (intensity);
+ }
++
++///double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
++///		t_shape *act_shape, t_ray r, double t_min)
++///{
++///	t_vec3	intersect_point;
++///	t_vec3	normal_vec;
++///	double	cosinus_angle;
++///	double	intensity;
++///	t_vec3	light_vec;
++///	t_ray	light_ray;
++///
++///	intersect_point = rt_math_get_intersect_point(r, t_min);
++///	light_ray.origin = obj.light.origin;
++///	light_vec = rt_math_light_get_vec(intersect_point, obj.light.origin);
++///	(void)shape;
++//////	if (rt_render_shape_intersect(shape, &act_shape, light_ray, &t_min))
++//////		return (0);
++///	normal_vec = rt_math_shape_get_normal(intersect_point, act_shape);
++///	cosinus_angle = rt_math_utils_get_cosinus(normal_vec, light_vec);
++///	intensity = cosinus_angle * obj.light.ratio
++///		+ obj.ambient.ratio; //+ obj_color
++///	if (intensity > 1)
++///		intensity = 1;
++///	else if (intensity < 0)
++///		intensity = 0;
++///	return (intensity);
++///}
+diff --git a/src/render/rt_render_pixel_get_color.c b/src/render/rt_render_pixel_get_color.c
+index 61362b2..393f319 100644
+--- a/src/render/rt_render_pixel_get_color.c
++++ b/src/render/rt_render_pixel_get_color.c
+@@ -6,7 +6,7 @@
+ /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
+ /*                                                +#+#+#+#+#+   +#+           */
+ /*   Created: 2025/12/30 12:24:26 by jsurian42         #+#    #+#             */
+-/*   Updated: 2026/01/21 12:10:36 by jsurian42        ###   ########.fr       */
++/*   Updated: 2026/01/24 16:18:15 by jsurian42        ###   ########.fr       */
+ /*                                                                            */
+ /* ************************************************************************** */
+ 
+@@ -14,31 +14,22 @@
+ 
+ int	rt_render_pixel_get_color(t_list *shape, t_obj obj, t_render_view v)
+ {
+-	t_get_color_view	c;
++	t_ray	r;
++	double	t_min;
++	t_shape	last_shape;
++	double	intensity;
++	t_color	color;
++	t_list	*shape_list = shape;
+ 
+-	c.r.dir = v.pixel_vec;
+-	c.r.origin = obj.cam.origin;
+-	c.shape_lst = shape;
+-	c.t_min = T_MAX;
+-	while (c.shape_lst != NULL)
++	r.dir = v.pixel_vec;
++	r.origin = obj.cam.origin;
++	if (rt_render_shape_intersect(shape_list, &last_shape, r, &t_min))
+ 	{
+-		if (rt_math_shape_intersect(c.r, *c.shape_lst->shape, &c.t))
+-		{
+-			if (c.t < c.t_min)
+-			{
+-				c.t_min = c.t;
+-				c.last_shape = c.shape_lst;
+-			}
+-		}
+-		c.shape_lst = c.shape_lst->next;
+-	}
+-	if (c.t_min < T_MAX)
+-	{
+-		c.intensity = rt_render_light_get_intensity(obj,
+-				c.last_shape->shape, c.r, c.t_min);
+-		c.color = rt_render_pixel_get_ret_color(c.last_shape->shape->color,
+-				obj.ambient, c.intensity);
+-		return (rt_parse_utils_get_int_color(c.color));
++		intensity = rt_render_light_get_intensity(shape_list, obj, &last_shape,
++				r, t_min);
++		color = rt_render_pixel_get_ret_color(last_shape.color,
++				obj.ambient, intensity);
++		return (rt_parse_utils_get_int_color(color));
+ 	}
+ 	return (0);
+ }
