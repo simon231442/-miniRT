@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/01/24 15:48:41 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/01/26 16:55:04 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,11 +68,13 @@ SOURCES :=	minirt.c \
 			rt_math_utils_vec_cross.c \
 			rt_math_utils_vec_add.c \
 			rt_math_utils_vec_multi_scale.c \
+			rt_math_utils_point_distance.c \
 			rt_render.c \
 			rt_render_pixel_get_addr.c \
 			rt_render_pixel_get_color.c \
 			rt_render_shape_intersect.c \
 			rt_render_light_get_intensity.c \
+			rt_render_shadow_intersect.c \
 			rt_render_pixel_get_ret_color.c \
 
 

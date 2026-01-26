@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 18:41:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/24 16:25:25 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/26 16:54:06 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_vec3	rt_math_utils_vec_sub(t_vec3 v1, t_vec3 v2);
 t_vec3	rt_math_utils_vec_cross(t_vec3 v1, t_vec3 v2);
 t_vec3	rt_math_utils_vec_add(t_vec3 v1, t_vec3 v2);
 t_vec3	rt_math_utils_vec_multi_scale(t_vec3 v, double scalar);
+double	rt_math_utils_point_distance(t_vec3 p1, t_vec3 p2);
 
 int rt_math_sphere_intersect(t_ray r, t_shape sphere, double *t);
 int	rt_math_plane_intersect(t_ray r, t_shape plane, double *t);
