@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 18:30:21 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/15 14:59:15 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/26 16:13:36 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 t_vec3	rt_math_light_get_vec(t_vec3 intersect_point, t_vec3 light_origin)
 {
-	return (rt_math_utils_vec_sub(light_origin, intersect_point));
+	t_vec3	ret;
+
+	ret = rt_math_utils_vec_sub(light_origin, intersect_point);
+	ret = rt_math_utils_vec_normalize(ret);
+	return (ret);
 }

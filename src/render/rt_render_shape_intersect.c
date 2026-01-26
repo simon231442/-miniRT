@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:51:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/24 16:17:39 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/26 15:57:39 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	rt_render_shape_intersect(t_list *shape_lst, t_shape *last_shape, t_ray r,
 			if (t < *t_min)
 			{
 				*t_min = t;
-				last_shape = shape_lst->shape;
+				*last_shape = *shape_lst->shape;
 			}
 		}
 		shape_lst = shape_lst->next;
