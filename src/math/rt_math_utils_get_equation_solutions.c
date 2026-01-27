@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_render_shape_intersect.c                        :+:      :+:    :+:   */
+/*   rt_math_utils_get_equation_solutions.c             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 12:51:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/27 14:42:34 by jsurian42        ###   ########.fr       */
+/*   Created: 2026/01/27 15:30:36 by jsurian42         #+#    #+#             */
+/*   Updated: 2026/01/27 15:33:19 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int	rt_render_shape_intersect(t_list *shape_lst, t_shape *last_shape, t_ray r,
-		double *t_min)
+double	rt_math_utils_get_equation_solutions(double a, double b, double c,
+		double sqrt_delta, int positive)
 {
-	double	t;
-
-	*t_min = T_MAX;
-	while (shape_lst != NULL)
-	{
-		if (rt_render_choose_shape_intersect(r, *shape_lst->shape, &t))
-		{
-			if (t < *t_min)
-			{
-				*t_min = t;
-				*last_shape = *shape_lst->shape;
-			}
-		}
-		shape_lst = shape_lst->next;
-	}
-	if (*t_min < T_MAX)
-		return (1);
-	return (0);
+	if (positive)
+		return ((-b + sqrt_delta) / (2 * a));
+	else
+		return ((-b - sqrt_delta) / (2 * a));
 }

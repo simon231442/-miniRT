@@ -11,9 +11,9 @@ ok			rt_math_plan_get_normal
 ok	shadow
 
 pixel_get_vec !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+a revoir parce que trop complexe et pas ok si changement de x et y
 
 supp sphere_get_delta une fois que cylinder ok
-inversion x et y
 
 math_utils get_cosinus a changer
 

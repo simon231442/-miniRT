@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 09:59:25 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/07 16:52:42 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/27 14:34:18 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static int	color_is_valid(char **color)
 			return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
 		if (!ft_real_is_in_range(*color,"0", "255"))
 		{
-			printf("him hoouuum color %s pas valid\n", *color);
+			//printf("him hoouuum color %s pas valid\n", *color);
 			//return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
 		}
-	printf("color %s is valid\n", *color);
+	//printf("color %s is valid\n", *color);
 		color++;
 	}
 	return (1);

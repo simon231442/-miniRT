@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:28:02 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/27 13:50:56 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/27 14:33:04 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ static int	arg_all_is_valid(char **arg)
 		return (rt_error_put(ERROR_REAL_NB_FORMAT), 1);
 	if (!ft_real_is_in_range(arg[3],"0","180"))
 	{
-		printf("fov %s\n", arg[3]);
+		//printf("fov %s\n", arg[3]);
 		return (rt_error_put(ERROR_OUT_OF_RANGE), 1);
 	}
-	printf("%s is ok!\n", arg[3]);
+	//printf("%s is ok!\n", arg[3]);
 	return (1);
 }

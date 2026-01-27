@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 18:41:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/27 13:16:01 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/27 15:33:47 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ t_vec3	rt_math_get_intersect_point(t_ray r, double t_min);
 
 t_vec3	rt_math_light_get_vec(t_vec3 intersect_point, t_vec3 light_origin);
 double	rt_math_utils_get_cosinus(t_vec3 normal_vec, t_vec3 light_vec);
+double	rt_math_utils_get_delta(double a, double b, double c);
+double	rt_math_utils_get_equation_solutions(double a, double b, double c,
+		double sqrt_delta, int positive);
 
 
 #endif

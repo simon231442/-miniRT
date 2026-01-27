@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/01/27 13:41:50 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/01/27 15:38:16 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,6 @@ SOURCES :=	minirt.c \
 			rt_mlx_hook_key.c \
 			rt_math_pixel_get_vec.c \
 			rt_math_light_get_vec.c \
-			rt_math_sphere_get_delta.c \
 			rt_math_sphere_intersect.c \
 			rt_math_plane_intersect.c \
 			rt_math_cylinder_intersect.c \
@@ -70,10 +69,13 @@ SOURCES :=	minirt.c \
 			rt_math_utils_vec_add.c \
 			rt_math_utils_vec_multi_scale.c \
 			rt_math_utils_point_distance.c \
+			rt_math_utils_get_delta.c \
+			rt_math_utils_get_equation_solutions.c \
 			rt_render.c \
 			rt_render_pixel_get_addr.c \
 			rt_render_pixel_get_color.c \
 			rt_render_shape_intersect.c \
+			rt_render_choose_shape_intersect.c \
 			rt_render_light_get_intensity.c \
 			rt_render_shadow_intersect.c \
 			rt_render_pixel_get_ret_color.c \

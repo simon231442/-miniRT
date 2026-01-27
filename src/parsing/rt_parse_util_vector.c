@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:31:07 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/07 16:46:39 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/27 14:33:41 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static int	vector_is_valid(char **vector)
 			return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
 		if (!ft_real_is_in_range(*vector,"-2147483648", "2147483647"))
 		{
-			printf("aille vector_is_pas_valid %s\n", *vector);
+			//printf("aille vector_is_pas_valid %s\n", *vector);
 			//return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
 		}
-		printf("vector %s\n is valid", *vector);
+		//printf("vector %s\n is valid", *vector);
 		vector++;
 	}
 	return (1);
