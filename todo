@@ -1,18 +1,17 @@
 gerer plusieurs forme differente
 ok		rt_math_shape_intersect
 ok			rt_math_sphere_intersect
-ok			rt_math_plan_intersect
+			rt_math_plan_intersect
 		rt_math_cylinder_intersect
 	
 ok	rt_math_shape_get_normal
 ok			rt_math_sphere_get_normal
 ok			rt_math_plan_get_normal
 		rt_math_cylinder_get_normal
+ok	shadow
 
 pixel_get_vec !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-probleme diametre negatif avec test2.rt
 
-shadow rt_math_light_get_intensity add rt_math_shape_intersect
 supp sphere_get_delta une fois que cylinder ok
 inversion x et y
 

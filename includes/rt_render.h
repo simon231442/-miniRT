@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:14:10 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/26 16:55:28 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/27 11:19:48 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int	rt_render_choose_shape_intersect(t_ray r, t_shape shape, double *t);
 
 double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
 		t_shape *act_shape, t_ray r, double t_min);
-int	rt_render_shadow_intersect(t_list *shape_lst, t_ray r, double light_distance);
+int	rt_render_shadow_intersect(t_list *shape_lst, t_shape *act_shape, t_ray r,
+		double light_distance);
 
 t_color	rt_render_pixel_get_ret_color(t_color shape_color, t_ambient ambient,
 			double intensity);
