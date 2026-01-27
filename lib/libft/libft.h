@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:25:29 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/05 10:40:44 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/27 13:47:17 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,21 @@
 # include <unistd.h>
 
 typedef struct s_shape	t_shape;
+
+typedef struct s_real
+{
+	char	*raw;
+	int		nega;
+	char	*int_start;
+	int		int_len;
+	char	*fract_start;
+}	t_real;
+
+
+int	ft_real_format_is_valid(char *nb);
+int	ft_is_zero_only(char *str);
+int	ft_real_is_in_range(char *value, char *min, char *max);
+int	ft_arg_count(char **arg);
 
 typedef struct s_list
 {

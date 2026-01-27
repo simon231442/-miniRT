@@ -1,7 +1,7 @@
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror -g -I.
 
 SRCS = 	ft_isalpha.c \
 		ft_isdigit.c \
@@ -36,7 +36,11 @@ SRCS = 	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
+		ft_real_format_is_valid.c \
+		ft_is_zero_only.c \
+		ft_real_is_in_range.c \
+		ft_arg_count.c \
 
 SRCS_BONUS =	ft_lstnew_bonus.c \
 				ft_lstadd_back_bonus.c \

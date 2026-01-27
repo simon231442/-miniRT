@@ -6,7 +6,7 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 19:38:18 by simon2314         #+#    #+#             */
-/*   Updated: 2026/01/07 16:50:46 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/27 13:49:10 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,16 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 	{
 		line = get_next_line(fd);
 		if (!line)
-			break ;
+			break;
+		if (*line == '#' || *line == '\n')
+		{
+			free(line);
+			continue;
+		}
 		rt_parse_util_line_clean(line);
-		if (parse_line(line, la_complete))
-			return (free(line), 1);
+		parse_line(line, la_complete);
+//		if (parse_line(line, la_complete))
+//			return (free(line), 1);
 		free(line);
 	}
 	return (0);
@@ -73,7 +79,6 @@ static t_parser	*parser_tab_get(void)
 	{"cy", rt_parse_shape_cylinder},
 	{NULL, NULL}
 	};
-
 	return (parser_tab);
 }
 
