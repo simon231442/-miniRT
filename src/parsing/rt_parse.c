@@ -78,7 +78,6 @@ static t_parser	*parser_tab_get(void)
 	{"cy", rt_parse_shape_cylinder},
 	{NULL, NULL}
 	};
-
 	return (parser_tab);
 }
 

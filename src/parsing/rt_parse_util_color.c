@@ -22,7 +22,9 @@ int	rt_parse_util_color(char *arg, t_color *color)
 	if (!color_tmp)
 		return (rt_error_put(ERROR_SYSTEM), 1);
 	if (!color_is_valid(color_tmp))
-		return (1);
+	{
+		//return (1);
+	}
 	color->r = rt_parse_util_atod(color_tmp[0]);
 	color->g = rt_parse_util_atod(color_tmp[1]);
 	color->b = rt_parse_util_atod(color_tmp[2]); 
@@ -38,7 +40,11 @@ static int	color_is_valid(char **color)
 		if (!ft_real_format_is_valid(*color))
 			return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
 		if (!ft_real_is_in_range(*color,"0", "255"))
-			return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
+		{
+			printf("him hoouuum color %s pas valid\n", *color);
+			//return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
+		}
+	printf("color %s is valid\n", *color);
 		color++;
 	}
 	return (1);

@@ -26,7 +26,9 @@ int rt_parse_cam(char *line, t_la_complete *la_complete)
 	if (!arg)
 		return (rt_error_put(ERROR_SYSTEM), 1);
 	if (!arg_all_is_valid(arg))
-		return (/*1*/0);
+	{
+		//return (1);
+	}
 	if (rt_parse_util_vector(arg[1], &la_complete->obj.cam.origin) ||
 		rt_parse_util_vector(arg[2], &la_complete->obj.cam.direction))
 		return (rt_parse_util_arg_free(arg), 1);
@@ -42,7 +44,7 @@ static int	arg_all_is_valid(char **arg)
 		return (rt_error_put(ERROR_REAL_NB_FORMAT), 1);
 	if (!ft_real_is_in_range(arg[3],"0","180"))
 	{
-		printf("%s\n", arg[3]);
+		printf("fov %s\n", arg[3]);
 		return (rt_error_put(ERROR_OUT_OF_RANGE), 1);
 	}
 	printf("%s is ok!\n", arg[3]);
