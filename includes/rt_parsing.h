@@ -34,6 +34,7 @@ int		rt_parse_shape_cylinder(char *line, t_la_complete *la_complete);
 double	rt_parse_util_atod(char *value);
 int		rt_parse_util_vector(char *arg, t_vec3 *vector);
 int		rt_parse_util_color(char *arg, t_color *color);
+int		rt_parse_utils_real_nb_format_is_valid(char *nb);
 int		rt_parse_util_is_in_range(char *value, char *min, char *max);
 int		rt_parse_utils_is_higher_or_equal(char *a, char *b);
 

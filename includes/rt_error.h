@@ -18,7 +18,10 @@
 #define ERROR_USAGE "usage ./miniRT <scene.rt>"
 #define ERROR_SYSTEM "Failure system"
 #define ERROR_IDENTIFIER "Wrong identifier"
+#define ERROR_REAL_NB_FORMAT "incorrect format of nb"
 #define ERROR_OUT_OF_RANGE "An argument is out of range"
+#define ERROR_ARG_QUANTITY "wrong quantity of argument on a line"
+#define ERROR_VECTOR "A vector is not correct"
 
 void	rt_error_put(char *message);
 

@@ -17,6 +17,21 @@
 # include <stddef.h>
 # include <unistd.h>
 
+typedef struct s_real
+{
+	char	*raw;
+	int		nega;
+	char	*int_start;
+	int		int_len;
+	char	*fract_start;
+}	t_real;
+
+
+int	ft_real_format_is_valid(char *nb);
+int	ft_is_zero_only(char *str);
+int	ft_real_is_in_range(char *value, char *min, char *max);
+int	ft_arg_count(char **arg);
+
 typedef struct s_list
 {
 	void			*content;

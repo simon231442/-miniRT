@@ -36,9 +36,15 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 		line = get_next_line(fd);
 		if (!line)
 			break;
+		if (*line == '#' || *line == '\n')
+		{
+			free(line);
+			continue;
+		}
 		rt_parse_util_line_clean(line);
-		if (parse_line(line, la_complete))
-			return (free(line), 1);
+		parse_line(line, la_complete);
+//		if (parse_line(line, la_complete))
+//			return (free(line), 1);
 		free(line);
 	}
 	return (0);
