@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:51:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/26 16:41:29 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/27 13:10:53 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	rt_render_choose_shape_intersect(t_ray r, t_shape shape, double *t)
 		return (rt_math_sphere_intersect(r, shape, t));
 	if (shape.type == PLANE) 
 		return (rt_math_plane_intersect(r, shape, t));
+	if (shape.type == CYLINDER) 
+		return (rt_math_cylinder_intersect(r, shape, t));
 	return (0);
 }
 

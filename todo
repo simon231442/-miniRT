@@ -1,7 +1,7 @@
 gerer plusieurs forme differente
 ok		rt_math_shape_intersect
 ok			rt_math_sphere_intersect
-			rt_math_plan_intersect
+ok			rt_math_plan_intersect
 		rt_math_cylinder_intersect
 	
 ok	rt_math_shape_get_normal
