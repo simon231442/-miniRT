@@ -16,6 +16,7 @@ int	rt_render_shadow_intersect(t_list *shape_lst, t_shape *act_shape, t_ray r,
 		double light_distance)
 {
 	double	t;
+	(void)act_shape;
 
 	while (shape_lst != NULL)
 	{

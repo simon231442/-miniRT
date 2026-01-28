@@ -19,10 +19,8 @@ double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
 	t_vec3	normal_vec;
 	double	cosinus_angle;
 	double	intensity;
-	t_vec3	light_vec;
 	t_ray	light_ray;
 	double	light_distance;
-	t_shape	temp_shape;
 
 	intersect_point = rt_math_get_intersect_point(r, t_min);
 	light_ray.origin = intersect_point;

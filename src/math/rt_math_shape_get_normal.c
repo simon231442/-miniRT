@@ -14,12 +14,12 @@
 
 t_vec3	rt_math_shape_get_normal(t_vec3 intersect_point, t_shape *shape)
 {
-	t_vec3	ret;
+	//t_vec3	ret;
 	if (shape->type == SPHERE)
 		return (rt_math_sphere_get_normal(intersect_point, shape->origin));
 	else if (shape->type == PLANE)
 		return (shape->direction);
-	else if (shape->type == CYLINDER)
+	else //if (shape->type == CYLINDER)
 		return (rt_math_cylinder_get_normal());
-	return (ret); //??????????????
+	//return (ret); //??????????????
 }
