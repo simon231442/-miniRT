@@ -13,7 +13,7 @@
 #ifndef RT_MLX_H
 # define RT_MLX_H
 
-# define SIZE_X 1000
+# define SIZE_X 800
 # define SIZE_Y 800
 
 # define TITLE "miniRT" 

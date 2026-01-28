@@ -14,5 +14,8 @@
 
 int	rt_math_cylinder_intersect(t_ray r, t_shape cylinder, double *t)
 {
+	(void)r;
+	(void)cylinder;
+	(void)t;
 	return (1);
 }

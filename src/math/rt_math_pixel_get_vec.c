@@ -22,7 +22,7 @@ t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction,
 	t_vec3	b_n;
 	t_vec3	v_n;
 
-	double	d = 1;
+//	double	d = 1;
 	double	k = SIZE_X;
 	double	m = SIZE_Y;
 

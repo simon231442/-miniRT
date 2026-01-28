@@ -15,6 +15,8 @@
 t_vec3	rt_math_cylinder_get_normal(void)
 {
 	t_vec3	ret;
+	ret.x = 0;
+	//(void)ret;
 
 	return (ret);
 }
