@@ -1,6 +1,7 @@
 gerer plusieurs forme differente
 ok		rt_math_shape_intersect
 ok			rt_math_sphere_intersect
+			si delta = 0 une solution
 ok			rt_math_plan_intersect
 		rt_math_cylinder_intersect
 	

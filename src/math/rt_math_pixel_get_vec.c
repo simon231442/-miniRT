@@ -6,7 +6,7 @@
 /*   By: jsurian <jsurian@student.42lausanne.ch>       +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/12/15 16:45:57 by jsurian        #+#    #+#                */
-/*   Updated: 2026/01/27 13:17:41 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/29 17:11:14 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction,
 	int j = y;
 
 	t_vec3	C; //centre viewport
-	double fov_rad = fov * M_PI / 180;
+	//double fov_rad = fov * M_PI / 180;
 
 	up_global.x = 0;
 	up_global.y = 1;
@@ -42,8 +42,8 @@ t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction,
 
 	//centre viewport
 	C = rt_math_utils_vec_add(origin, t_n);
-	double h_x = tan(fov_rad/2) * ((m - 1) / (k - 1));
-	double h_y = tan(fov_rad/2);
+	double h_x = tan(fov/2) * ((m - 1) / (k - 1));
+	double h_y = tan(fov/2);
 	t_vec3 temp = rt_math_utils_vec_sub(C, rt_math_utils_vec_multi_scale(b_n, h_x)); 
 	t_vec3 P_1m = rt_math_utils_vec_sub(temp,
 			rt_math_utils_vec_multi_scale(v_n, h_y)); 

@@ -6,17 +6,23 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 14:11:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/20 14:11:59 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/29 17:06:49 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-t_vec3	rt_math_cylinder_get_normal(void)
+t_vec3	rt_math_cylinder_get_normal(t_vec3 intersect_point, t_vec3 origin_cylinder,
+		t_vec3 dir_cylinder)
 {
-	t_vec3	ret;
-	ret.x = 0;
-	//(void)ret;
+	t_vec3	op;
+	double	t;
+	t_vec3	c;
 
-	return (ret);
+	dir_cylinder = rt_math_utils_vec_normalize(dir_cylinder);
+	op = rt_math_utils_vec_sub(intersect_point, origin_cylinder);
+	t = rt_math_utils_vec_dot(op, dir_cylinder);
+	c = rt_math_utils_vec_add(origin_cylinder,
+			rt_math_utils_vec_multi_scale(dir_cylinder, t));
+	return (rt_math_utils_vec_sub(intersect_point, c));
 }
