@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_util_vector.c                             :+:      :+:    :+:   */
+/*   rt_parse_util_vector.c                              :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:31:07 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/07 16:46:39 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/28 21:59:32 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	vector_is_valid(char **vector)
 			printf("aille vector_is_pas_valid %s\n", *vector);
 			//return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
 		}
-		printf("vector %s\n is valid", *vector);
+		printf("vector %s is valid\n", *vector);
 		vector++;
 	}
 	return (1);

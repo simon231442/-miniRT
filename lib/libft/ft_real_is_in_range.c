@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_real_is_in_range.c                         :+:    :+:           */
+/*   ft_real_is_in_range.c                               :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 15:13:09 by simon2314         #+#    #+#             */
-/*   Updated: 2026/01/16 19:24:23 by srenaud        ########   odam.nl        */
+/*   Updated: 2026/01/29 10:14:54 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
 void	real_set(t_real *real, char *raw);
 int		is_higher_or_equal(t_real a, t_real b);
@@ -36,7 +37,8 @@ int	ft_real_is_in_range(char *value, char *min, char *max)
 	real_set(&real_value, value);
 	real_set(&real_min, min);
 	real_set(&real_max, max);
-	if (is_higher_or_equal(real_value, real_min) && is_higher_or_equal(real_max, real_value))
+	if (is_higher_or_equal(real_value, real_min)
+		&& is_higher_or_equal(real_max, real_value))
 		return (1);
 	return (0);
 }
@@ -44,6 +46,7 @@ int	ft_real_is_in_range(char *value, char *min, char *max)
 void	real_set(t_real *real, char *raw)
 {
 	char	*dot;
+
 	real->raw = raw;
 	if (raw[0] == '-')
 	{
@@ -64,6 +67,8 @@ void	real_set(t_real *real, char *raw)
 		real->int_len = ft_strchr(raw, '\0') - raw;
 		real->fract_start = NULL;
 	}
+	if (real->int_len == 1 && *real->int_start == '0')
+		real->int_len = 0;
 }
 
 int	is_higher_or_equal(t_real a, t_real b)
@@ -90,7 +95,7 @@ int	is_higher_or_equal(t_real a, t_real b)
 	if (fract_is_higher_or_equal(a, b))
 		return (1);
 	return (0);
-}	
+}
 
 int	fract_is_higher_or_equal(t_real a, t_real b)
 {
@@ -102,7 +107,7 @@ int	fract_is_higher_or_equal(t_real a, t_real b)
 	{
 		if (ft_is_zero_only(b.fract_start))
 			return (1);
-		return(0);
+		return (0);
 	}
 	i = 0;
 	while (a.fract_start[i] && b.fract_start[i])
@@ -119,101 +124,3 @@ int	fract_is_higher_or_equal(t_real a, t_real b)
 		return (0);
 	return (1);
 }
-	
-/*
-int	ft_real_is_in_range(char *value, char *min, char *max)
-{
-	if (is_lower_or_equal_to_max(value, max) && is_higher_or_equal_to_min(value, min))
-		return (1);
-	return (0);
-}
-
-int	is_lower_or_equal_to_max(char *value, char *max)
-{
-	int	decimal_diff;
-	
-	decimal_diff = decimal_counter(max) - decimal_counter(value);
-	if (*value == '-')
-	{
-		if (*max != '-')
-			return (1);
-		if (*max == '-')
-		{
-			if (decimal_diff > 0)
-				return (1);
-			if (decimal_diff == 0)
-			{
-				if (ft_real_equal_decimals_is_higher_or_equal(max, value))
-					return (1);
-				else
-					return (0);
-			}
-			return (0);
-		}
-	}
-	if (*max == '-')
-		return (0);
-	if (*max != '-')
-	{
-		if (decimal_diff > 0)
-			return (1);
-		if (decimal_diff == 0)
-		{
-			if (ft_real_equal_decimals_is_higher_or_equal(max, value))
-				return (1);
-			else
-				return (0);
-		}
-		return (0);
-	}
-	return (0);
-}
-
-int	is_higher_or_equal_to_min(char *value, char *min)
-{
-	int	decimal_diff;
-
-	decimal_diff = decimal_counter(min) - decimal_counter(value);
-	if (decimal_diff == 0)
-		return (ft_real_equal_decimals_is_higher_or_equal(value, min));
-	if (*value == '-')
-	{
-		if (*min != '-')
-			return (0);
-		if (*min == '-')
-		{
-			if (decimal_diff > 0)
-				return (1);
-			if (decimal_diff < 0)
-				return (0);
-		}
-	}
-	if (*min == '-')
-		return (1);
-	if (*min != '-')
-	{
-		if (decimal_diff > 0)
-			return (0);
-		if (decimal_diff < 0)
-			return (1);
-	}
-	return (0);
-}
-
-int decimal_counter(char *a)
-{
-	int	count;
-
-	count = 0;
-	if (*a == '-')
-		a++;
-	while (*a == '0')
-		a++;
-	while (*a && ft_isdigit(*a))
-	{
-		count++;
-		a++;
-	}
-	return (count);
-}
-*/

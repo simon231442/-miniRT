@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_real_format_is_valid.c                          :+:      :+:    :+:   */
+/*   ft_real_format_is_valid.c                           :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 11:11:16 by simon2314         #+#    #+#             */
-/*   Updated: 2026/01/19 11:11:16 by simon2314        ###   ####lausanne.ch   */
+/*   Updated: 2026/01/29 10:16:44 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int	ft_real_format_is_valid(char *nb)
 		return (0);
 	nb = digit_skip(nb);
 	if (!*nb)
-		return(1);
+		return (1);
 	if (*nb == '.')
 		nb++;
 	nb = digit_skip(nb);
 	if (!*nb)
-		return(1);
+		return (1);
 	return (0);
 }
 
@@ -37,4 +37,3 @@ static char	*digit_skip(char *str)
 		str++;
 	return (str);
 }
-

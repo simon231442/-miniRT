@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_cam.c                                     :+:      :+:    :+:   */
+/*   rt_parse_cam.c                                      :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:28:02 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/27 13:50:56 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/29 10:22:53 by srenaud        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ static int	arg_all_is_valid(char **arg)
 		return (rt_error_put(ERROR_ARG_QUANTITY), 0);
 	if (!ft_real_format_is_valid(arg[3]))
 		return (rt_error_put(ERROR_REAL_NB_FORMAT), 1);
-	if (!ft_real_is_in_range(arg[3],"0","180"))
+	if (!ft_real_is_in_range(arg[3],"0.0","180.0"))
 	{
-		printf("fov %s\n", arg[3]);
+		printf("fov %s out of range\n ", arg[3]);
 		return (rt_error_put(ERROR_OUT_OF_RANGE), 1);
 	}
-	printf("%s is ok!\n", arg[3]);
+	printf("fov %s is ok!\n", arg[3]);
 	return (1);
 }
