@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:31:07 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/27 14:33:41 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/29 17:24:00 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	rt_parse_util_vector(char *arg, t_vec3 *vector)
 	if (!vec_tmp)
 		return (rt_error_put(ERROR_SYSTEM), 1);
 	if (!vector_is_valid(vec_tmp))
-	{
-		//return (1);
-	}
+		return (1);
 	vector->x = rt_parse_util_atod(vec_tmp[0]);
 	vector->y = rt_parse_util_atod(vec_tmp[1]);
 	vector->z = rt_parse_util_atod(vec_tmp[2]);
@@ -39,12 +37,8 @@ static int	vector_is_valid(char **vector)
 	{
 		if (!ft_real_format_is_valid(*vector))
 			return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
-		if (!ft_real_is_in_range(*vector,"-2147483648", "2147483647"))
-		{
-			//printf("aille vector_is_pas_valid %s\n", *vector);
-			//return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
-		}
-		//printf("vector %s\n is valid", *vector);
+		if (!ft_real_is_in_range(*vector, "-2147483648", "2147483647"))
+			return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
 		vector++;
 	}
 	return (1);
