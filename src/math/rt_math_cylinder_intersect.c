@@ -6,11 +6,33 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 13:11:45 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/29 14:19:58 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/29 18:08:19 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+
+static int	check_cylinder_out_endcap(t_ray r, double t_min, t_shape cylinder)
+{
+	t_vec3	intersect_point;
+	t_vec3	top_endcap;
+	double	out_or_not;
+
+	intersect_point = rt_math_get_intersect_point(r, t_min);
+	top_endcap = rt_math_utils_vec_add(
+			rt_math_utils_vec_multi_scale(cylinder.direction, cylinder.height),
+			cylinder.origin);
+	out_or_not = rt_math_utils_vec_dot(
+			rt_math_utils_vec_sub(top_endcap, intersect_point), 
+			cylinder.direction);
+	if (out_or_not < 0)
+		return (1);
+	else if (out_or_not > rt_math_utils_vec_length(rt_math_utils_vec_sub(top_endcap,
+					cylinder.origin))) 
+		return (1);
+	else
+		return (0);
+}
 
 int	rt_math_cylinder_intersect(t_ray r, t_shape cylinder, double *t)
 {
@@ -35,6 +57,8 @@ int	rt_math_cylinder_intersect(t_ray r, t_shape cylinder, double *t)
 	else if (v.t1 > 0)
 		*t = v.t1;
 	else
+		return (0);
+	if (check_cylinder_out_endcap(r, *t, cylinder))
 		return (0);
 	return (1);
 }
