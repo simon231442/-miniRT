@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
 void	real_set(t_real *real, char *raw);
 int		is_higher_or_equal(t_real a, t_real b);
@@ -73,12 +72,19 @@ void	real_set(t_real *real, char *raw)
 
 int	is_higher_or_equal(t_real a, t_real b)
 {
-	int	i;
+	int		i;
+	t_real	tmp;
 
 	if (a.nega == 1 && b.nega == 0)
 		return (0);
 	if (a.nega == 0 && b.nega == 1)
 		return (1);
+	if (a.nega == 1 && b.nega == 1)
+	{
+		tmp = a;
+		a = b;
+		b = tmp;
+	}
 	if (a.int_len > b.int_len)
 		return (1);
 	if (a.int_len < b.int_len)

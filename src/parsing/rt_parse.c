@@ -36,16 +36,16 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 	{
 		line = get_next_line(fd);
 		if (!line)
-			break;
+			break ;
 		if (*line == '#' || *line == '\n')
 		{
 			free(line);
-			continue;
+			continue ;
 		}
 		rt_parse_util_line_clean(line);
 		parse_line(line, la_complete);
-//		if (parse_line(line, la_complete))
-//			return (free(line), 1);
+		if (parse_line(line, la_complete))
+			return (free(line), 1);
 		free(line);
 	}
 	return (0);
@@ -62,7 +62,6 @@ static int	parse_line(char	*line, t_la_complete *la_complete)
 	static t_parser	*parser_tab;
 
 	parser_tab = parser_tab_get();
-//		rt_parse_line_count_is_valid();
 	if (parser_find_and_execute(line, parser_tab, la_complete))
 		return (1);
 	return (0);
@@ -79,6 +78,7 @@ static t_parser	*parser_tab_get(void)
 	{"cy", rt_parse_shape_cylinder},
 	{NULL, NULL}
 	};
+
 	return (parser_tab);
 }
 

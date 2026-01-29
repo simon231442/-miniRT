@@ -12,7 +12,8 @@
 
 #include "minirt.h"
 
-static int arg_all_is_valid(char **arg);
+static int	arg_all_is_valid(char **arg);
+
 /** 
  * @brief	parse a camera line and fill la_complete->obj.cam
  			camera's parametres : origin, direction, fov 
@@ -26,11 +27,9 @@ int	rt_parse_cam(char *line, t_la_complete *la_complete)
 	if (!arg)
 		return (rt_error_put(ERROR_SYSTEM), 1);
 	if (!arg_all_is_valid(arg))
-	{
-		//return (1);
-	}
-	if (rt_parse_util_vector(arg[1], &la_complete->obj.cam.origin) ||
-		rt_parse_util_vector(arg[2], &la_complete->obj.cam.direction))
+		return (1);
+	if (rt_parse_util_vector(arg[1], &la_complete->obj.cam.origin)
+		|| rt_parse_util_vector(arg[2], &la_complete->obj.cam.direction))
 		return (rt_parse_util_arg_free(arg), 1);
 	la_complete->obj.cam.fov = rt_parse_util_atod(arg[3]);
 	return (rt_parse_util_arg_free(arg), 0);
@@ -42,11 +41,7 @@ static int	arg_all_is_valid(char **arg)
 		return (rt_error_put(ERROR_ARG_QUANTITY), 0);
 	if (!ft_real_format_is_valid(arg[3]))
 		return (rt_error_put(ERROR_REAL_NB_FORMAT), 1);
-	if (!ft_real_is_in_range(arg[3],"0.0","180.0"))
-	{
-		printf("fov %s out of range\n ", arg[3]);
+	if (!ft_real_is_in_range(arg[3], "0.0", "180.0"))
 		return (rt_error_put(ERROR_OUT_OF_RANGE), 1);
-	}
-	printf("fov %s is ok!\n", arg[3]);
 	return (1);
 }
