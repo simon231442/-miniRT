@@ -19,6 +19,7 @@
 */
 
 static t_shape	*shape_sphere_new(char *line);
+static int	arg_all_is_valid(char **arg);
 
 int	rt_parse_shape_sphere(char *line, t_la_complete *la_complete)
 {
@@ -46,6 +47,8 @@ static t_shape	*shape_sphere_new(char *line)
 	arg = ft_split(line, ' ');
 	if (!arg)
 		return (rt_error_put(ERROR_SYSTEM), NULL);
+	if (!arg_all_is_valid(arg))
+		return (rt_parse_util_arg_free(arg), NULL);
 	shape->type = SPHERE;
 	if (rt_parse_util_vector(arg[1], &shape->origin))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
@@ -53,4 +56,15 @@ static t_shape	*shape_sphere_new(char *line)
 	if (rt_parse_util_color(arg[3], &shape->color))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
 	return (shape);
+}
+
+static int	arg_all_is_valid(char **arg)
+{
+	if (ft_arg_count(arg) != 4)
+		return (rt_error_put(ERROR_ARG_QUANTITY), 0);
+	if (!ft_real_format_is_valid(arg[2]))
+		return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
+	if (!ft_real_is_in_range(arg[2], "-214748364", "214748364"))
+		return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
+	return (1);
 }
