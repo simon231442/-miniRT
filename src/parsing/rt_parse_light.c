@@ -17,6 +17,7 @@
  			light's parametres : origin, ratio, color 
  * @return	0 on success, ERROR_SYSTEM or ... 
 */
+static int	arg_all_is_valid(char **arg);
 
 int	rt_parse_light(char *line, t_la_complete *la_complete)
 {
@@ -25,10 +26,23 @@ int	rt_parse_light(char *line, t_la_complete *la_complete)
 	arg = ft_split(line, ' ');
 	if (!arg)
 		return (rt_error_put(ERROR_SYSTEM), 1);
+	if (!arg_all_is_valid(arg))
+		return (rt_parse_util_arg_free(arg), 1);
 	if (rt_parse_util_vector(arg[1], &la_complete->obj.light.origin))
 		return (rt_parse_util_arg_free(arg), 1);
 	la_complete->obj.light.ratio = rt_parse_util_atod(arg[2]);
 	if (rt_parse_util_color(arg[3], &la_complete->obj.light.color))
 		return (rt_parse_util_arg_free(arg), 1);
 	return (rt_parse_util_arg_free(arg), 0);
+}
+
+static int	arg_all_is_valid(char **arg)
+{
+	if (ft_arg_count(arg) != 4)
+		return (rt_error_put(ERROR_ARG_QUANTITY), 0);
+	if (!ft_real_format_is_valid(arg[2]))
+		return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
+	if (!ft_real_is_in_range(arg[2], "0", "1"))
+		return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
+	return (1);
 }

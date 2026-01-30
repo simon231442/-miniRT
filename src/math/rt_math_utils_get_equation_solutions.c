@@ -15,6 +15,7 @@
 double	rt_math_utils_get_equation_solutions(double a, double b, double c,
 		double sqrt_delta, int positive)
 {
+	(void)c;
 	if (positive)
 		return ((-b + sqrt_delta) / (2 * a));
 	else
