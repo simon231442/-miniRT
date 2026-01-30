@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 08:56:19 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/27 14:31:55 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/30 18:48:29 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 
 # define TITLE "miniRT" 
 
-# define KEY_Q		113
-# define KEY_ESC	65307
-# define KEY_J 		106
-# define KEY_K		107
+# define KEY_Q			113
+# define KEY_ESC		65307
+# define KEY_J 			106
+# define KEY_K			107
+# define LITTLECROSS	17
 
 typedef struct s_mlx
 {
