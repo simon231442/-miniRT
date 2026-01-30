@@ -29,3 +29,13 @@ sp 0,0,0 -4 4 255,255,0
 
 -possibilite de mettre de mettre des diametres negatifs
 -couleur negative
+
+-----------------------------------
+
+si pas .rt, exit
+seulement 1 parametre ----> fenetre dois s'ouvrir
+faire en sorte de pouvoir changer la resolution
+
+
+
+
