@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 13:11:45 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/29 18:08:19 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/30 17:30:23 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,17 @@ int	rt_math_cylinder_intersect(t_ray r, t_shape cylinder, double *t)
 	v.sqrt_delta = sqrt(v.delta);
 	v.t0 = rt_math_utils_get_equation_solutions(v.a, v.b, v.c, v.sqrt_delta, 0);
 	v.t1 = rt_math_utils_get_equation_solutions(v.a, v.b, v.c, v.sqrt_delta, 1);
-	if (v.t0 > 0)
+	if (check_cylinder_out_endcap(r, v.t0, cylinder) &&
+			check_cylinder_out_endcap(r, v.t1, cylinder))
+	{
+		(void)t;
+		return (0);
+	}
+	else if (v.t0 >= 0)
 		*t = v.t0;
-	else if (v.t1 > 0)
+	else if (v.t1 >= 0)
 		*t = v.t1;
 	else
-		return (0);
-	if (check_cylinder_out_endcap(r, *t, cylinder))
 		return (0);
 	return (1);
 }
