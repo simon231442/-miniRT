@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 13:52:52 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/27 11:27:01 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/30 18:25:58 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
 	light_distance = rt_math_utils_point_distance(intersect_point,
 			obj.light.origin);
 	if (rt_render_shadow_intersect(shape, act_shape, light_ray, light_distance))
-		return (obj.ambient.ratio);
+		return (0);
 	normal_vec = rt_math_shape_get_normal(intersect_point, act_shape);
 	cosinus_angle = rt_math_utils_get_cosinus(normal_vec, light_ray.dir);
-	intensity = cosinus_angle * obj.light.ratio
-		+ obj.ambient.ratio; //+ obj_color
+	intensity = cosinus_angle * obj.light.ratio; 
 	if (intensity > 1)
 		intensity = 1;
 	else if (intensity < 0)

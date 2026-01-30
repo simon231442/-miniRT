@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 13:11:45 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/30 17:30:23 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/01/30 18:17:03 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,31 +34,39 @@ static int	check_cylinder_out_endcap(t_ray r, double t_min, t_shape cylinder)
 		return (0);
 }
 
+static void cylinder_delta_abc(t_intersect_view *v, t_ray r, t_shape cylinder)
+{
+	v->oc = rt_math_utils_vec_sub(r.origin, cylinder.origin);
+	v->a = 1 - pow(rt_math_utils_vec_dot(cylinder.direction, r.dir), 2);
+	v->b = 2 * (rt_math_utils_vec_dot(r.dir, v->oc) -
+			rt_math_utils_vec_dot(cylinder.direction, r.dir) *
+			rt_math_utils_vec_dot(cylinder.direction, v->oc));
+	v->c = rt_math_utils_vec_dot(v->oc, v->oc) -
+			pow(rt_math_utils_vec_dot(cylinder.direction, v->oc), 2) -
+			pow(cylinder.radius, 2);
+	v->delta = rt_math_utils_get_delta(v->a, v->b, v->c);
+}
+
 int	rt_math_cylinder_intersect(t_ray r, t_shape cylinder, double *t)
 {
 	t_intersect_view	v;
 
-	v.oc = rt_math_utils_vec_sub(r.origin, cylinder.origin);
-	v.a = 1 - pow(rt_math_utils_vec_dot(cylinder.direction, r.dir), 2);
-	v.b = 2 * (rt_math_utils_vec_dot(r.dir, v.oc) -
-			rt_math_utils_vec_dot(cylinder.direction, r.dir) *
-			rt_math_utils_vec_dot(cylinder.direction, v.oc));
-	v.c = rt_math_utils_vec_dot(v.oc, v.oc) -
-			pow(rt_math_utils_vec_dot(cylinder.direction, v.oc), 2) -
-			pow(cylinder.radius, 2);
-	v.delta = rt_math_utils_get_delta(v.a, v.b, v.c);
+	cylinder_delta_abc(&v, r, cylinder);
 	if (v.delta < 0)
 		return (0);
 	v.sqrt_delta = sqrt(v.delta);
 	v.t0 = rt_math_utils_get_equation_solutions(v.a, v.b, v.c, v.sqrt_delta, 0);
 	v.t1 = rt_math_utils_get_equation_solutions(v.a, v.b, v.c, v.sqrt_delta, 1);
-	if (check_cylinder_out_endcap(r, v.t0, cylinder) &&
-			check_cylinder_out_endcap(r, v.t1, cylinder))
+	if (check_cylinder_out_endcap(r, v.t0, cylinder))
 	{
-		(void)t;
+		if (!check_cylinder_out_endcap(r, v.t1, cylinder))
+		{
+			*t = v.t1;
+			return (1);
+		}
 		return (0);
 	}
-	else if (v.t0 >= 0)
+	if (v.t0 >= 0)
 		*t = v.t0;
 	else if (v.t1 >= 0)
 		*t = v.t1;
