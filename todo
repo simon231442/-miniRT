@@ -7,3 +7,12 @@ math_utils get_cosinus a changer
 
 antialiasing 
 multithread
+-----------------------------------
+
+si pas .rt, exit
+seulement 1 parametre ----> fenetre dois s'ouvrir
+faire en sorte de pouvoir changer la resolution
+
+
+
+
