@@ -21,8 +21,8 @@ int	hook_littlecross(t_mlx *self)
 int	rt_mlx_hook(t_mlx *self)
 {
 	mlx_key_hook(self->win_ptr, rt_mlx_hook_key, self);
-	if (mlx_hook(self->win_ptr, LITTLECROSS, 0, hook_littlecross, self))
-		return (1);
+/*	if (mlx_hook(self->win_ptr, LITTLECROSS, 0, hook_littlecross, self))
+		return (1);*/
 	return (0);
 }
 	//mlx_mouse_hook(self->win_ptr, rt_mlx_hook_mouse, self);

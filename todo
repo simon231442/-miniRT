@@ -12,7 +12,10 @@ multithread
 si pas .rt, exit
 seulement 1 parametre ----> fenetre dois s'ouvrir
 faire en sorte de pouvoir changer la resolution
-
+voir double affichage error 
+changer la range du vecteur direction de la camera, cylindre et plane (0.0 a 1.0)
+enlever le parsing de la couleur de la light
+verifier les leaks
 
 
 
