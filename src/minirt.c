@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/27 13:48:22 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/03 12:27:57 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int ac, char **av)
 		return (rt_mlx_free(&la_complete.mlx),
 			rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
 
-	if (rt_mlx_hook(&la_complete.mlx))
+	if (rt_mlx_hook(&la_complete))
 		return (rt_mlx_free(&la_complete.mlx),
 			rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
 

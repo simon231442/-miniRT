@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 08:56:19 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/30 18:48:29 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/03 12:42:12 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@
 # define KEY_ESC		65307
 # define KEY_J 			106
 # define KEY_K			107
+# define KEY_D			100
+# define KEY_A			97
+# define KEY_W			119
+# define KEY_S			115
+# define ARROW_UP		65362
+# define ARROW_DOWN		65364
 # define LITTLECROSS	17
 
 typedef struct s_mlx
@@ -38,7 +44,7 @@ typedef struct s_mlx
 int		rt_mlx_init(t_mlx *self);
 void	rt_mlx_free(t_mlx *self);
 
-int		rt_mlx_hook(t_mlx *self);
-int		rt_mlx_hook_key(int keycode, t_mlx *self);
+int		rt_mlx_hook(t_la_complete *self);
+int		rt_mlx_hook_key(int keycode, t_la_complete *self);
 
 #endif

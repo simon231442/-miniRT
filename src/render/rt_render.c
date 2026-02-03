@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:12:01 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/22 17:08:26 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/03 12:47:25 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	rt_render(t_la_complete *la_complete)
 {
 	t_render_view	v;
+
+	printf("light x : %f, y : %f, z : %f\n", la_complete->obj.light.origin.x, la_complete->obj.light.origin.y, la_complete->obj.light.origin.z);
 	if (la_complete->mlx.mlx_ptr)
 	{
 		v.y = 0;

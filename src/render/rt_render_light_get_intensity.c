@@ -6,14 +6,14 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 13:52:52 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/03 11:43:10 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/03 13:02:52 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
 double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
-		t_shape *act_shape, t_ray r, double t_min)
+		t_shape **act_shape, t_ray r, double t_min)
 {
 	t_vec3	intersect_point;
 	t_vec3	normal_vec;
@@ -29,7 +29,7 @@ double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
 			obj.light.origin);
 	if (rt_render_shadow_intersect(shape, act_shape, light_ray, light_distance))
 		return (0);
-	normal_vec = rt_math_shape_get_normal(intersect_point, *act_shape);
+	normal_vec = rt_math_shape_get_normal(intersect_point, **act_shape);
 	cosinus_angle = rt_math_utils_get_cosinus(normal_vec, light_ray.dir);
 	intensity = cosinus_angle * obj.light.ratio; 
 	if (intensity > 1)

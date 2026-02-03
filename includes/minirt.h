@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/01 16:00:56 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/03 12:30:22 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ typedef struct s_obj
 	t_ambient	ambient;
 	t_light		light;
 }	t_obj;
+
+typedef struct	s_la_complete	t_la_complete;
 
 # include "rt_mlx.h"
 

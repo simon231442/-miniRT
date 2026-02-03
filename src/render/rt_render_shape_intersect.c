@@ -6,13 +6,13 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:51:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/03 11:58:03 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/03 12:14:32 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int	rt_render_shape_intersect(t_list *shape_lst, t_shape *last_shape, t_ray r,
+int	rt_render_shape_intersect(t_list *shape_lst, t_shape **last_shape, t_ray r,
 		double *t_min)
 {
 	double	t;
@@ -25,7 +25,7 @@ int	rt_render_shape_intersect(t_list *shape_lst, t_shape *last_shape, t_ray r,
 			if (t < *t_min)
 			{
 				*t_min = t;
-				*last_shape = *shape_lst->shape;
+				*last_shape = shape_lst->shape;
 			}
 		}
 		shape_lst = shape_lst->next;
