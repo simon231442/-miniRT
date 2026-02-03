@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/18 14:43:21 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/01 16:00:56 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,13 @@ typedef enum e_shape_type
 	CYLINDER
 }	t_shape_type;
 
+typedef enum e_hit_type
+{
+	BODY,
+	TOP,
+	BOTTOM
+}	t_hit_type;
+
 typedef struct s_shape
 {
 	t_shape_type	type;
@@ -73,6 +80,7 @@ typedef struct s_shape
 	double			height;
 	t_vec3			direction;
 	t_color			color;
+	t_hit_type		hit_type;
 }	t_shape;
 
 typedef struct s_obj

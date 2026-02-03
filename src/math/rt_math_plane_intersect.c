@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 13:06:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/27 11:32:38 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/03 11:29:38 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ int	rt_math_plane_intersect(t_ray r, t_shape plane, double *t)
 	{
 		temp = rt_math_utils_vec_sub(plane.origin, r.origin);
 		*t = rt_math_utils_vec_dot(temp, plane.direction) / denom;
-		if (*t < EPSILON) //????????????????
-			return (0);
-		else
+		if (*t > EPSILON) //????????????????
 			return (1);
 	}
 	return (0);
