@@ -9,12 +9,10 @@ antialiasing
 multithread
 -----------------------------------
 
-si pas .rt, exit
-seulement 1 parametre ----> fenetre dois s'ouvrir
 faire en sorte de pouvoir changer la resolution
-changer la range du vecteur direction de la camera, cylindre et plane (0.0 a 1.0)
-enlever le parsing de la couleur de la light
 verifier les leaks
 
-
+changer la range du vecteur direction de la camera, cylindre et plane (0.0 a 1.0)
+	----> au final on les normalise de toute facon donc on laisse la meme range
+il est possible par exemple de mettre plusieurs cameras dans le .rt sans qu'il n'y ai de retour d'erreur ce qui n'est pas correct. c'est la derniere cam qui sera prise en compte
 
