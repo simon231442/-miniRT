@@ -6,13 +6,14 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 12:23:35 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/01 15:56:05 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/03 16:21:43 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-static int	intersect_cap_top(t_ray r, t_shape cylinder, double *t)
+
+int	rt_math_cylinder_intersect_cap_top(t_ray r, t_shape cylinder, double *t)
 {
 	t_shape	cap;
 	t_vec3	intersect_point;
@@ -31,7 +32,7 @@ static int	intersect_cap_top(t_ray r, t_shape cylinder, double *t)
 	return (0);
 }
 
-static int	intersect_cap_bottom(t_ray r, t_shape cylinder, double *t)
+int	rt_math_cylinder_intersect_cap_bottom(t_ray r, t_shape cylinder, double *t)
 {
 	t_shape	cap;
 	t_vec3	intersect_point;
@@ -48,26 +49,26 @@ static int	intersect_cap_bottom(t_ray r, t_shape cylinder, double *t)
 	return (0);
 }
 
-int	rt_math_cylinder_intersect_cap(t_ray r, t_shape *cylinder, double *t)
-{
-	double	t_min;
-
-	t_min = T_MAX;
-	if (intersect_cap_bottom(r, *cylinder, t))	
-		t_min = *t;
-	if (intersect_cap_top(r, *cylinder, t))
-	{
-		if (*t < t_min)
-		{
-			cylinder->hit_type = TOP;
-			return (1);
-		}
-	}
-	if (t_min != T_MAX)
-	{
-		*t = t_min;
-		cylinder->hit_type = BOTTOM;
-		return (1);
-	}
-	return (0);
-}
+///int	rt_math_cylinder_intersect_cap(t_ray r, t_shape *cylinder, double *t)
+///{
+///	double	t_min;
+///
+///	t_min = T_MAX;
+///	if (intersect_cap_bottom(r, *cylinder, t))	
+///		t_min = *t;
+///	if (intersect_cap_top(r, *cylinder, t))
+///	{
+///		if (*t < t_min)
+///		{
+///			cylinder->hit_type = TOP;
+///			return (1);
+///		}
+///	}
+///	if (t_min != T_MAX)
+///	{
+///		*t = t_min;
+///		cylinder->hit_type = BOTTOM;
+///		return (1);
+///	}
+///	return (0);
+///}
