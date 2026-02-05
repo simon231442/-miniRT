@@ -13,8 +13,43 @@
 #include "minirt.h"
 
 //a changer si size_x != de size_y
-t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction,
-		t_vec3 origin)
+/*
+t_vec3	rt_math_pixel_get_vec(int i, int j, double fov, t_vec3 direction, t_vec3 origin)
+{
+	t_vec3	center;
+	t_vec3	world_up;
+	t_vec3	right;
+	t_vec3	up;
+	t_vec3	first;
+	t_vec3	direction_ij;
+
+	center.x = origin.x + direction.x / tan(fov / 2);
+	center.y = origin.y + direction.y / tan(fov / 2);
+	center.z = origin.z + direction.z / tan(fov / 2);
+	world_up.x = 0;
+	world_up.y = 1;
+	world_up.z = 0;
+	right = rt_math_utils_vec_cross(direction, world_up);
+	right = rt_math_utils_vec_normalize(right);
+	up = rt_math_utils_vec_cross(right, direction);
+	first.x = center.x - right.x * (SIZE_X - 1) / 2 + up.x * (SIZE_Y -1) / 2;
+	first.y = center.y - right.y * (SIZE_X - 1) / 2 + up.y * (SIZE_Y -1) / 2;
+	first.z = center.z - right.z * (SIZE_X - 1) / 2 + up.z * (SIZE_Y -1) / 2;
+	direction_ij.x = first.x + i * right.x - j * up.x - origin.x;
+	direction_ij.y = first.y + i * right.y - j * up.y - origin.y;
+	direction_ij.z = first.z + i * right.z - j * up.z - origin.z;
+	direction_ij = rt_math_utils_vec_normalize(direction_ij);
+	return(direction_ij);
+}
+*/
+
+
+
+
+
+
+/**/
+t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction, t_vec3 origin)
 {
 	t_vec3	u_temp;
 	t_vec3	up_global;
@@ -58,3 +93,4 @@ t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction,
 	t_vec3 r_ij = rt_math_utils_vec_normalize(rt_math_utils_vec_sub(P_ij, origin));
 	return (r_ij);
 }
+/**/
