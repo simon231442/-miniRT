@@ -102,11 +102,10 @@ LIB_LINK = -Ilib/libft -Ilib/minilibx-linux -Ilib/get_next_line
 #                             COMPILER OPTIONS                                 #
 ################################################################################
 
-UNAME_N := $(shell uname -n)
-ifeq ($(UNAME_N),Arch-Jules)
-	CC	:= tcc
-else
+ifeq ($(wildcard /etc/arch-release),)
 	CC	:= gcc
+else
+	CC	:= tcc
 endif
 
 CFLAGS		:= -g -Wall -Werror -Wextra
