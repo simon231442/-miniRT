@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:29:43 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/07 16:51:56 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/06 15:01:58 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 */
 
 static t_shape	*shape_sphere_new(char *line);
-static int	arg_all_is_valid(char **arg);
+static int		arg_all_is_valid(char **arg);
 
 int	rt_parse_shape_sphere(char *line, t_la_complete *la_complete)
 {

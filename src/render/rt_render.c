@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:12:01 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/03 12:47:25 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/07 17:43:53 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	rt_render(t_la_complete *la_complete)
 {
 	t_render_view	v;
 
-	printf("light x : %f, y : %f, z : %f\n", la_complete->obj.light.origin.x, la_complete->obj.light.origin.y, la_complete->obj.light.origin.z);
 	if (la_complete->mlx.mlx_ptr)
 	{
 		v.y = 0;
@@ -28,8 +27,7 @@ int	rt_render(t_la_complete *la_complete)
 				v.pixel_addr = rt_render_pixel_get_addr(&la_complete->mlx,
 						v.x, v.y);
 				v.pixel_vec = rt_math_pixel_get_vec(v.x, v.y,
-						la_complete->obj.cam.fov, la_complete->obj.cam.direction,
-						la_complete->obj.cam.origin);
+						la_complete->obj.cam);
 				*v.pixel_addr = rt_render_pixel_get_color(la_complete->shape,
 						la_complete->obj, v);
 				v.x++;
@@ -41,3 +39,5 @@ int	rt_render(t_la_complete *la_complete)
 		la_complete->mlx.win_ptr, la_complete->mlx.img_ptr, 0, 0);
 	return (0);
 }
+//printf("light x : %f, y : %f, z : %f\n", la_complete->obj.light.origin.x,
+//la_complete->obj.light.origin.y, la_complete->obj.light.origin.z);

@@ -1,8 +1,11 @@
-pixel_get_vec
-cylindre pas ok
+simon:
+pixel get vec
 
+jules:
+bien comprendre epsilonn
+2 solutions necessaires body cylindre ?
+fonction a la norme
 
-math_utils get_cosinus a changer
 
 antialiasing 
 multithread
@@ -11,7 +14,3 @@ multithread
 si pas .rt, exit
 seulement 1 parametre ----> fenetre dois s'ouvrir
 faire en sorte de pouvoir changer la resolution
-
-
-
-

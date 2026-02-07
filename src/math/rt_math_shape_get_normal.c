@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 11:49:48 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/03 10:43:53 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/06 13:31:38 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_vec3	rt_math_shape_get_normal(t_vec3 intersect_point, t_shape shape)
 		return (shape.direction);
 	else
 		return (rt_math_cylinder_get_normal(intersect_point, shape.origin,
-					shape.direction, shape.hit_type));
+				shape.direction, shape.hit_type));
 }
 //esle cylinder

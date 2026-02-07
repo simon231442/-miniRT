@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:36:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/27 15:33:25 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/07 16:55:55 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	rt_math_sphere_intersect(t_ray r, t_shape sphere, double *t)
 	if (v.delta < 0)
 		return (0);
 	v.sqrt_delta = sqrt(v.delta);
-	v.t0 = rt_math_utils_get_equation_solutions(v.a, v.b, v.c, v.sqrt_delta, 0);
-	v.t1 = rt_math_utils_get_equation_solutions(v.a, v.b, v.c, v.sqrt_delta, 1);
+	v.t0 = rt_math_utils_get_equation_solutions(v, 0);
+	v.t1 = rt_math_utils_get_equation_solutions(v, 1);
 	if (v.t0 > 0)
 		*t = v.t0;
 	else if (v.t1 > 0)

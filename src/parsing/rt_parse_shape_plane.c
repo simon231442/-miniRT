@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:30:17 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/07 16:47:42 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/06 15:01:39 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 */
 
 static t_shape	*shape_plane_new(char *line);
-static int	arg_all_is_valid(char **arg);
+static int		arg_all_is_valid(char **arg);
 
 int	rt_parse_shape_plane(char *line, t_la_complete *la_complete)
 {
@@ -58,7 +58,6 @@ static t_shape	*shape_plane_new(char *line)
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
 	return (shape);
 }
-
 
 static int	arg_all_is_valid(char **arg)
 {

@@ -6,23 +6,23 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 16:33:30 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/03 13:04:17 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/07 17:44:29 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int	rt_render_shadow_intersect(t_list *shape_lst, t_shape **act_shape, t_ray r,
+int	rt_render_shadow_intersect(t_list *shape_lst, t_shape **last_shape, t_ray r,
 		double light_distance)
 {
 	double	t;
 
 	while (shape_lst != NULL)
 	{
-		if (*act_shape == shape_lst->shape)
+		if (*last_shape == shape_lst->shape)
 		{
 			shape_lst = shape_lst->next;
-			continue;
+			continue ;
 		}
 		if (rt_render_choose_shape_intersect(r, shape_lst->shape, &t))
 		{

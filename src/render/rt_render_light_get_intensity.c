@@ -6,35 +6,31 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 13:52:52 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/03 13:02:52 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/07 17:39:26 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-double	rt_render_light_get_intensity(t_list *shape, t_obj obj,
-		t_shape **act_shape, t_ray r, double t_min)
+double	rt_render_light_get_intensity(t_pixel_view *p, t_obj obj)
 {
-	t_vec3	intersect_point;
-	t_vec3	normal_vec;
-	double	cosinus_angle;
-	double	intensity;
-	t_ray	light_ray;
-	double	light_distance;
+	t_light_view	l;
 
-	intersect_point = rt_math_get_intersect_point(r, t_min);
-	light_ray.origin = intersect_point;
-	light_ray.dir = rt_math_light_get_vec(intersect_point, obj.light.origin);
-	light_distance = rt_math_utils_point_distance(intersect_point,
+	l.intersect_point = rt_math_get_intersect_point(p->r, p->t_min);
+	l.light_ray.origin = l.intersect_point;
+	l.light_ray.dir = rt_math_light_get_vec(l.intersect_point,
 			obj.light.origin);
-	if (rt_render_shadow_intersect(shape, act_shape, light_ray, light_distance))
+	l.light_distance = rt_math_utils_point_distance(l.intersect_point,
+			obj.light.origin);
+	if (rt_render_shadow_intersect(p->shape_list, &p->last_shape,
+			l.light_ray, l.light_distance))
 		return (0);
-	normal_vec = rt_math_shape_get_normal(intersect_point, **act_shape);
-	cosinus_angle = rt_math_utils_get_cosinus(normal_vec, light_ray.dir);
-	intensity = cosinus_angle * obj.light.ratio; 
-	if (intensity > 1)
-		intensity = 1;
-	else if (intensity < 0)
-		intensity = 0;
-	return (intensity);
+	l.normal_vec = rt_math_shape_get_normal(l.intersect_point, *p->last_shape);
+	l.cosinus_angle = rt_math_utils_get_cosinus(l.normal_vec, l.light_ray.dir);
+	l.intensity = l.cosinus_angle * obj.light.ratio;
+	if (l.intensity > 1)
+		l.intensity = 1;
+	else if (l.intensity < 0)
+		l.intensity = 0;
+	return (l.intensity);
 }

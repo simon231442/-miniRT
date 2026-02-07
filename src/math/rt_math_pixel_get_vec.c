@@ -6,16 +6,18 @@
 /*   By: jsurian <jsurian@student.42lausanne.ch>       +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/12/15 16:45:57 by jsurian        #+#    #+#                */
-/*   Updated: 2026/01/29 17:11:14 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/07 17:43:35 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
 //a changer si size_x != de size_y
-t_vec3	rt_math_pixel_get_vec(int x, int y, double fov, t_vec3 direction,
-		t_vec3 origin)
+t_vec3	rt_math_pixel_get_vec(int x, int y, t_cam cam)
 {
+	t_vec3 origin = cam.origin;
+	t_vec3 direction = cam.direction;
+	double fov = cam.fov;
 	t_vec3	u_temp;
 	t_vec3	up_global;
 	t_vec3	t_n;
