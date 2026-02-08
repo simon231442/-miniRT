@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/01/31 17:46:09 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/02/08 12:54:55 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,7 +103,7 @@ LIB_LINK = -Ilib/libft -Ilib/minilibx-linux -Ilib/get_next_line
 #                             COMPILER OPTIONS                                 #
 ################################################################################
 
-ifneq ($(wildcard /etc/arch-release),arch-release)
+ifneq ($(wildcard /etc/arch-release),)
 	CC	:= tcc
 else
 	CC	:= gcc
