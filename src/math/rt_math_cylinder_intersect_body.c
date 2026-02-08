@@ -56,10 +56,15 @@ int	rt_math_cylinder_intersect_body(t_ray r, t_shape cylinder, double *t)
 		return (0);
 	v.sqrt_delta = sqrt(v.delta);
 	v.t0 = rt_math_utils_get_equation_solutions(v, 0);
-	//v.t1 = rt_math_utils_get_equation_solutions(v.a, v.b, v.c, v.sqrt_delta, 1);
-	if (!check_cylinder_out_endcap(r, v.t0, cylinder))
+	if (!check_cylinder_out_endcap(r, v.t0, cylinder) && v.t0 > EPSILON)
 	{
 		*t = v.t0;
+		return (1);
+	}
+	v.t1 = rt_math_utils_get_equation_solutions(v, 1);
+	if (!check_cylinder_out_endcap(r, v.t1, cylinder) && v.t1 > EPSILON)
+	{
+		*t = v.t1;
 		return (1);
 	}
 	return (0);

@@ -26,9 +26,9 @@ int	rt_math_sphere_intersect(t_ray r, t_shape sphere, double *t)
 	v.sqrt_delta = sqrt(v.delta);
 	v.t0 = rt_math_utils_get_equation_solutions(v, 0);
 	v.t1 = rt_math_utils_get_equation_solutions(v, 1);
-	if (v.t0 > 0)
+	if (v.t0 > EPSILON)
 		*t = v.t0;
-	else if (v.t1 > 0)
+	else if (v.t1 > EPSILON)
 		*t = v.t1;
 	else
 		return (0);
