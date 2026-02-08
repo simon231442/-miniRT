@@ -102,10 +102,10 @@ LIB_LINK = -Ilib/libft -Ilib/minilibx-linux -Ilib/get_next_line
 #                             COMPILER OPTIONS                                 #
 ################################################################################
 
-ifeq ($(wildcard /etc/arch-release),)
-	CC	:= gcc
-else
+ifneq ($(wildcard /etc/arch-release),arch-release)
 	CC	:= tcc
+else
+	CC	:= gcc
 endif
 
 CFLAGS		:= -g -Wall -Werror -Wextra
