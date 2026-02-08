@@ -26,8 +26,7 @@ int	rt_render(t_la_complete *la_complete)
 				v.pixel_addr = rt_render_pixel_get_addr(&la_complete->mlx,
 						v.x, v.y);
 				v.pixel_vec = rt_math_pixel_get_vec(v.x, v.y,
-						la_complete->obj.cam.fov, la_complete->obj.cam.direction,
-						la_complete->obj.cam.origin);
+						la_complete->obj.cam);
 				*v.pixel_addr = rt_render_pixel_get_color(la_complete->shape,
 						la_complete->obj, v);
 				v.x++;

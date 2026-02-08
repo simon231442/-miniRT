@@ -31,7 +31,8 @@ typedef	struct	s_intersect_view
 	double	t1;
 }	t_intersect_view;
 
-t_vec3	rt_math_pixel_get_vec(int i, int j, double fov, t_vec3 direction, t_vec3 origin);
+void	rt_math_cam_calculation(t_cam *cam);
+t_vec3	rt_math_pixel_get_vec(int i, int j, t_cam cam);
 //double	rt_math_sphere_get_delta(double radius, t_vec3 d, t_vec3 oc);
 
 t_vec3	rt_math_utils_vec_normalize(t_vec3 v);

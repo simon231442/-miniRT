@@ -25,6 +25,7 @@ int	main(int ac, char **av)
 	ft_bzero(&la_complete, sizeof(t_la_complete));
 	if (rt_parse(av[1], &la_complete))
 		return (rt_parse_util_shape_free(&la_complete), EXIT_FAILURE);
+	rt_math_cam_calculation(&la_complete.obj.cam);
 	//ajouter dans les retours les frees de la complete
 	if (rt_mlx_init(&la_complete.mlx))
 		return (rt_mlx_free(&la_complete.mlx),
