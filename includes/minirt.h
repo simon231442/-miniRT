@@ -43,6 +43,11 @@ typedef struct s_cam
 	t_vec3	origin;
 	t_vec3	direction;
 	double	fov;
+	double	height;
+	double	width;
+	t_vec3	first_pixel;
+	t_vec3	right;
+	t_vec3	up;
 }	t_cam;
 
 typedef struct s_ambient

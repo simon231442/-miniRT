@@ -16,6 +16,7 @@
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
 #define ERROR_USAGE "usage ./miniRT <scene.rt>"
+#define ERROR_FILE_NAME "wrong file, the file name has to end with .rt"
 #define ERROR_SYSTEM "Failure system"
 #define ERROR_IDENTIFIER "Wrong identifier"
 #define ERROR_REAL_NB_FORMAT "incorrect format of nb"

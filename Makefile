@@ -51,6 +51,7 @@ SOURCES :=	minirt.c \
 			rt_mlx_init.c \
 			rt_mlx_hook.c \
 			rt_mlx_hook_key.c \
+			rt_math_cam_calculation.c \
 			rt_math_pixel_get_vec.c \
 			rt_math_light_get_vec.c \
 			rt_math_sphere_intersect.c \
