@@ -1,9 +1,5 @@
-simon:
-pixel get vec
-
 jules:
-little cross
-ne pas rappeler render a chaque hook
+valgrind
 
 
 antialiasing 

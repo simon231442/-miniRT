@@ -6,23 +6,26 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 12:42:32 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/06 15:00:15 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 16:46:20 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_parsing.h"
 
-int	hook_littlecross(t_mlx *self)
+int	hook_littlecross(t_la_complete *self)
 {
-	(void)self;
+	rt_mlx_free(&self->mlx);
+	rt_parse_util_shape_free(self);
+	exit(0);
 	return (1);
 }
 
 int	rt_mlx_hook(t_la_complete *self)
 {
 	mlx_key_hook(self->mlx.win_ptr, rt_mlx_hook_key, self);
+	mlx_hook(self->mlx.win_ptr, LITTLECROSS, 0, hook_littlecross, self);
 	return (0);
 }
-///	if (mlx_hook(self->win_ptr, LITTLECROSS, 0, hook_littlecross, self))
-///		return (1);
+
 	//mlx_mouse_hook(self->win_ptr, rt_mlx_hook_mouse, self);
