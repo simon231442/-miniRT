@@ -24,7 +24,7 @@ else
 	CC	= gcc
 	LFLAGS += -lbsd
 endif
-ifneq ($(wildcard /etc/arch-release),arch-release)
+ifneq ($(wildcard /etc/arch-release),)
 	CC	:= tcc
 endif
 

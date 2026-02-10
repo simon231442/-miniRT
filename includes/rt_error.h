@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:07:36 by srenaud           #+#    #+#             */
-/*   Updated: 2026/02/09 21:06:25 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 14:49:33 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define EXIT_SUCCESS 0
 # define EXIT_FAILURE 1
 # define ERROR_USAGE "usage ./miniRT <scene.rt>"
+# define ERROR_FILE_NAME "wrong file, the file name has to end with .rt"
 # define ERROR_SYSTEM "Failure system"
 # define ERROR_IDENTIFIER "Wrong identifier"
 # define ERROR_REAL_NB_FORMAT "incorrect format of nb"

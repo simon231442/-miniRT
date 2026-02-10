@@ -54,7 +54,7 @@ static int	rt_render_setup(t_context *ctx, t_render_config *config)
 		return (1);
 	if (ctx->scene.camera.fov <= 0.0 || ctx->scene.camera.fov >= 180.0)
 		return (rt_error("Camera FOV invalid"));
-	fov_radians = ctx->scene.camera.fov * M_PI / 180.0;
+	fov_radians = ctx->scene.camera.fov ;//* M_PI / 180.0;
 	config->aspect = (double)RT_IMAGE_WIDTH / (double)RT_IMAGE_HEIGHT;
 	config->scale = tan(fov_radians * 0.5);
 	config->bytes_per_pixel = ctx->bits_per_pixel / 8;
