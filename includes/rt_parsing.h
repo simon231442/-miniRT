@@ -6,29 +6,29 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 17:00:32 by simon2314         #+#    #+#             */
-/*   Updated: 2026/01/27 13:46:22 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/09 21:05:57 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_PARSING_H
 # define RT_PARSING_H
 
-typedef struct s_la_complete t_la_complete;
-typedef enum e_error_type t_error_type;
-typedef struct s_vec3 t_vec3;
-typedef struct s_color t_color;
+typedef struct s_la_complete	t_la_complete;
+typedef enum e_error_type		t_error_type;
+typedef struct s_vec3			t_vec3;
+typedef struct s_color			t_color;
 
 typedef struct s_parser
 {
 	char	*identifier;
 	int		(*f)(char *line, t_la_complete *la_complete);
 }	t_parser;
-	
+
 int		rt_parse(char *path, t_la_complete *la_complet);
 int		rt_parse_ambient(char *line, t_la_complete *la_complete);
-int 	rt_parse_cam(char *line, t_la_complete *la_complete);
+int		rt_parse_cam(char *line, t_la_complete *la_complete);
 int		rt_parse_light(char *line, t_la_complete *la_complete);
-int 	rt_parse_shape_sphere(char *line, t_la_complete *la_complete);
+int		rt_parse_shape_sphere(char *line, t_la_complete *la_complete);
 int		rt_parse_shape_plane(char *line, t_la_complete *la_complete);
 int		rt_parse_shape_cylinder(char *line, t_la_complete *la_complete);
 double	rt_parse_util_atod(char *value);
@@ -45,4 +45,3 @@ void	rt_parse_util_arg_free(char **arg);
 void	rt_parse_util_shape_free(t_la_complete *la_complete);
 
 #endif
-

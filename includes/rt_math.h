@@ -6,20 +6,20 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 18:41:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/07 17:41:52 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/09 08:29:21 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_MATH_H
 # define RT_MATH_H
 
-typedef struct	s_ray
+typedef struct s_ray
 {
 	t_vec3	dir;
 	t_vec3	origin;
 }	t_ray;
 
-typedef	struct	s_intersect_view
+typedef struct s_intersect_view
 {
 	t_vec3	oc;
 	double	a;
@@ -43,18 +43,16 @@ t_vec3	rt_math_utils_vec_add(t_vec3 v1, t_vec3 v2);
 t_vec3	rt_math_utils_vec_multi_scale(t_vec3 v, double scalar);
 double	rt_math_utils_point_distance(t_vec3 p1, t_vec3 p2);
 
-int rt_math_sphere_intersect(t_ray r, t_shape sphere, double *t);
-int	rt_math_plane_intersect(t_ray r, t_shape plane, double *t);
-int	rt_math_cylinder_intersect(t_ray r, t_shape *cylinder, double *t);
-int	rt_math_cylinder_intersect_body(t_ray r, t_shape cylinder, double *t);
-int	rt_math_cylinder_intersect_cap(t_ray r, t_shape *cylinder, double *t);
-//int	rt_math_cylinder_intersect_cap_top(t_ray r, t_shape cylinder, double *t);
-//int	rt_math_cylinder_intersect_cap_bottom(t_ray r, t_shape cylinder, double *t);
+int		rt_math_sphere_intersect(t_ray r, t_shape sphere, double *t);
+int		rt_math_plane_intersect(t_ray r, t_shape plane, double *t);
+int		rt_math_cylinder_intersect(t_ray r, t_shape *cylinder, double *t);
+int		rt_math_cylinder_intersect_body(t_ray r, t_shape cylinder, double *t);
+int		rt_math_cylinder_intersect_cap(t_ray r, t_shape *cylinder, double *t);
 
 t_vec3	rt_math_shape_get_normal(t_vec3 intersect_point, t_shape shape);
 t_vec3	rt_math_sphere_get_normal(t_vec3 intersect_point, t_vec3 origin_sphere);
-t_vec3	rt_math_cylinder_get_normal(t_vec3 intersect_point, t_vec3 origin_cylinder,
-		t_vec3 dir_cylinder, t_hit_type type_hit);
+t_vec3	rt_math_cylinder_get_normal(t_vec3 intersect_point,
+			t_vec3 origin_cylinder, t_vec3 dir_cylinder, t_hit_type type_hit);
 
 t_vec3	rt_math_get_intersect_point(t_ray r, double t_min);
 
@@ -62,6 +60,5 @@ t_vec3	rt_math_light_get_vec(t_vec3 intersect_point, t_vec3 light_origin);
 double	rt_math_utils_get_cosinus(t_vec3 normal_vec, t_vec3 light_vec);
 double	rt_math_utils_get_delta(double a, double b, double c);
 double	rt_math_utils_get_equation_solutions(t_intersect_view v, int positive);
-
 
 #endif
