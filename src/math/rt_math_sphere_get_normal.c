@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 18:43:42 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/16 14:13:27 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:45:00 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 //en connaissant le point d'intersection t, on peut calculer la coordonne
 //avec la cooordonne du point moins lorigin de la sphere -> normal

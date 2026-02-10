@@ -6,11 +6,12 @@
 /*   By: jsurian <jsurian@student.42lausanne.ch>       +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/12/15 16:45:57 by jsurian        #+#    #+#                */
-/*   Updated: 2026/02/07 17:43:35 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:39:46 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 //a changer si size_x != de size_y
 /**/

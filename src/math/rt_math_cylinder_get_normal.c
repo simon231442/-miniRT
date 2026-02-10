@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 14:11:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/06 13:30:42 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:45:13 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 t_vec3	rt_math_cylinder_get_normal(t_vec3 intersect_point,
 		t_vec3 origin_cylinder, t_vec3 dir_cylinder, t_hit_type type_hit)

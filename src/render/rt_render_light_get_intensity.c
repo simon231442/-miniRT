@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 13:52:52 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/07 17:39:26 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:48:27 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_render.h"
 
 double	rt_render_light_get_intensity(t_pixel_view *p, t_obj obj)
 {

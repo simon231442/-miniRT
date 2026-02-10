@@ -6,11 +6,12 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 09:25:03 by simon2314         #+#    #+#             */
-/*   Updated: 2026/02/06 09:25:03 by simon2314        ###   ####lausanne.ch   */
+/*   Updated: 2026/02/10 15:39:24 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 static t_vec3	center_pixel_get(t_vec3 origin, t_vec3 direction);
 static t_vec3	first_pixel_get(t_vec3 center, t_cam cam);

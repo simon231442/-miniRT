@@ -6,12 +6,15 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 18:41:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/09 08:29:21 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:43:36 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_MATH_H
 # define RT_MATH_H
+
+# define EPSILON	0//1e-6
+# define T_MAX 		10000
 
 typedef struct s_ray
 {

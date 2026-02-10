@@ -6,11 +6,13 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:30:38 by srenaud           #+#    #+#             */
-/*   Updated: 2026/02/06 15:00:51 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:30:08 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_parsing.h"
+#include "rt_error.h"
 
 /** 
  * @brief	parse a cylinder line, create a shape node and fill it's fields

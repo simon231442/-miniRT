@@ -6,11 +6,13 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:51:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/03 12:14:32 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:48:09 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_render.h"
+#include "rt_math.h"
 
 int	rt_render_shape_intersect(t_list *shape_lst, t_shape **last_shape, t_ray r,
 		double *t_min)

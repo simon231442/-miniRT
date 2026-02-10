@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 12:23:35 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/06 14:57:14 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:44:30 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 static int	intersect_cap_top(t_ray r, t_shape cylinder, double *t)
 {

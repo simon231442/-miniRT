@@ -6,11 +6,13 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:28:17 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/29 17:22:07 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:28:10 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_parsing.h"
+#include "rt_error.h"
 
 static int	arg_all_is_valid(char **arg);
 

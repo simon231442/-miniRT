@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 12:23:07 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/07 16:55:41 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:52:39 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 static int	check_cylinder_out_endcap(t_ray r, double t_min, t_shape cylinder)
 {

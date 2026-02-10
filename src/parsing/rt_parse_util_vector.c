@@ -6,11 +6,13 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:31:07 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/29 17:24:00 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:32:15 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_parsing.h"
+#include "rt_error.h"
 
 static int	vector_is_valid(char **vector);
 

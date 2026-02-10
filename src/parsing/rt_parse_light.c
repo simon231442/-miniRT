@@ -6,11 +6,13 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:29:13 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/07 16:46:14 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:29:29 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_parsing.h"
+#include "rt_error.h"
 
 /** 
  * @brief	parse a light line and fill la_complete->obj.light

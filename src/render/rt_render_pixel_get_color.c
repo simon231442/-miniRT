@@ -6,11 +6,13 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 12:24:26 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/07 17:06:12 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:47:20 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_render.h"
+#include "rt_parsing.h"
 
 int	rt_render_pixel_get_color(t_list *shape, t_obj obj, t_render_view v)
 {

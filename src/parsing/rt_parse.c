@@ -6,11 +6,13 @@
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 19:38:18 by simon2314         #+#    #+#             */
-/*   Updated: 2026/01/27 13:49:10 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:27:07 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_parsing.h"
+#include "rt_error.h"
 
 static int		parse_line(char	*line, t_la_complete *la_complete);
 static t_parser	*parser_tab_get(void);

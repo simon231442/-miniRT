@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:20:49 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/09 21:29:39 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:23:55 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include "mlx.h"
 # include "libft.h"
 # include "get_next_line.h"
+
+# include "rt_mlx.h"
 
 typedef struct s_vec3
 {
@@ -93,10 +95,6 @@ typedef struct s_obj
 	t_light		light;
 }	t_obj;
 
-typedef struct	s_la_complete	t_la_complete;
-
-# include "rt_mlx.h"
-
 typedef struct s_la_complete
 {
 	t_mlx	mlx;
@@ -104,11 +102,5 @@ typedef struct s_la_complete
 	t_list	*shape;
 	int		error_status;
 }	t_la_complete;
-
-# include "rt_parsing.h"
-# include "rt_error.h"
-# include "rt_math.h"
-# include "rt_render.h"
-# include "rt_debug.h"
 
 #endif

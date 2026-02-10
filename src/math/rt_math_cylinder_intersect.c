@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 13:11:45 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/06 14:46:03 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:42:59 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 int	rt_math_cylinder_intersect(t_ray r, t_shape *cylinder, double *t)
 {

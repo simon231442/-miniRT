@@ -6,18 +6,18 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:14:10 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/09 21:24:18 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:49:58 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_RENDER_H
 # define RT_RENDER_H
 
-# define T_MAX 		10000
-# define EPSILON	0//1e-6
 # define SPHERE		0
 # define PLANE		1
 # define CYLINDER	2
+
+# include "rt_math.h"
 
 typedef struct s_render_view
 {

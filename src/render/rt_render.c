@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:12:01 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/07 17:43:53 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:46:31 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_render.h"
 
 int	rt_render(t_la_complete *la_complete)
 {

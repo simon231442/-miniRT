@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:54:56 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/06 13:31:10 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:45:51 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 double	rt_math_utils_get_cosinus(t_vec3 normal_vec, t_vec3 light_vec)
 {

@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:48:05 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/01/05 09:19:12 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:45:40 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 //normalization uniquement de vecteurs
 t_vec3	rt_math_utils_vec_normalize(t_vec3 v)

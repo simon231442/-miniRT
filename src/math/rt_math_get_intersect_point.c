@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:13:43 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/06 13:31:52 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:45:26 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 t_vec3	rt_math_get_intersect_point(t_ray r, double t_min)
 {

@@ -6,11 +6,13 @@
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 09:59:25 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/29 17:23:00 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:31:33 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_parsing.h"
+#include "rt_error.h"
 
 static int	color_is_valid(char **color);
 

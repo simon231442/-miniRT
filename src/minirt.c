@@ -6,11 +6,15 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:19:33 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/06 14:58:32 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:25:19 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_error.h"
+#include "rt_parsing.h"
+#include "rt_math.h"
+#include "rt_render.h"
 
 int	is_rt_file(char *file_name);
 

@@ -6,11 +6,12 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:36:24 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/07 16:55:55 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:40:30 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "rt_math.h"
 
 int	rt_math_sphere_intersect(t_ray r, t_shape sphere, double *t)
 {

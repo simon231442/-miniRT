@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 08:56:19 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/03 12:42:12 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/10 15:24:02 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ typedef struct s_mlx
 	int		img_line;
 	int		img_endian;
 }	t_mlx;
+
+typedef struct s_la_complete	t_la_complete;
 
 int		rt_mlx_init(t_mlx *self);
 void	rt_mlx_free(t_mlx *self);
