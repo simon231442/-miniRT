@@ -19,8 +19,19 @@ static t_vec3	first_pixel_get(t_vec3 center, t_cam cam);
 void	rt_math_cam_calculation(t_cam *cam)
 {
 	t_vec3			center;
-	static t_vec3	world_up = {0, 1, 0, 0};
+	t_vec3			world_up;
+	double			dot_up;
 
+	cam->direction = rt_math_utils_vec_normalize(cam->direction);
+	world_up = (t_vec3){0, 1, 0, 0};
+	dot_up = fabs(rt_math_utils_vec_dot(cam->direction, world_up));
+	if (dot_up > 0.999)
+	{
+		world_up = (t_vec3){0, 0, 1, 0};
+		dot_up = fabs(rt_math_utils_vec_dot(cam->direction, world_up));
+		if (dot_up > 0.999)
+			world_up = (t_vec3){1, 0, 0, 0};
+	}
 	cam->right = rt_math_utils_vec_cross(world_up, cam->direction);
 	cam->right = rt_math_utils_vec_normalize(cam->right);
 	cam->up = rt_math_utils_vec_cross(cam->direction, cam->right);
