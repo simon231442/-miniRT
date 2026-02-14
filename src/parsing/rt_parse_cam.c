@@ -42,8 +42,8 @@ static int	arg_all_is_valid(char **arg)
 	if (ft_arg_count(arg) != 4)
 		return (rt_error_put(ERROR_ARG_QUANTITY), 0);
 	if (!ft_real_format_is_valid(arg[3]))
-		return (rt_error_put(ERROR_REAL_NB_FORMAT), 1);
+		return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
 	if (!ft_real_is_in_range(arg[3], "0.0", "180.0"))
-		return (rt_error_put(ERROR_OUT_OF_RANGE), 1);
+		return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
 	return (1);
 }
