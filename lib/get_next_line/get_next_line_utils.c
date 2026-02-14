@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:01:58 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/10 18:00:51 by srenaud          ###   ########.fr       */
+/*   Updated: 2026/02/14 15:40:30 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	gnl_strcpy(char *dest, const char *src)
 void	gnl_strcat(char *dest, const char *src)
 {
 	size_t	i;
-	size_t	 len;
+	size_t	len;
 
 	i = 0;
 	len = gnl_strlen(dest);

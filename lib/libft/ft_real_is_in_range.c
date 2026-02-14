@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_real_is_in_range.c                               :+:    :+:           */
+/*   ft_real_is_in_range.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 15:13:09 by simon2314         #+#    #+#             */
-/*   Updated: 2026/01/29 10:14:54 by srenaud        ########   odam.nl        */
+/*   Updated: 2026/02/14 15:44:57 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,21 +70,25 @@ void	real_set(t_real *real, char *raw)
 		real->int_len = 0;
 }
 
+static void	ft_swap(t_real *a, t_real *b)
+{
+	t_real	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
 int	is_higher_or_equal(t_real a, t_real b)
 {
 	int		i;
-	t_real	tmp;
 
 	if (a.nega == 1 && b.nega == 0)
 		return (0);
 	if (a.nega == 0 && b.nega == 1)
 		return (1);
 	if (a.nega == 1 && b.nega == 1)
-	{
-		tmp = a;
-		a = b;
-		b = tmp;
-	}
+		ft_swap(&a, &b);
 	if (a.int_len > b.int_len)
 		return (1);
 	if (a.int_len < b.int_len)

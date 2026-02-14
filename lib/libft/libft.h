@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:25:29 by srenaud           #+#    #+#             */
-/*   Updated: 2026/01/27 13:47:17 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/14 15:41:39 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ typedef struct s_real
 	char	*fract_start;
 }	t_real;
 
-
-int	ft_real_format_is_valid(char *nb);
-int	ft_is_zero_only(char *str);
-int	ft_real_is_in_range(char *value, char *min, char *max);
-int	ft_arg_count(char **arg);
+int		ft_real_format_is_valid(char *nb);
+int		ft_is_zero_only(char *str);
+int		ft_real_is_in_range(char *value, char *min, char *max);
+int		ft_arg_count(char **arg);
 
 typedef struct s_list
 {
