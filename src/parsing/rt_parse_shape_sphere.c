@@ -57,7 +57,7 @@ static t_shape	*shape_sphere_new(char *line)
 	shape->radius = rt_parse_util_atod(arg[2]) / 2;
 	if (rt_parse_util_color(arg[3], &shape->color))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);
-	return (shape);
+	return (rt_parse_util_arg_free(arg), shape);
 }
 
 static int	arg_all_is_valid(char **arg)

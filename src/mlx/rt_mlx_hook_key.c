@@ -12,6 +12,7 @@
 
 #include "minirt.h"
 #include "rt_render.h"
+#include "rt_parsing.h"
 //#include "stdio.h"
 
 int	rt_mlx_hook_key(int keycode, t_la_complete *self)
