@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_mlx_hook.c                                      :+:      :+:    :+:   */
+/*   rt_mlx_hook.c                                       :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 12:42:32 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/02/10 16:46:20 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/15 13:37:24 by jsurian        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	hook_littlecross(t_la_complete *self)
 {
-	rt_mlx_free(&self->mlx);
 	rt_parse_util_shape_free(self);
+	rt_mlx_free(&self->mlx);
 	exit(0);
 	return (1);
 }

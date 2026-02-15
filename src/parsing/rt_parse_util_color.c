@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_util_color.c                              :+:      :+:    :+:   */
+/*   rt_parse_util_color.c                               :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 09:59:25 by srenaud           #+#    #+#             */
-/*   Updated: 2026/02/10 15:31:33 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/15 13:40:05 by jsurian        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	rt_parse_util_color(char *arg, t_color *color)
 	color->r = rt_parse_util_atod(color_tmp[0]);
 	color->g = rt_parse_util_atod(color_tmp[1]);
 	color->b = rt_parse_util_atod(color_tmp[2]);
-		return (rt_parse_util_arg_free(color_tmp), 0);
+	return (rt_parse_util_arg_free(color_tmp), 0);
 }
 
 static int	color_is_valid(char **color)
