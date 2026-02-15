@@ -48,9 +48,9 @@ static t_shape	*shape_sphere_new(char *line)
 		return (rt_error_put(ERROR_SYSTEM), NULL);
 	arg = ft_split(line, ' ');
 	if (!arg)
-		return (rt_error_put(ERROR_SYSTEM), NULL);
+		return (free(shape), rt_error_put(ERROR_SYSTEM), NULL);
 	if (!arg_all_is_valid(arg))
-		return (rt_parse_util_arg_free(arg), NULL);
+		return (free(shape), rt_parse_util_arg_free(arg), NULL);
 	shape->type = SPHERE;
 	if (rt_parse_util_vector(arg[1], &shape->origin))
 		return (free(shape), rt_parse_util_arg_free(arg), NULL);

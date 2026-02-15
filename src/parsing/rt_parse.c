@@ -46,9 +46,10 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 		}
 		rt_parse_util_line_clean(line);
 		if (parse_line(line, la_complete))
-			return (free(line), 1);
+			return (free(line), close(fd), 1);
 		free(line);
 	}
+	close(fd);
 	return (0);
 }
 
