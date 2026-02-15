@@ -6,7 +6,7 @@
 #    By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:04:08 by jsurian42         #+#    #+#              #
-#    Updated: 2026/02/10 15:48:48 by jsurian42        ###   ########.fr        #
+#    Updated: 2026/02/14 16:12:03 by jsurian42        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,6 +109,12 @@ else
 	CC	:= gcc
 endif
 
+INPUT_X ?= $(shell bash -c 'read -p "Define size_x: " size_x; echo $$size_x')
+INPUT_Y ?= $(shell bash -c 'read -p "Define size_y: " size_y; echo $$size_y')
+
+WINDOW_FLAG_X	:= -D SIZE_X=$(INPUT_X)
+WINDOW_FLAG_Y	:= -D SIZE_Y=$(INPUT_Y)
+
 CFLAGS		:= -g -Wall -Werror -Wextra
 CPPFLAGS	:= -Iincludes $(LIB_LINK)
 MLXFLAGS 	:= -Llib/minilibx-linux/ -lmlx -lXext -lX11 -lm
@@ -124,11 +130,11 @@ OBJETS		:= $(SOURCES:%.c=$(OBJ_DIR)/%.o)
 ################################################################################
 
 $(NAME) : $(OBJETS) $(LIBFT) $(GNL) $(MLX)
-	$(CC) $(CFLAGS) $(OBJETS) $(LIBFT) $(GNL) $(MLXFLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJETS) $(LIBFT) $(GNL) $(MLXFLAGS) -o $(NAME) 
 
 $(OBJ_DIR)/%.o : %.c | $(OBJ_DIR)
 #@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(WINDOW_FLAG_X) $(WINDOW_FLAG_Y) -c $< -o $@
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
