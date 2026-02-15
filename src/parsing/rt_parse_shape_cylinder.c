@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_shape_cylinder.c                          :+:      :+:    :+:   */
+/*   rt_parse_shape_cylinder.c                           :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:30:38 by srenaud           #+#    #+#             */
-/*   Updated: 2026/02/10 15:30:08 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/15 14:38:22 by jsurian        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ static int	arg_all_is_valid(char **arg)
 		return (rt_error_put(ERROR_ARG_QUANTITY), 0);
 	if (!ft_real_format_is_valid(arg[3]))
 		return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
-	if (!ft_real_is_in_range(arg[3], "-214748364", "214748364"))
+	if (!ft_real_is_in_range(arg[3], "0", "214748364"))
 		return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
 	if (!ft_real_format_is_valid(arg[4]))
 		return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
-	if (!ft_real_is_in_range(arg[4], "-214748364", "214748364"))
+	if (!ft_real_is_in_range(arg[4], "0", "214748364"))
 		return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
 	return (1);
 }

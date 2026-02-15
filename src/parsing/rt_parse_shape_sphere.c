@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse_shape_sphere.c                            :+:      :+:    :+:   */
+/*   rt_parse_shape_sphere.c                             :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srenaud <srenaud@42lausanne.ch>            #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:29:43 by srenaud           #+#    #+#             */
-/*   Updated: 2026/02/10 15:30:56 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/15 14:37:38 by jsurian        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	arg_all_is_valid(char **arg)
 		return (rt_error_put(ERROR_ARG_QUANTITY), 0);
 	if (!ft_real_format_is_valid(arg[2]))
 		return (rt_error_put(ERROR_REAL_NB_FORMAT), 0);
-	if (!ft_real_is_in_range(arg[2], "-214748364", "214748364"))
+	if (!ft_real_is_in_range(arg[2], "0", "214748364"))
 		return (rt_error_put(ERROR_OUT_OF_RANGE), 0);
 	return (1);
 }

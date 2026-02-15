@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_parse.c                                         :+:      :+:    :+:   */
+/*   rt_parse.c                                          :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simon2314 <simon2314@42lausanne.ch>        #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 19:38:18 by simon2314         #+#    #+#             */
-/*   Updated: 2026/02/10 15:27:07 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/02/15 14:40:03 by jsurian        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int	rt_parse(char *path, t_la_complete *la_complete)
 		}
 		rt_parse_util_line_clean(line);
 		if (parse_line(line, la_complete))
-			return (free(line), close(fd), 1);
+			return (free(line), get_next_line(-1),
+				close(fd), 1);
 		free(line);
 	}
 	close(fd);
